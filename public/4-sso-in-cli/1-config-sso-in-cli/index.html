@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.69.0" />
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>SSO Configuration for CLI :: Working with AWS CLI on Windows/Ubuntu</title>
+
+    
+    <link href="/css/nucleus.css?1610760304" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1610760304" rel="stylesheet">
+    <link href="/css/hybrid.css?1610760304" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1610760304" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1610760304" rel="stylesheet">
+    <link href="/css/auto-complete.css?1610760304" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1610760304" rel="stylesheet">
+    <link href="/css/theme.css?1610760304" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1610760304" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1610760304" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1610760304"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/4-sso-in-cli/1-config-sso-in-cli/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1610760304"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1610760304"></script>
+<script type="text/javascript">
+    
+        var baseurl = "";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1610760304"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-cli-installation/" title="AWS CLI Installation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-cli-installation/">
+          <b>1. </b>AWS CLI Installation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-cli-installation/1-ver-1/" title="AWS CLI version 1" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-cli-installation/1-ver-1/">
+          <b>1.1. </b>AWS CLI version 1
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-cli-installation/2-ver-2/" title="AWS CLI version 2" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-cli-installation/2-ver-2/">
+          <b>1.2. </b>AWS CLI version 2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-basic-setup/" title="AWS CLI Basic Setup" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-basic-setup/">
+          <b>2. </b>AWS CLI Basic Setup
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-multi-profile/" title="Multi-profile Setup" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-multi-profile/">
+          <b>3. </b>Multi-profile Setup
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-sso-in-cli/" title="AWS SSO in CLI" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/4-sso-in-cli/">
+          <b>4. </b>AWS SSO in CLI
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-sso-in-cli/1-config-sso-in-cli/" title="SSO Configuration for CLI" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/4-sso-in-cli/1-config-sso-in-cli/">
+          <b>4.1 </b>SSO Configuration for CLI
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-sso-in-cli/2-using-sso-in-cli/" title="Using AWS SSO in CLI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-sso-in-cli/2-using-sso-in-cli/">
+          <b>4.2 </b>Using AWS SSO in CLI
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-examples/" title="Examples with AWS CLI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/5-examples/">
+          <b>5. </b>Examples with AWS CLI
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="http://awsstudygroup.com"><i class='fab fa-aws'></i> AWS Study Group - Blog</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/660548818043427/"><i class='fab fa-facebook'></i> AWS Study Group - FB Group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="/4-sso-in-cli/1-config-sso-in-cli/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="vi" value="/vi/4-sso-in-cli/1-config-sso-in-cli/">Tiếng Việt</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+    
+
+    
+
+    
+</left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Working with AWS CLI on Windows/Ubuntu</a> > <a href='/4-sso-in-cli/'>AWS SSO in CLI</a> > SSO Configuration for CLI
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              SSO Configuration for CLI
+            </h1>
+          
+
+        
+
+
+
+	<p>You can configure one or more of your AWS CLI named profiles to use a role from AWS SSO You can create and configure multiple profiles and configure each one to use a a different AWS SSO user portal or SSO-defined role.</p>
+<p>You can configure the profile in the following ways:</p>
+<ul>
+<li><strong>Automatically</strong>, using the command <code>aws configure sso</code></li>
+<li><strong>Manually</strong>, by editing the <code>.aws/config</code> file that stores the named profiles.</li>
+</ul>
+<p><strong>Contents</strong></p>
+<ul>
+<li><a href="#1-automatic-configuration">1. Automatic configuration</a></li>
+<li><a href="#2-manual-configuration">2. Manual configuration</a></li>
+</ul>
+<h4 id="1-automatic-configuration">1. Automatic configuration</h4>
+<p>You can add an AWS SSO enabled profile to your AWS CLI by running the following command, providing your <strong>AWS SSO start URL</strong> and the <strong>AWS Region</strong> that hosts the AWS SSO directory.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ aws configure sso
+SSO start URL <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: https://my-sso-portal.awsapps.com/start
+SSO region <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>:us-east-1
+</code></pre></div><p>The AWS CLI attempts to open your default browser and begin the login process for your AWS SSO account.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">SSO authorization page has automatically been opened in your default browser.  
+Follow the instructions in the browser to complete this authorization request.
+</code></pre></div><p><em>If the AWS CLI cannot open the browser, the following message appears with instructions on how to manually start the login process.</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Using a browser, open the following URL:  
+https://my-sso-portal.awsapps.com/verify  
+
+and enter the following code:  
+QCFK-N451  
+</code></pre></div><p>AWS SSO uses the code to associate the AWS SSO session with your current AWS CLI session. The AWS SSO browser page prompts you to sign in with your AWS SSO account credentials. This enables the AWS CLI (through the permissions associated with your AWS SSO account) to retrieve and display the AWS accounts and roles that you are authorized to use with AWS SSO.</p>
+<p>Next, the AWS CLI displays the AWS accounts available for you to use. If you are authorized to use only one account, the AWS CLI selects that account for you automatically and skips the prompt. The AWS accounts that are available for you to use are determined by your user configuration in AWS SSO.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">There are <span style="color:#ae81ff">2</span> AWS accounts available to you.
+&gt; DeveloperAccount, developer-account-admin@example.com <span style="color:#f92672">(</span>123456789011<span style="color:#f92672">)</span> 
+  ProductionAccount, production-account-admin@example.com <span style="color:#f92672">(</span>123456789022<span style="color:#f92672">)</span>
+</code></pre></div><p>Use the arrow keys to select the account you want to use with this profile. The &ldquo;&gt;&rdquo; character on the left points to the current choice. Press ENTER to make your selection.</p>
+<p>Next, the AWS CLI confirms your account choice, and displays the IAM roles that are available to you in the selected account. If the selected account lists only one role, the AWS CLI selects that role for you automatically and skips the prompt. The roles that are available for you to use are determined by your user configuration in AWS SSO.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Using the account ID 123456789011
+There are <span style="color:#ae81ff">2</span> roles available to you.
+&gt; ReadOnly
+  FullAccess
+</code></pre></div><p>As before, use the arrow keys to select the IAM role you want to use with this profile. The &ldquo;&gt;&rdquo; character on the left points to the current choice. Press <!-- raw HTML omitted --> to make your selection.</p>
+<p>The AWS CLI confirms your role selection.</p>
+<p>Using the role name &ldquo;ReadOnly&rdquo;</p>
+<p>Now you can finish the configuration of your profile, by specifying the default output format, the default AWS Region to send commands to, and providing a name for the profile so you can reference this profile from among all those defined on the local computer. In the following example, the user enters a default Region, default output format, and the name of the profile. You can alternatively press <!-- raw HTML omitted --> to select any default values that are shown between the square brackets. The suggested profile name is the account ID number followed by an underscore followed by the role name.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">CLI default client Region <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: us-west-2&lt;ENTER&gt;
+CLI default output format <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: json&lt;ENTER&gt;
+CLI profile name <span style="color:#f92672">[</span>123456789011_ReadOnly<span style="color:#f92672">]</span>: my-dev-profile&lt;ENTER&gt;
+</code></pre></div><p>A final message describes the completed profile configuration.</p>
+<p>To use this profile, specify the profile name using &ndash;profile, as shown:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws s3 ls --profile my-dev-profile
+</code></pre></div><p>The previous example entries would result in a named profile in <code>~/.aws/config</code> that looks like the following example.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[profile my-dev-profile]
+sso_start_url = https://my-sso-portal.awsapps.com/start
+sso_region = us-east-1
+sso_account_id = 123456789011
+sso_role_name = readOnly
+region = us-west-2
+output = json
+</code></pre></div><p>At this point, you have a profile that you can use to request temporary credentials. You must use the <strong>aws sso login</strong> command to actually request and retrieve the temporary credentials needed to run commands.</p>
+<h4 id="2-manual-configuration">2. Manual configuration</h4>
+<p>To manually add AWS SSO support to a named profile, you must add the following keys and values to the profile definition in the file <code>~/.aws/config</code> (Linux or macOS) or <code>%USERPROFILE%/.aws/config</code> (Windows).</p>
+<ul>
+<li><strong>sso_start_url</strong>: The URL that points to the organization&rsquo;s AWS SSO user portal.<br>
+<code>sso_start_url = https://my-sso-portal.awsapps.com/start</code></li>
+<li><strong>sso_region</strong>: The AWS Region that contains the AWS SSO portal host. This is separate from, and can be a different <code>region</code> than the default CLI region parameter.<br>
+<code>sso_region = us-west-2</code></li>
+<li><strong>sso_account_id</strong>: The AWS account ID that contains the IAM role that you want to use with this profile.<br>
+<code>sso_account_id = 123456789011</code></li>
+<li><strong>sso_role_name</strong>: The name of the IAM role that defines the user&rsquo;s permissions when using this profile.<br>
+<code>sso_role_name = ReadAccess</code></li>
+</ul>
+<p>The presence of these keys identify this profile as one that uses AWS SSO to authenticate the user.</p>
+<p>You can also include any other keys and values that are valid in the <code>.aws/config</code> file, such as region, output, or s3. However, you can&rsquo;t include any credential related values, such as <strong>role_arn</strong> or <strong>aws_secret_access_key</strong>. If you do, the AWS CLI produces an error.</p>
+<p>So a typical AWS SSO profile in <code>.aws/config</code> might look similar to the following example.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[profile my-dev-profile]
+sso_start_url = https://my-sso-portal.awsapps.com/start
+sso_region = us-east-1
+sso_account_id = 123456789011
+sso_role_name = readOnly
+region = us-west-2
+output = json
+</code></pre></div><p>At this point, same as automatic config, you have a profile that you can use to request temporary credentials. However, you can&rsquo;t yet run an AWS CLI service command. You must first use the aws sso login command to actually request and retrieve the temporary credentials needed to run commands.
+Next section will tell you how to use AWS SSO named profile.</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/4-sso-in-cli/" title="AWS SSO in CLI"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/4-sso-in-cli/2-using-sso-in-cli/" title="Using AWS SSO in CLI" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1610760304"></script>
+    <script src="/js/perfect-scrollbar.min.js?1610760304"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1610760304"></script>
+    <script src="/js/jquery.sticky.js?1610760304"></script>
+    <script src="/js/featherlight.min.js?1610760304"></script>
+    <script src="/js/highlight.pack.js?1610760304"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1610760304"></script>
+    <script src="/js/learn.js?1610760304"></script>
+    <script src="/js/hugo-learn.js?1610760304"></script>
+
+    <link href="/mermaid/mermaid.css?1610760304" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1610760304"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

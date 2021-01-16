@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.69.0" />
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Examples with AWS CLI :: Working with AWS CLI on Windows/Ubuntu</title>
+
+    
+    <link href="/css/nucleus.css?1610760304" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1610760304" rel="stylesheet">
+    <link href="/css/hybrid.css?1610760304" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1610760304" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1610760304" rel="stylesheet">
+    <link href="/css/auto-complete.css?1610760304" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1610760304" rel="stylesheet">
+    <link href="/css/theme.css?1610760304" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1610760304" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1610760304" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1610760304"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/5-examples/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1610760304"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1610760304"></script>
+<script type="text/javascript">
+    
+        var baseurl = "";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1610760304"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-cli-installation/" title="AWS CLI Installation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-cli-installation/">
+          <b>1. </b>AWS CLI Installation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-cli-installation/1-ver-1/" title="AWS CLI version 1" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-cli-installation/1-ver-1/">
+          <b>1.1. </b>AWS CLI version 1
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-cli-installation/2-ver-2/" title="AWS CLI version 2" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-cli-installation/2-ver-2/">
+          <b>1.2. </b>AWS CLI version 2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-basic-setup/" title="AWS CLI Basic Setup" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-basic-setup/">
+          <b>2. </b>AWS CLI Basic Setup
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-multi-profile/" title="Multi-profile Setup" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-multi-profile/">
+          <b>3. </b>Multi-profile Setup
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-sso-in-cli/" title="AWS SSO in CLI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-sso-in-cli/">
+          <b>4. </b>AWS SSO in CLI
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-sso-in-cli/1-config-sso-in-cli/" title="SSO Configuration for CLI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-sso-in-cli/1-config-sso-in-cli/">
+          <b>4.1 </b>SSO Configuration for CLI
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-sso-in-cli/2-using-sso-in-cli/" title="Using AWS SSO in CLI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-sso-in-cli/2-using-sso-in-cli/">
+          <b>4.2 </b>Using AWS SSO in CLI
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-examples/" title="Examples with AWS CLI" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/5-examples/">
+          <b>5. </b>Examples with AWS CLI
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="http://awsstudygroup.com"><i class='fab fa-aws'></i> AWS Study Group - Blog</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/660548818043427/"><i class='fab fa-facebook'></i> AWS Study Group - FB Group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="/5-examples/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="vi" value="/vi/5-examples/">Tiếng Việt</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+    
+
+    
+
+    
+</left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            <a href='/'>Working with AWS CLI on Windows/Ubuntu</a> > Examples with AWS CLI
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Examples with AWS CLI
+            </h1>
+          
+
+        
+
+
+
+	<p>This section describes how to use the AWS CLI to work on creating infrastructure on AWS.</p>
+<p><strong>Contents:</strong></p>
+<ul>
+<li><a href="#1-working-with-a-vpc">1. Working with a VPC</a></li>
+<li><a href="#2-working-with-subnets-in-vpc">2. Working with subnets in VPC</a></li>
+<li><a href="#3-working-with-internet-gateway--nat-gateway">3. Working with Internet Gateway &amp; NAT Gateway</a></li>
+<li><a href="#4-working-with-routing-table">4. Working with Routing Table</a></li>
+<li><a href="#5-working-with-transit-gateway">5. Working with Transit Gateway</a></li>
+<li><a href="#6-implement-cloud-trail">6. Implement Cloud Trail</a></li>
+<li><a href="#7-working-with-s3-gateway-vpc-endpoint">7. Working with S3 Gateway VPC Endpoint</a></li>
+</ul>
+<h4 id="1-working-with-a-vpc">1. Working with a VPC</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export VPC_CIDR<span style="color:#f92672">=</span>&lt;CidrBlock&gt;
+export VPC_ID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws ec2 create-vpc --cidr-block $VPC_CIDR --query <span style="color:#e6db74">&#39;Vpc.VpcId&#39;</span> --output text<span style="color:#66d9ef">)</span>
+
+aws ec2 create-tags --resources $VPC_ID --tags Key<span style="color:#f92672">=</span>Name,Value<span style="color:#f92672">=</span>DEV-VPC-$VPC_CIDR
+</code></pre></div><h4 id="2-working-with-subnets-in-vpc">2. Working with subnets in VPC</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># NAT Internet subnet</span>  
+export VPC_ID<span style="color:#f92672">=</span>&lt;VpcId&gt;
+export REGION<span style="color:#f92672">=</span>&lt;Region&gt;
+export AZ1<span style="color:#f92672">=</span>&lt;AvailabilityZone1&gt;
+export AZ2<span style="color:#f92672">=</span>&lt;AvailabilityZone2&gt;
+export NAT_SUBNET_CIDR<span style="color:#f92672">=</span>&lt;CidrBlock&gt;
+export SUBNET_ID_INTERNET<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block $NAT_SUBNET_CIDR --availability-zone $AZ1 --query <span style="color:#e6db74">&#39;Subnet.SubnetId&#39;</span> --output text<span style="color:#66d9ef">)</span>
+
+aws ec2 create-tags --resources $SUBNET_ID_INTERNET --tags Key<span style="color:#f92672">=</span>Name,Value<span style="color:#f92672">=</span>DEV-InternetSubnet-$NAT_SUBNET_CIDR --output text
+
+<span style="color:#75715e"># Web subnet</span>  
+export WEB_SUBNET_CIDR1<span style="color:#f92672">=</span>&lt;CidrBlock&gt;
+export WEB_SUBNET_CIDR2<span style="color:#f92672">=</span>&lt;CidrBlock&gt;
+export SUBNET_ID_WEB1<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block $WEB_SUBNET_CIDR1 --availability-zone $AZ1 --query <span style="color:#e6db74">&#39;Subnet.SubnetId&#39;</span> --output text<span style="color:#66d9ef">)</span>
+
+aws ec2 create-tags --resources $SUBNET_ID_WEB1 --tags Key<span style="color:#f92672">=</span>Name,Value<span style="color:#f92672">=</span>Web-PublicSubnet-$AZ1-$WEB_SUBNET_CIDR1 --output text
+
+export SUBNET_ID_WEB2<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block $WEB_SUBNET_CIDR2 --availability-zone $AZ2 --query <span style="color:#e6db74">&#39;Subnet.SubnetId&#39;</span> --output text<span style="color:#66d9ef">)</span>
+
+aws ec2 create-tags --resources $SUBNET_ID_WEB2 --tags Key<span style="color:#f92672">=</span>Name,Value<span style="color:#f92672">=</span>DEV-Web-PublicSubnet-$AZ2-$WEB_SUBNET_CIDR2 --output text
+
+<span style="color:#75715e"># Application subnet</span>  
+export APP_SUBNET_CIDR1<span style="color:#f92672">=</span>&lt;CidrBlock&gt;
+export APP_SUBNET_CIDR2<span style="color:#f92672">=</span>&lt;CidrBlock&gt;
+export SUBNET_ID_APP1<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block $APP_SUBNET_CIDR1 --availability-zone $AZ1 --query <span style="color:#e6db74">&#39;Subnet.SubnetId&#39;</span> --output text<span style="color:#66d9ef">)</span>
+
+aws ec2 create-tags --resources $SUBNET_ID_APP1 --tags Key<span style="color:#f92672">=</span>Name,Value<span style="color:#f92672">=</span>DEV-APP-PrivateSubnet-$AZ1-$APP_SUBNET_CIDR1 --output text
+
+export SUBNET_ID_APP2<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block $APP_SUBNET_CIDR2 --availability-zone $AZ2 --query <span style="color:#e6db74">&#39;Subnet.SubnetId&#39;</span> --output text<span style="color:#66d9ef">)</span>
+
+aws ec2 create-tags --resources $SUBNET_ID_APP2 --tags Key<span style="color:#f92672">=</span>Name,Value<span style="color:#f92672">=</span>DEV-APP-PrivateSubnet-$AZ2-$APP_SUBNET_CIDR2 --output text
+
+<span style="color:#75715e"># Database subnet</span>
+export DB_SUBNET_CIDR1<span style="color:#f92672">=</span>&lt;CidrBlock&gt;
+export DB_SUBNET_CIDR2<span style="color:#f92672">=</span>&lt;CidrBlock&gt;
+export SUBNET_ID_DB1<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block $DB_SUBNET_CIDR1 --availability-zone $AZ1 --query <span style="color:#e6db74">&#39;Subnet.SubnetId&#39;</span> --output text<span style="color:#66d9ef">)</span>
+
+aws ec2 create-tags --resources $SUBNET_ID_DB1 --tags Key<span style="color:#f92672">=</span>Name,Value<span style="color:#f92672">=</span>DEV-DB-PrivateSubnet-$AZ1-$DB_SUBNET_CIDR1 --output text
+
+export SUBNET_ID_DB2<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block $DB_SUBNET_CIDR2 --availability-zone $AZ2 --query <span style="color:#e6db74">&#39;Subnet.SubnetId&#39;</span> --output text<span style="color:#66d9ef">)</span>
+
+aws ec2 create-tags --resources $SUBNET_ID_DB2 --tags Key<span style="color:#f92672">=</span>Name,Value<span style="color:#f92672">=</span>DEV-DB-PrivateSubnet-$AZ2-$DB_SUBNET_CIDR2 --output text
+</code></pre></div><h4 id="3-working-with-internet-gateway--nat-gateway">3. Working with Internet Gateway &amp; NAT Gateway</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Create Internet Gateway</span>
+export VPC_ID<span style="color:#f92672">=</span>&lt;VpcId&gt;
+export SUBNET_ID_INTERNET<span style="color:#f92672">=</span>&lt;SubnetId&gt;
+export IGW_ID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws ec2 create-internet-gateway --query <span style="color:#e6db74">&#39;InternetGateway.InternetGatewayId&#39;</span> --output text<span style="color:#66d9ef">)</span>
+
+aws ec2 create-tags --resources $IGW_ID --tags Key<span style="color:#f92672">=</span>Name,Value<span style="color:#f92672">=</span>DEV-InternetGateway
+
+<span style="color:#75715e"># Attach Internet Gateway to VPC</span>
+aws ec2 attach-internet-gateway --internet-gateway-id $IGW_ID --vpc-id $VPC_ID --output text
+
+<span style="color:#75715e"># Create Elastic IP address</span>
+export ALLOC_ID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws ec2 allocate-address --domain vpc --query <span style="color:#e6db74">&#39;AllocationId&#39;</span> --output text<span style="color:#66d9ef">)</span>
+
+aws ec2 create-tags --resources $ALLOC_ID --tags Key<span style="color:#f92672">=</span>Name,Value<span style="color:#f92672">=</span>DEV-Elastic-IP
+
+<span style="color:#75715e"># Create NAT Gateway</span>
+export NATGW_ID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws ec2 create-nat-gateway --allocation-id $ALLOC_ID --subnet-id $SUBNET_ID_INTERNET --query <span style="color:#e6db74">&#39;NatGateway.NatGatewayId&#39;</span> --output text<span style="color:#66d9ef">)</span>
+
+aws ec2 create-tags --resources $NATGW_ID --tags Key<span style="color:#f92672">=</span>Name,Value<span style="color:#f92672">=</span>DEV-NAT-GW
+</code></pre></div><h4 id="4-working-with-routing-table">4. Working with Routing Table</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#Create custom routable</span>
+export VPC_ID<span style="color:#f92672">=</span>&lt;VpcId&gt;
+export NATGW_ID<span style="color:#f92672">=</span>&lt;NatGatewayId&gt;
+export SUBNET_ID_INTERNET<span style="color:#f92672">=</span>&lt;SubnetId&gt;
+export RTB_ID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws ec2 create-route-table --vpc-id $VPC_ID --query <span style="color:#e6db74">&#39;RouteTable.RouteTableId&#39;</span> --output text<span style="color:#66d9ef">)</span>
+
+aws ec2 create-tags --resources $RTB_ID --tags Key<span style="color:#f92672">=</span>Name,Value<span style="color:#f92672">=</span>DEV-RouteTable-Internet
+
+<span style="color:#75715e">#Add route entry that direct traffic to internet through NAT Gateway</span>
+aws ec2 create-route --route-table-id $RTB_ID --destination-cidr-block 0.0.0.0/0 --nat-gateway-id $NATGW_ID --output text 
+
+<span style="color:#75715e">#Associate the custom routable to the subnet that required internet connection</span>
+aws ec2 associate-route-table --route-table-id $RTB_ID --subnet-id $SUBNET_ID_INTERNET --output text 
+</code></pre></div><h4 id="5-working-with-transit-gateway">5. Working with Transit Gateway</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># List Transit Gateway in system</span>
+aws ec2 describe-transit-gateways --output text
+
+<span style="color:#75715e"># Create Transit Gateway attachment ( Require to list at least 1 subnet per availability zone )</span>
+export TGW_ID<span style="color:#f92672">=</span>&lt;TransitGatewayId&gt;
+export VPC_ID<span style="color:#f92672">=</span>&lt;VpcId&gt;
+export SUBNET_ID_WEB1<span style="color:#f92672">=</span>&lt;SubnetId&gt;
+export SUBNET_ID_WEB2<span style="color:#f92672">=</span>&lt;SubnetId&gt;
+
+export TGW_ATTACHMENT<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws ec2 create-transit-gateway-vpc-attachment --transit-gateway-id $TGW_ID --vpc-id $VPC_ID --subnet-ids $SUBNET_ID_WEB1 $SUBNET_ID_WEB2 --query <span style="color:#e6db74">&#39;TransitGatewayVpcAttachment.TransitGatewayAttachmentId&#39;</span> --output text<span style="color:#66d9ef">)</span>
+
+aws ec2 create-tags --resources $TGW_ATTACHMENT --tags Key<span style="color:#f92672">=</span>Name,Value<span style="color:#f92672">=</span>DEV-Transitgateway-attachment
+</code></pre></div><h4 id="6-implement-cloud-trail">6. Implement Cloud Trail</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#Create bucket to store log</span>
+export TRAIL_NAME<span style="color:#f92672">=</span>&lt;TrailName&gt;
+export S3_BUCKET<span style="color:#f92672">=</span>&lt;S3BucketName&gt;
+export S3_PREFIX<span style="color:#f92672">=</span>&lt;ObjectPrefix&gt;
+export ACCOUNT_ID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws sts get-caller-identity --query <span style="color:#e6db74">&#39;Account&#39;</span> --output text<span style="color:#66d9ef">)</span>
+
+aws s3 mb s3://$S3_BUCKET
+
+<span style="color:#75715e">#Create bucket policy json</span>
+cat <span style="color:#e6db74">&lt;&lt;&#39;EOT&#39;&gt;&gt; $S3_BUCKET-bucket-policy.json
+</span><span style="color:#e6db74">{
+</span><span style="color:#e6db74">    &#34;Version&#34;: &#34;2012-10-17&#34;,
+</span><span style="color:#e6db74">    &#34;Statement&#34;: [
+</span><span style="color:#e6db74">        {
+</span><span style="color:#e6db74">            &#34;Sid&#34;: &#34;AWSCloudTrailAclCheck20150319&#34;,
+</span><span style="color:#e6db74">            &#34;Effect&#34;: &#34;Allow&#34;,
+</span><span style="color:#e6db74">            &#34;Principal&#34;: {&#34;Service&#34;: &#34;cloudtrail.amazonaws.com&#34;},
+</span><span style="color:#e6db74">            &#34;Action&#34;: &#34;s3:GetBucketAcl&#34;,
+</span><span style="color:#e6db74">            &#34;Resource&#34;: &#34;arn:aws:s3:::$S3_BUCKET&#34;
+</span><span style="color:#e6db74">        },
+</span><span style="color:#e6db74">        {
+</span><span style="color:#e6db74">            &#34;Sid&#34;: &#34;AWSCloudTrailWrite20150319&#34;,
+</span><span style="color:#e6db74">            &#34;Effect&#34;: &#34;Allow&#34;,
+</span><span style="color:#e6db74">            &#34;Principal&#34;: {&#34;Service&#34;: &#34;cloudtrail.amazonaws.com&#34;},
+</span><span style="color:#e6db74">            &#34;Action&#34;: &#34;s3:PutObject&#34;,
+</span><span style="color:#e6db74">            &#34;Resource&#34;: &#34;arn:aws:s3:::$S3_BUCKET/$S3_PREFIX/AWSLogs/$ACCOUNT_ID/*&#34;,
+</span><span style="color:#e6db74">            &#34;Condition&#34;: {&#34;StringEquals&#34;: {&#34;s3:x-amz-acl&#34;: &#34;bucket-owner-full-control&#34;}}
+</span><span style="color:#e6db74">        }
+</span><span style="color:#e6db74">    ]
+</span><span style="color:#e6db74">}
+</span><span style="color:#e6db74">EOT</span>
+
+<span style="color:#75715e">#Assign S3 bucket policy</span>
+
+aws s3api put-bucket-policy --bucket<span style="color:#f92672">=</span>$S3_BUCKET --policy<span style="color:#f92672">=</span>file://<span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>/$S3_BUCKET-bucket-policy.json
+
+<span style="color:#75715e">#Create and start trail</span>
+
+aws cloudtrail create-trail --region<span style="color:#f92672">=</span>$REGION --name<span style="color:#f92672">=</span>$TRAIL_NAME --s3-bucket-name<span style="color:#f92672">=</span>$S3_BUCKET --s3-key-prefix<span style="color:#f92672">=</span>$S3_PREFIX
+
+aws cloudtrail start-logging --region<span style="color:#f92672">=</span>$REGION --name<span style="color:#f92672">=</span>$TRAIL_NAME
+</code></pre></div><h4 id="7-working-with-s3-gateway-vpc-endpoint">7. Working with S3 Gateway VPC Endpoint</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#Create VPC Endpoint</span>
+export REGION<span style="color:#f92672">=</span>&lt;Region&gt;
+export VPC_ID<span style="color:#f92672">=</span>&lt;VpcId&gt;
+export ROUTE_TABLE_ID<span style="color:#f92672">=</span>&lt;RouteTableId&gt;
+export S3_BUCKET<span style="color:#f92672">=</span>&lt;S3BucketName&gt;
+export VPC_ENDPOINT_ID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws ec2 create-vpc-endpoint --region<span style="color:#f92672">=</span>$REGION --vpc-id $VPC_ID --service-name com.amazonaws.$REGION.s3 --route-table-ids $ROUTE_TABLE_ID --query <span style="color:#e6db74">&#39;VpcEndpoint.VpcEndpointId&#39;</span> --output text<span style="color:#66d9ef">)</span>
+
+<span style="color:#75715e">#Update Bucket Policy to allow access from the VPC Endpoint</span>
+
+cat <span style="color:#e6db74">&lt;&lt;&#39;EOT&#39;&gt;&gt; $S3_BUCKET-bucket-policy.json
+</span><span style="color:#e6db74">{
+</span><span style="color:#e6db74">    &#34;Version&#34;: &#34;2012-10-17&#34;,
+</span><span style="color:#e6db74">    &#34;Statement&#34;: [
+</span><span style="color:#e6db74">        {
+</span><span style="color:#e6db74">            &#34;Sid&#34;: &#34;Access-to-specific-VPCE-only&#34;,
+</span><span style="color:#e6db74">            &#34;Principal&#34;: &#34;*&#34;,
+</span><span style="color:#e6db74">            &#34;Action&#34;: &#34;s3:*&#34;,
+</span><span style="color:#e6db74">            &#34;Effect&#34;: &#34;Allow&#34;,
+</span><span style="color:#e6db74">            &#34;Resource&#34;: [&#34;arn:aws:s3:::$S3_BUCKET/*&#34;],
+</span><span style="color:#e6db74">            &#34;Condition&#34;: {
+</span><span style="color:#e6db74">                &#34;StringEquals&#34;: {
+</span><span style="color:#e6db74">                    &#34;aws:sourceVpce&#34;: &#34;$VPC_ENDPOINT_ID&#34;
+</span><span style="color:#e6db74">                }
+</span><span style="color:#e6db74">            }
+</span><span style="color:#e6db74">        }
+</span><span style="color:#e6db74">   ]
+</span><span style="color:#e6db74">}
+</span><span style="color:#e6db74">EOT</span>
+
+aws s3api put-bucket-policy --bucket<span style="color:#f92672">=</span>$S3_BUCKET --policy<span style="color:#f92672">=</span>file://<span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>/$S3_BUCKET-bucket-policy.json
+</code></pre></div>
+<section class="attachments orange">
+	<label>
+		<i class="fas fa-paperclip" aria-hidden="true"></i>
+		Scripts for References
+	</label>
+	
+		
+	
+	<div class="attachments-files">
+	
+		
+		
+			
+				<li>
+					<a href="/5-examples/_index.files/1-CreateVpc.sh" >
+						1-CreateVpc.sh
+					</a>
+					(0 ko)
+				</li>
+			
+		
+	
+		
+		
+			
+				<li>
+					<a href="/5-examples/_index.files/2-CreateSubnets.sh" >
+						2-CreateSubnets.sh
+					</a>
+					(2 ko)
+				</li>
+			
+		
+	
+		
+		
+			
+				<li>
+					<a href="/5-examples/_index.files/3-CreateIGW-NGW.sh" >
+						3-CreateIGW-NGW.sh
+					</a>
+					(0 ko)
+				</li>
+			
+		
+	
+		
+		
+			
+				<li>
+					<a href="/5-examples/_index.files/4-CreateRouteTable.sh" >
+						4-CreateRouteTable.sh
+					</a>
+					(0 ko)
+				</li>
+			
+		
+	
+		
+		
+			
+				<li>
+					<a href="/5-examples/_index.files/5-CreateTransitGW.sh" >
+						5-CreateTransitGW.sh
+					</a>
+					(0 ko)
+				</li>
+			
+		
+	
+		
+		
+			
+				<li>
+					<a href="/5-examples/_index.files/6-ImplementCloudTrail.sh" >
+						6-ImplementCloudTrail.sh
+					</a>
+					(1 ko)
+				</li>
+			
+		
+	
+		
+		
+			
+				<li>
+					<a href="/5-examples/_index.files/7-S3GW-VPCEndpoint.sh" >
+						7-S3GW-VPCEndpoint.sh
+					</a>
+					(1 ko)
+				</li>
+			
+		
+	
+	<div>
+	
+</section>
+
+
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/4-sso-in-cli/2-using-sso-in-cli/" title="Using AWS SSO in CLI"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/1-cli-installation/" title="AWS CLI Installation" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1610760304"></script>
+    <script src="/js/perfect-scrollbar.min.js?1610760304"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1610760304"></script>
+    <script src="/js/jquery.sticky.js?1610760304"></script>
+    <script src="/js/featherlight.min.js?1610760304"></script>
+    <script src="/js/highlight.pack.js?1610760304"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1610760304"></script>
+    <script src="/js/learn.js?1610760304"></script>
+    <script src="/js/hugo-learn.js?1610760304"></script>
+
+    <link href="/mermaid/mermaid.css?1610760304" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1610760304"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
