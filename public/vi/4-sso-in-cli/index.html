@@ -12,21 +12,21 @@
     <title>AWS SSO trong CLI :: Sử dụng AWS CLI trên Windows/Ubuntu</title>
 
     
-    <link href="/css/nucleus.css?1610760304" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1610760304" rel="stylesheet">
-    <link href="/css/hybrid.css?1610760304" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1610760304" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1610760304" rel="stylesheet">
-    <link href="/css/auto-complete.css?1610760304" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1610760304" rel="stylesheet">
-    <link href="/css/theme.css?1610760304" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1610760304" rel="stylesheet">
+    <link href="/css/nucleus.css?1625463095" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1625463095" rel="stylesheet">
+    <link href="/css/hybrid.css?1625463095" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1625463095" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1625463095" rel="stylesheet">
+    <link href="/css/auto-complete.css?1625463095" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1625463095" rel="stylesheet">
+    <link href="/css/theme.css?1625463095" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1625463095" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1610760304" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1625463095" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1610760304"></script>
+    <script src="/js/jquery-3.3.1.min.js?1625463095"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1610760304"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1610760304"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1625463095"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1625463095"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1610760304"></script>
+<script type="text/javascript" src="/js/search.js?1625463095"></script>
 
     
   </div>
@@ -94,74 +94,6 @@
           
       </a>
       
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/1-cli-installation/1-ver-1/" title="AWS CLI phiên bản 1" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/1-cli-installation/1-ver-1/">
-          <b>1.1. </b>AWS CLI phiên bản 1
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/1-cli-installation/2-ver-2/" title="AWS CLI phiên bản 2" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/1-cli-installation/2-ver-2/">
-          <b>1.2. </b>AWS CLI phiên bản 2
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
               
     </li>
   
@@ -421,11 +353,11 @@
     <section id="footer">
       <left>
     
-    
-
-    
-
-    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7834096&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
 </left>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -507,15 +439,12 @@
 
 
 
-	<h4 id="cấu-hình-aws-cli-để-sử-dụng-aws-single-sign-on">Cấu hình AWS CLI để sử dụng AWS Single Sign-On</h4>
+	<h4 id="thiết-lập-aws-cli-để-sử-dụng-aws-single-sign-on">Thiết lập AWS CLI để sử dụng AWS Single Sign-On</h4>
 
-<div class="notices warning" ><ul>
-<li>Tính năng sau chỉ xuất hiện nếu bạn sử dụng AWS CLI phiên bản 2. Tính năng này không hỗ trợ ở AWS CLI phiên bản 1.</li>
-<li>Đảm bảo rằng bạn đã thiết lập AWS SSO cho AWS Organization của mình. Nếu chưa hãy xem <a href="">Thiết lập AWS SSO</a></li>
-</ul>
+<div class="notices warning" ><p>Tính năng này chỉ xuất hiện nếu bạn sử dụng AWS CLI v2. Hãy đảm bảo rằng bạn đã thiết lập AWS SSO cho AWS Organization của mình. Nếu chưa hãy xem <a href="https://000012.awsstudygroup.com/vi/">Thiết lập AWS SSO</a></p>
 </div>
 
-<p>Nếu organization của bạn sử dụng <strong>AWS Single Sign-On (AWS SSO)</strong>, người dùng của bạn có thể đăng nhập vào Active Directory, danh mục tích hợp sẵn tích hợp sẵn trong AWS SSO, hoặc một iDP khác kết nối vào AWS SSO và được áp vào phù hợp với <strong>AWS Identity and Access Management (IAM) role</strong> cho phép bạn chạy các lệnh AWS CLI. Bất kể bạn sử dụng iDP nào, AWS SSO sẽ loại bỏ những điểm khác biệt đó và tất cả chúng đều hoạt động với AWS CLI.</p>
+<p>Nếu organization của bạn sử dụng <strong>AWS Single Sign-On (AWS SSO)</strong>, người dùng của bạn có thể đăng nhập vào tài khoản AWS thuộc AWS SSO và chạy các lệnh AWS CLI thông qua <em>Active Directory</em> (danh mục tích hợp sẵn tích hợp sẵn trong AWS SSO) hoặc một <em>Identity Provider</em> (nhà cung cấp nhận dạng) khác đã được thiết lập phù hợp. Bất kể bạn sử dụng nhà cung cấp nhận dạng nào, AWS SSO sẽ loại bỏ những điểm khác biệt đó và hỗ trợ hoạt động với AWS CLI một cách bình thường.</p>
 <p><strong>Nội dung</strong></p>
 <ol>
 <li><a href="./1-config-sso-in-cli/">Thiết lập Profile sử dụng AWS SSO</a></li>
@@ -569,42 +498,8 @@
 
                     
                     
-                        
-                    
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
             
         
@@ -733,19 +628,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1610760304"></script>
-    <script src="/js/perfect-scrollbar.min.js?1610760304"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1610760304"></script>
-    <script src="/js/jquery.sticky.js?1610760304"></script>
-    <script src="/js/featherlight.min.js?1610760304"></script>
-    <script src="/js/highlight.pack.js?1610760304"></script>
+    <script src="/js/clipboard.min.js?1625463095"></script>
+    <script src="/js/perfect-scrollbar.min.js?1625463095"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1625463095"></script>
+    <script src="/js/jquery.sticky.js?1625463095"></script>
+    <script src="/js/featherlight.min.js?1625463095"></script>
+    <script src="/js/highlight.pack.js?1625463095"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1610760304"></script>
-    <script src="/js/learn.js?1610760304"></script>
-    <script src="/js/hugo-learn.js?1610760304"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1625463095"></script>
+    <script src="/js/learn.js?1625463095"></script>
+    <script src="/js/hugo-learn.js?1625463095"></script>
 
-    <link href="/mermaid/mermaid.css?1610760304" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1610760304"></script>
+    <link href="/mermaid/mermaid.css?1625463095" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1625463095"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

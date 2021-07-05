@@ -1,72 +1,118 @@
 +++
-title = "Multi-profile Setup"
+title = "Thiết lập Multi-profile"
 date = 2020
 weight = 3
 chapter = false
 pre = "<b>3. </b>"
 +++
 
-**Contents**
-- [1. Profile](#1-profile)
-- [2. Multiple Profiles](#2-multiple-profiles)
-  - [Create Named Profile](#create-named-profile)
-  - [Manage Configuration with Multiple Profile](#manage-configuration-with-multiple-profile)
+#### Tổng quan
 
-### 1. Profile
-A collection of settings is called a profile. By default, the AWS CLI uses the **default** profile. You can create and use additional named profiles with varying credentials and settings by specifying the --profile option and assigning a name.
-You can save your frequently used configuration settings and credentials in files that are maintained by the AWS CLI.
+Ở phần này, bạn sẽ tìm hiểu về khái niệm profile trong AWS CLI và làm các bài tập thực hành như tạo **default profile**, tạo **profile riêng**, cập nhật profile, và quản lý nhiều profile (*multi-profile management*)
 
-The following example creates the **default** profile.
-```bash
-$ aws configure
-AWS Access Key ID [None]: *AKIAIOSFODNN7EXAMPLE*
-AWS Secret Access Key [None]: *wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY*
-Default region name [None]: *us-west-2*
-Default output format [None]: *json*
-```
+#### Profile
+- **Profile** là tập các thiết lập và định danh cho phép bạn sử dụng các lệnh có trong AWS CLI. Mặc định, AWS CLI sử dụng **default profile**. Ngoài ra, bạn còn có thể tạo thêm nhiều profile khác gọi là **profile riêng** với thông số ```--profile```.
+- AWS CLI lưu trữ thông tin của các profile trong tập tin **config** và **credentials**. Ngoài việc tạo thêm profile với thông số ```--profile```, bạn có thể tạo thêm các profile khác bằng cách thêm các thiết lập trực tiếp vào các tập tin **config** và **credentials**.
+- Với thông số ```--profile```, bạn có thể chỉ định một profile cụ thể để nó thực hiện những câu lệnh trong AWS CLI. Ngoài ra, bạn cũng có thể chỉ định một profile trong biến môi trường (AWS_PROFILE) để thay thế default profile ở một session nào dó.
 
-### 2. Multiple Profiles
-The AWS CLI supports using any of multiple named profiles that are stored in the config and credentials files. You can configure additional profiles by using aws configure with the --profile option, or by adding entries to the config and credentials files.
-The files are divided into profiles. A named profile is a collection of settings and credentials that you can apply to a AWS CLI command. When you specify a profile to run a command, the settings and credentials are used to run that command. You can specify one profile that is the "default", and is used when no profile is explicitly referenced. Other profiles have names that you can specify as a parameter on the command line for individual commands. Alternatively, you can specify a profile in an environment variable (AWS_PROFILE) which essentially overrides the default profile for commands that run in that session.
+**Nội dung**
+1. [Tạo Default Profile](#tạo-default-profile)
+2. [Tạo profile riêng](#tạo-profile-riêng)
+3. [Cập nhật profile](#cập-nhật-profile)
+4. [Quản lý nhiều profile (*multi-profile management*)](#quản-lý-nhiều-profile-multi-profile-management)
 
-#### Create Named Profile
-The following example creates a profile named **testuser**.
-```bash
-$ aws configure *--profile testuser*
-AWS Access Key ID [None]: AKIAI44QH8DHBEXAMPLE
-AWS Secret Access Key [None]: je7MtGbClwBF/2Zp9Utk/h3yCo8nvbEXAMPLEKEY
-Default region name [None]: us-east-1
-Default output format [None]: text
-```
+#### Tạo Default Profile
+1. Truy cập vào máy tính mà bạn đã cài đặt AWS CLI và khởi chạy Terminal
+    - **Linux shells** cho các máy sử dụng Linux hoặc MacOS
+    - **Windows Command Line** cho các máy sử dụng Windows
+2. Nhập dòng lệnh sau để khởi tạo **default profile**:
+    ```bash
+    $ aws configure
+    ```
+3. Lần lượt nhập những thông tin về Access Key, Region, và Output Format mà bạn muốn *(Lưu ý: bạn nên sử dụng Access Key mà bạn đã tạo)*. Sau đây là ví dụ:
+    ```bash
+    AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
+    AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+    Default region name [None]: us-west-2
+    Default output format [None]: json
+    ```
+4. Như vậy, default profile của bạn đã được tạo thành công
 
-So, you can then specify a ```--profile *profilename*``` and use the credentials and settings stored under that name.
-```bash
-aws s3 ls --profile produser
-```
+#### Tạo profile riêng
+1. Truy cập vào máy tính mà bạn đã cài đặt AWS CLI và khởi chạy Terminal
+    - **Linux shells** cho các máy sử dụng Linux hoặc MacOS
+    - **Windows Command Line** cho các máy sử dụng Windows
+2. Để khởi tạo **profile riêng** có tên là **testuser**, bạn cần thêm thông số ```--profile```:
+    ```bash
+    $ aws configure --profile testuser
+    ```
+3. Lần lượt nhập những thông tin về Access Key, Region, và Output Format mà bạn muốn *(Lưu ý: bạn nên sử dụng Access Key mà bạn đã tạo)*. Sau đây là ví dụ:
+    ```bash
+    AWS Access Key ID [None]: AKIAI44QH8DHBEXAMPLE
+    AWS Secret Access Key [None]: je7MtGbClwBF/2Zp9Utk/h3yCo8nvbEXAMPLEKEY
+    Default region name [None]: us-east-1
+    Default output format [None]: text
+    ```
+4. Như vậy, profile riêng có tên là **testuser** của bạn đã được tạo thành công
 
-To update these settings, run ```aws configure``` again (with or without the ```--profile *profilename*``` parameter, depending on which profile you want to update) and enter new values as appropriate. The next sections contain more information about the files that **aws configure** creates, additional settings, and named profiles.
+#### Cập nhật profile
+1. Truy cập vào máy tính mà bạn đã cài đặt AWS CLI và khởi chạy Terminal
+    - **Linux shells** cho các máy sử dụng Linux hoặc MacOS
+    - **Windows Command Line** cho các máy sử dụng Windows
+2. Nhập dòng lệnh sau để cập nhật profile:
+    ```bash
+    $ aws configure #nếu bạn muốn cập nhật default profile
+    $ aws configure --profile testuser #nếu bạn muốn cập nhật profile riêng có tên là testuser. Bạn có thể thay thế tên testuser với một profile khác
+    ```
+3. Lần lượt nhập những thông tin về Access Key, Region, và Output Format mà bạn muốn cập nhật. Sau đây là ví dụ:
+    ```bash
+    AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
+    AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+    Default region name [None]: ap-southeast-1
+    Default output format [None]: yaml
+    ```
+4. Như vậy, bạn đã cập nhật profile thành công.
 
-#### Manage Configuration with Multiple Profile 
-The following example shows a credentials file with two profiles. The first [default] is used when you run a CLI command with no profile. The second is used when you run a CLI command with the --profile user1 parameter. 
-```~/.aws/credentials``` (Linux & Mac) or ```%USERPROFILE%\.aws\credentials``` (Windows).
-```
-[default]
-aws_access_key_id=AKIAIOSFODNN7EXAMPLE
-aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+#### Quản lý nhiều profile (*multi-profile management*)
 
-[testuser]
-aws_access_key_id=AKIAI44QH8DHBEXAMPLE
-aws_secret_access_key=je7MtGbClwBF/2Zp9Utk/h3yCo8nvbEXAMPLEKEY
-```
+Ở bước này, bạn sẽ truy cập vào hai tập tin **config** và **credentials** để xem thông tin lưu trữ của các profile vừa được tạo. 
 
-Each profile can specify different credentials—perhaps from different IAM users—and can also specify different AWS Regions and output formats.
-```~/.aws/config``` (Linux & Mac) or ```%USERPROFILE%\.aws\config``` (Windows).
-```
-[default]
-region=us-west-2
-output=json
+Địa chỉ của hai tập tin trên sẽ được tìm thấy ở đường dẫn:
 
-[profile testuser]
-region=us-east-1
-output=text
-```
+|      HĐH         |              Địa chỉ            |
+|:---------------:|:--------------------------------:|
+| Linux và MacOS    |```~/.aws/config``` và ```~/.aws/credentials```|
+|  Windows  | ```%USERPROFILE%\.aws\config``` và ```%USERPROFILE%\.aws\credentials```      |
+
+1. Truy cập vào máy tính mà bạn đã cài đặt AWS CLI và khởi chạy Terminal
+    - **Linux shells** cho các máy sử dụng Linux hoặc MacOS
+    - **Windows Command Line** cho các máy sử dụng Windows
+2. Đi tới thư mục chứa hai tập tin **config** và **credentials** bằng câu lệnh sau:
+    - **Linux và MacOS**
+      ```bash
+      $ cd ~/.aws/
+      ```
+    - **Windows**
+      ```bash
+      $ cd %USERPROFILE%\.aws\
+      ```
+3. Xem nội dung của hai tập tin **config** và **credentials** bằng lệnh:
+    - **Linux và MacOS**
+      ```bash
+      $ cat config
+      $ cat credentials
+      ```
+    - **Windows**
+      ```bash
+      $ more config
+      $ more credentials  
+      ```
+4. Màn hình của bạn sẽ hiện ra kết quả tương tự như hình sau:
+    - **Linux và MacOS**
+        ![3_Linux](../../images/3_Linux.png?width=90pc)
+    - **Windows**
+        ![3_Windows](../../images/3_Windows.png?width=90pc)
+
+{{% notice info %}}
+Bạn có thể thêm hoặc chỉnh sửa profile trực tiếp bằng cách chỉnh sửa hai tập tin **config** và **credentials** bằng trình chỉnh sửa của hệ điều hành của bạn.
+{{% /notice %}}

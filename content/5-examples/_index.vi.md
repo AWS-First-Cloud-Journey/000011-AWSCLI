@@ -5,8 +5,14 @@ weight = 5
 chapter = false
 pre = "<b>5. </b>"
 +++
-  
-This section describes how to use the AWS CLI to work on creating infrastructure on AWS.
+
+Ở phần này, bạn sẽ trải nghiệm việc sử dụng AWS CLI để tạo tài nguyên trên AWS. Các lệnh ví dụ bên dưới được áp dụng cho hệ điều hành Linux hoặc MacOS. Bạn có thể sử dụng **VI Editor** để ghi các lệnh dưới vào các shell scripts và khởi chạy chúng. Hãy ôn lại cách sử dụng **Vi Editor** ở bài [TRIỂN KHAI MÁY ẢO SHARENOTE](https://000006.awsstudygroup.com/vi/1-prerequisite/3-deploy-sharenote/)
+
+Các câu lệnh **VI Editor** cần dùng:
+```bash
+$ sudo vi <file.sh> #tạo và chỉnh sửa shell script
+$ sudo chmod +x <file.sh> #thiết lập thuộc tính khởi chạy cho shell script
+```
 
 **Nội dung:**
 - [1. Tạo một VPC](#1-tạo-một-vpc)

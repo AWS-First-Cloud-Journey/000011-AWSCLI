@@ -6,6 +6,8 @@ chapter = false
 pre = "<b>4.2 </b>"
 +++
   
+#### Tổng quan
+
 Phần này mô tả cách sử dụng profile AWS SSO mà bạn đã tạo trong phần trước.
 
 **Nội dung**
@@ -14,39 +16,24 @@ Phần này mô tả cách sử dụng profile AWS SSO mà bạn đã tạo tron
 - [3. Đăng xuất khỏi phiên AWS SSO](#3-đăng-xuất-khỏi-phiên-aws-sso)
 
 #### 1. Đăng nhập và lấy danh tính tạm thời
-Sau khi bạn cấu hình profile tự động hoặc thủ công, bạn có thể sử dụng profile đó để yêu cầu thông tin xác thực tạm thời từ AWS. Trước khi có thể chạy lệnh thao tác với dịch vụ bằng AWS CLI, bạn phải truy xuất và lưu vào bộ nhớ cache một bộ thông tin xác thực tạm thời. Để có các thông tin xác thực tạm thời này, hãy chạy lệnh sau.
-```bash
-$ aws sso login --profile my-test-profile
-```
+Sau khi bạn cấu hình profile tự động hoặc thủ công, bạn có thể sử dụng profile đó để yêu cầu thông tin xác thực tạm thời từ AWS. 
 
-AWS CLI sẽ mở trình duyệt mặc định của bạn và xác minh thông tin đăng nhập AWS SSO của bạn.
-```bash
-SSO authorization page has automatically been opened in your default browser. 
-Follow the instructions in the browser to complete this authorization request.
-Successully logged into Start URL: https://d-9667182f21.awsapps.com/start
-```
+1. Trước khi có thể chạy lệnh thao tác với dịch vụ bằng AWS CLI, bạn phải truy xuất và lưu vào bộ nhớ cache một bộ thông tin xác thực tạm thời. Để có các thông tin xác thực tạm thời này, hãy chạy lệnh sau.
+    ```bash
+    $ aws sso login --profile my-test-profile
+    ```
 
-Nếu bạn hiện chưa đăng nhập vào tài khoản AWS SSO của mình, bạn phải cung cấp username và password AWS SSO của mình.
+2. AWS CLI sẽ mở trình duyệt mặc định của bạn và xác minh thông tin đăng nhập AWS SSO của bạn với thông báo dưới đây.
+    ```bash
+    Successully logged into Start URL: https://d-9667182f21.awsapps.com/start
+    ```
+{{% notice note %}}
+Nếu bạn hiện chưa đăng nhập vào tài khoản AWS SSO của mình, bạn phải cung cấp username và password AWS SSO của mình. Nếu AWS CLI không thể mở trình duyệt, AWS CLI sẽ xuất thông báo với hướng dẫn về quy trình đăng nhập theo cách thủ công.
+{{% /notice %}}
 
-*Nếu AWS CLI không thể mở trình duyệt, thông báo sau sẽ xuất hiện với hướng dẫn về cách bắt đầu quy trình đăng nhập theo cách thủ công.*
-```bash
-$ aws sso login --profile my-test-profile
-Using a browser, open the following URL:
- 
-https://d-9667182f21.awsapps.com/verify
+3. Phiên đăng nhập SSO của bạn lúc này đã được cache và sẽ có thời gian vô hiệu. Khi bị vô hiệu, AWS CLI sẽ yêu cầu bạn đăng nhập trở lại vào AWS SSO.
 
-and enter the following code:
-QCFK-N451
-```
-
-AWS CLI sẽ mở trình duyệt mặc định của bạn (hoặc bạn sẽ mở thủ công) và truy cập đến trang yêu cầu và nhập mã xác thực được cung cấp. Trang web hỏi bạn về tài khoản AWS SSO.
-
-Phiên đăng nhập SSO của bạn lúc này đã được cache và sẽ có thời gian vô hiệu. Khi bị vô hiệu, AWS CLI sẽ yêu cầu bạn đăng nhập trở lại vào AWS SSO.
-
-Nếu thông tin đăng nhập SSO chính xác, AWS CLI sẽ sử dụng chúng để truy xuất thông tin đăng nhập tạm thời nhằm sử dụng IAM role được chỉ định trong profile.
-```bash
-Welcome, you have successfully signed-in to the AWS-CLI.
-```
+4. Nếu thông tin đăng nhập SSO chính xác, AWS CLI sẽ sử dụng chúng để truy xuất thông tin đăng nhập tạm thời nhằm sử dụng IAM role được chỉ định trong profile.
 
 #### 2. Sử dụng lệnh với profile được thiết lập AWS SSO
 Bạn có thể sử dụng các thông tin đăng nhập tạm thời này để gọi lệnh AWS CLI với profile được thiết lập. Ví dụ sau cho thấy rằng lệnh được chạy thông qua role đã được assume từ tài khoản được chỉ định.
@@ -67,9 +54,9 @@ SSO authorization page has automatically been opened in your default browser.
 Follow the instructions in the browser to complete this authorization request.
 ```
 
-You can create multiple AWS SSO enabled named profiles that each point to a different AWS account or role. You can also use the aws sso login command on more than one profile at a time. If any of them share the same AWS SSO user account, you must log in to that AWS SSO user account only once and then they all share a single set of AWS SSO cached credentials.
-Bạn có thể tạo nhiều profile sử dụng AWS SSO với mỗi profile sử dụng tài khoản hoặc role khác nhau. Bạn cũng có thể sử dụng lệnh ```aws sso login``` trên nhiều profile cùng một lúc. Nếu bất kỳ profile trong số chúng có cùng một tài khoản người dùng AWS SSO, bạn phải đăng nhập vào tài khoản người dùng AWS SSO đó một lần và sau đó tất cả profile đều chia sẻ một thông tin đăng nhập AWS SSO được lưu trong bộ nhớ cache.
-```text
+Bạn có thể tạo nhiều profile sử dụng AWS SSO với mỗi profile sử dụng tài khoản hoặc role khác nhau. Bạn cũng có thể sử dụng lệnh ```aws sso login``` trên nhiều profile cùng một lúc. Nếu bất kỳ profile nào có cùng một tài khoản người dùng AWS SSO, bạn chỉ cần đăng nhập vào AWS SSO User đó một lần và sau đó tất cả profile đều chia sẻ thông tin đăng nhập của AWS SSO User đã được tự động lưu trong bộ nhớ cache.
+
+```bash
 # The following command retrieves temporary credentials for the AWS account and role 
 # specified in one named profile. If you are not yet signed in to AWS SSO or your 
 # cached credentials have expired, it opens your browser and prompts you for your 
@@ -96,7 +83,7 @@ $ aws ec2 describe-instances --profile my-second-sso-profile
 ```
 
 #### 3. Đăng xuất khỏi phiên AWS SSO
-Khi bạn hoàn tất làm việc với các profile thiết lập SSO, bạn có thể chọn không làm gì cả và để thông tin đăng nhập tạm thời vào AWS và thông tin đăng nhập AWS SSO tự hết hạn. Tuy nhiên, bạn cũng có thể chọn chạy lệnh sau để xóa ngay lập tức tất cả thông tin đăng nhập đã lưu trong thư mục cache và tất cả thông tin đăng nhập tạm thời vào AWS dựa trên AWS SSO. Việc này sẽ vô hiệu hóa những thông tin đăng nhập đó, làm chúng không thể dùng cho bất kỳ lệnh nào sau đó.
+Khi bạn hoàn tất làm việc với các profile thiết lập SSO, bạn có thể chọn không làm gì cả và để thông tin đăng nhập tạm thời tự hết hạn. Tuy nhiên, bạn cũng có thể chọn chạy lệnh sau để xóa ngay lập tức tất cả thông tin đăng nhập đã lưu trong thư mục cache và tất cả thông tin đăng nhập tạm thời vào AWS dựa trên AWS SSO. Việc này sẽ vô hiệu hóa những thông tin đăng nhập đó và làm chúng không thể dùng cho bất kỳ lệnh nào sau đó.
 ```bash
 $ aws sso logout
 Successfully signed out of all SSO profiles.

@@ -1,85 +1,95 @@
 +++
-title = "Examples with AWS CLI"
+title = "Các Ví Dụ với AWS CLI"
 date = 2020
 weight = 5
 chapter = false
 pre = "<b>5. </b>"
 +++
 
-This section describes how to use the AWS CLI to work on creating infrastructure on AWS.
+Ở phần này, bạn sẽ trải nghiệm việc sử dụng AWS CLI để tạo tài nguyên trên AWS. Các lệnh ví dụ bên dưới được áp dụng cho hệ điều hành Linux hoặc MacOS. Bạn có thể sử dụng **VI Editor** để ghi các lệnh dưới vào các shell scripts và khởi chạy chúng. Hãy ôn lại cách sử dụng **Vi Editor** ở bài [TRIỂN KHAI MÁY ẢO SHARENOTE](https://000006.awsstudygroup.com/vi/1-prerequisite/3-deploy-sharenote/)
 
-**Contents:**
-- [1. Working with a VPC](#1-working-with-a-vpc)
-- [2. Working with subnets in VPC](#2-working-with-subnets-in-vpc)
-- [3. Working with Internet Gateway & NAT Gateway](#3-working-with-internet-gateway--nat-gateway)
-- [4. Working with Routing Table](#4-working-with-routing-table)
-- [5. Working with Transit Gateway](#5-working-with-transit-gateway)
-- [6. Implement Cloud Trail](#6-implement-cloud-trail)
-- [7. Working with S3 Gateway VPC Endpoint](#7-working-with-s3-gateway-vpc-endpoint)
-
-#### 1. Working with a VPC
-
+Các câu lệnh **VI Editor** cần dùng:
 ```bash
-export VPC_CIDR=<CidrBlock>
-export VPC_ID=$(aws ec2 create-vpc --cidr-block $VPC_CIDR --query 'Vpc.VpcId' --output text)
-
-aws ec2 create-tags --resources $VPC_ID --tags Key=Name,Value=DEV-VPC-$VPC_CIDR
+$ sudo vi <file.sh> #tạo và chỉnh sửa shell script
+$ sudo chmod +x <file.sh> #thiết lập thuộc tính khởi chạy cho shell script
 ```
 
-#### 2. Working with subnets in VPC
+**Nội dung:**
+- [1. Tạo một VPC](#1-tạo-một-vpc)
+- [2. Tạo các Subnet trong VPC](#2-tạo-các-subnet-trong-vpc)
+- [3. Tạo Internet Gateway và NAT Gateway](#3-tạo-internet-gateway-và-nat-gateway)
+- [4. Tạo Routing Table](#4-tạo-routing-table)
+- [5.Làm việc với Transit Gateway](#5làm-việc-với-transit-gateway)
+- [6. Thiết lập Cloud Trail](#6-thiết-lập-cloud-trail)
+- [7. Tạo S3 Gateway VPC Endpoint](#7-tạo-s3-gateway-vpc-endpoint)
+
+#### 1. Tạo một VPC
+
+```bash
+aws ec2 create-vpc --cidr-block 10.0.0.0/16 --output text
+
+export VPC_ID=<VpcId>
+aws ec2 create-tags --resources $VPC_ID --tags Key=Name,Value=DEV-VPC-10.0.0.0/16
+```
+
+#### 2. Tạo các Subnet trong VPC
 
 ```bash
 # NAT Internet subnet  
-export VPC_ID=<VpcId>
-export REGION=<Region>
-export AZ1=<AvailabilityZone1>
-export AZ2=<AvailabilityZone2>
-export NAT_SUBNET_CIDR=<CidrBlock>
-export SUBNET_ID_INTERNET=$(aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block $NAT_SUBNET_CIDR --availability-zone $AZ1 --query 'Subnet.SubnetId' --output text)
+aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block 10.0.1.0/24 --availability-zone ap-southeast-1a --output text 
 
-aws ec2 create-tags --resources $SUBNET_ID_INTERNET --tags Key=Name,Value=DEV-InternetSubnet-$NAT_SUBNET_CIDR --output text
+export SUBNET_ID_INTERNET=<SubnetId>
+
+aws ec2 create-tags --resources $SUBNET_ID_INTERNET --tags Key=Name,Value=DEV-InternetSubnet-1a-10.0.1.0/24 --output text
 
 # Web subnet  
-export WEB_SUBNET_CIDR1=<CidrBlock>
-export WEB_SUBNET_CIDR2=<CidrBlock>
-export SUBNET_ID_WEB1=$(aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block $WEB_SUBNET_CIDR1 --availability-zone $AZ1 --query 'Subnet.SubnetId' --output text)
+aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block 10.0.10.0/24 --availability-zone ap-southeast-1a --output text
 
-aws ec2 create-tags --resources $SUBNET_ID_WEB1 --tags Key=Name,Value=Web-PublicSubnet-$AZ1-$WEB_SUBNET_CIDR1 --output text
+export SUBNET_ID_WEB1=<SubnetId>
 
-export SUBNET_ID_WEB2=$(aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block $WEB_SUBNET_CIDR2 --availability-zone $AZ2 --query 'Subnet.SubnetId' --output text)
+aws ec2 create-tags --resources $SUBNET_ID_WEB1 --tags Key=Name,Value=DEV-WebPublicSubnet-1a-10.0.10.0/24 --output text
 
-aws ec2 create-tags --resources $SUBNET_ID_WEB2 --tags Key=Name,Value=DEV-Web-PublicSubnet-$AZ2-$WEB_SUBNET_CIDR2 --output text
+aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block 10.0.1111.0/24 --availability-zone ap-southeast-1b --output text
+
+export SUBNET_ID_WEB2=<SubnetId>
+
+aws ec2 create-tags --resources $SUBNET_ID_WEB2 --tags Key=Name,Value=DEV-WebPublicSubnet-1b-10.0.1111.0/24 --output text
 
 # Application subnet  
-export APP_SUBNET_CIDR1=<CidrBlock>
-export APP_SUBNET_CIDR2=<CidrBlock>
-export SUBNET_ID_APP1=$(aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block $APP_SUBNET_CIDR1 --availability-zone $AZ1 --query 'Subnet.SubnetId' --output text)
+aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block 10.0.20.0/24 --availability-zone ap-southeast-1a --output text
 
-aws ec2 create-tags --resources $SUBNET_ID_APP1 --tags Key=Name,Value=DEV-APP-PrivateSubnet-$AZ1-$APP_SUBNET_CIDR1 --output text
+export SUBNET_ID_APP1=<SubnetId>
 
-export SUBNET_ID_APP2=$(aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block $APP_SUBNET_CIDR2 --availability-zone $AZ2 --query 'Subnet.SubnetId' --output text)
+aws ec2 create-tags --resources $SUBNET_ID_APP1 --tags Key=Name,Value=DEV-APP-PrivateSubnet-1a-10.0.20.0/24 --output text
 
-aws ec2 create-tags --resources $SUBNET_ID_APP2 --tags Key=Name,Value=DEV-APP-PrivateSubnet-$AZ2-$APP_SUBNET_CIDR2 --output text
+
+aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block 10.0.21.0/24 --availability-zone ap-southeast-1b --output text
+
+export SUBNET_ID_APP2=<SubnetId>
+
+aws ec2 create-tags --resources $SUBNET_ID_APP2 --tags Key=Name,Value=DEV-APP-PrivateSubnet-1b-10.0.21.0/24 --output text
 
 # Database subnet
-export DB_SUBNET_CIDR1=<CidrBlock>
-export DB_SUBNET_CIDR2=<CidrBlock>
-export SUBNET_ID_DB1=$(aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block $DB_SUBNET_CIDR1 --availability-zone $AZ1 --query 'Subnet.SubnetId' --output text)
+aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block 10.0.30.0/24 --availability-zone ap-southeast-1a --output text
 
-aws ec2 create-tags --resources $SUBNET_ID_DB1 --tags Key=Name,Value=DEV-DB-PrivateSubnet-$AZ1-$DB_SUBNET_CIDR1 --output text
+export SUBNET_ID_DB1=<SubnetId>
 
-export SUBNET_ID_DB2=$(aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block $DB_SUBNET_CIDR2 --availability-zone $AZ2 --query 'Subnet.SubnetId' --output text)
+aws ec2 create-tags --resources $SUBNET_ID_DB1 --tags Key=Name,Value=DEV-DB-PrivateSubnet-1a-10.0.30.0/24 
 
-aws ec2 create-tags --resources $SUBNET_ID_DB2 --tags Key=Name,Value=DEV-DB-PrivateSubnet-$AZ2-$DB_SUBNET_CIDR2 --output text
+aws ec2 create-subnet --vpc-id $VPC_ID --cidr-block 10.0.31.0/24 --availability-zone ap-southeast-1b --output text
+
+export SUBNET_ID_DB2=<SubnetId>
+
+aws ec2 create-tags --resources $SUBNET_ID_DB2 --tags Key=Name,Value=DEV-DBPrivateSubnet-1b-10.0.31.0/24 --output text
 ```
 
-#### 3. Working with Internet Gateway & NAT Gateway
+#### 3. Tạo Internet Gateway và NAT Gateway
 
 ```bash
 # Create Internet Gateway
-export VPC_ID=<VpcId>
-export SUBNET_ID_INTERNET=<SubnetId>
-export IGW_ID=$(aws ec2 create-internet-gateway --query 'InternetGateway.InternetGatewayId' --output text)
+aws ec2 create-internet-gateway --output text
+
+export IGW_ID=<InternetGatewayId>
 
 aws ec2 create-tags --resources $IGW_ID --tags Key=Name,Value=DEV-InternetGateway
 
@@ -87,52 +97,55 @@ aws ec2 create-tags --resources $IGW_ID --tags Key=Name,Value=DEV-InternetGatewa
 aws ec2 attach-internet-gateway --internet-gateway-id $IGW_ID --vpc-id $VPC_ID --output text
 
 # Create Elastic IP address
-export ALLOC_ID=$(aws ec2 allocate-address --domain vpc --query 'AllocationId' --output text)
+aws ec2 allocate-address --domain vpc --output text
+
+export ALLOC_ID=<AllocationId>
 
 aws ec2 create-tags --resources $ALLOC_ID --tags Key=Name,Value=DEV-Elastic-IP
 
 # Create NAT Gateway
-export NATGW_ID=$(aws ec2 create-nat-gateway --allocation-id $ALLOC_ID --subnet-id $SUBNET_ID_INTERNET --query 'NatGateway.NatGatewayId' --output text)
+aws ec2 create-nat-gateway --allocation-id $ALLOC_ID --subnet-id $SUBNET_ID_INTERNET
+
+export NATGW_ID=<NatGatewayId>
 
 aws ec2 create-tags --resources $NATGW_ID --tags Key=Name,Value=DEV-NAT-GW
 ```
 
-#### 4. Working with Routing Table
+#### 4. Tạo Routing Table
 
 ```bash
 #Create custom routable
-export VPC_ID=<VpcId>
-export NATGW_ID=<NatGatewayId>
-export SUBNET_ID_INTERNET=<SubnetId>
-export RTB_ID=$(aws ec2 create-route-table --vpc-id $VPC_ID --query 'RouteTable.RouteTableId' --output text)
+aws ec2 create-route-table --vpc-id $VPC_ID --output text 
+
+export RTB_ID=<RouteTableId>
 
 aws ec2 create-tags --resources $RTB_ID --tags Key=Name,Value=DEV-RouteTable-Internet
 
+
 #Add route entry that direct traffic to internet through NAT Gateway
-aws ec2 create-route --route-table-id $RTB_ID --destination-cidr-block 0.0.0.0/0 --nat-gateway-id $NATGW_ID --output text 
+aws ec2 create-route --route-table-id $RTB_ID --destination-cidr-block 0.0.0.0/0 --nat-gateway-id $NATGW_ID
 
 #Associate the custom routable to the subnet that required internet connection
-aws ec2 associate-route-table --route-table-id $RTB_ID --subnet-id $SUBNET_ID_INTERNET --output text 
+aws ec2 associate-route-table --route-table-id $RTB_ID --subnet-id $SUBNET_ID_INTERNET
 ```
 
-#### 5. Working with Transit Gateway
+#### 5.Làm việc với Transit Gateway
 
 ```bash
-# List Transit Gateway in system
-aws ec2 describe-transit-gateways --output text
+#List Transit Gateway in system 
+aws ec2 describe-transit-gateways
 
-# Create Transit Gateway attachment ( Require to list at least 1 subnet per availability zone )
 export TGW_ID=<TransitGatewayId>
-export VPC_ID=<VpcId>
-export SUBNET_ID_WEB1=<SubnetId>
-export SUBNET_ID_WEB2=<SubnetId>
 
-export TGW_ATTACHMENT=$(aws ec2 create-transit-gateway-vpc-attachment --transit-gateway-id $TGW_ID --vpc-id $VPC_ID --subnet-ids $SUBNET_ID_WEB1 $SUBNET_ID_WEB2 --query 'TransitGatewayVpcAttachment.TransitGatewayAttachmentId' --output text)
+#Create Transit Gateway attachment ( Require to list at least 1 subnet per availability zone )
+aws ec2 create-transit-gateway-vpc-attachment --transit-gateway-id $TGW_ID --vpc-id $VPC_ID --subnet-ids $SUBNET_ID_WEB1 $SUBNET_ID_WEB2 --output text
+
+export TGW_ATTACHMENT=<TransitGatewayAttachmentId>
 
 aws ec2 create-tags --resources $TGW_ATTACHMENT --tags Key=Name,Value=DEV-Transitgateway-attachment
 ```
 
-#### 6. Implement Cloud Trail
+#### 6. Thiết lập Cloud Trail
 
 ```bash
 #Create bucket to store log
@@ -178,7 +191,7 @@ aws cloudtrail create-trail --region=$REGION --name=$TRAIL_NAME --s3-bucket-name
 aws cloudtrail start-logging --region=$REGION --name=$TRAIL_NAME
 ```
 
-#### 7. Working with S3 Gateway VPC Endpoint
+#### 7. Tạo S3 Gateway VPC Endpoint
 
 ```bash
 #Create VPC Endpoint
@@ -213,4 +226,4 @@ EOT
 aws s3api put-bucket-policy --bucket=$S3_BUCKET --policy=file://$(pwd)/$S3_BUCKET-bucket-policy.json
 ```
 
-{{%attachments style="orange" title="Scripts for References" pattern=".*(sh|txt)"/%}}
+{{%attachments style="orange" title="Các script Tham khảo" pattern=".*(sh|txt)"/%}}

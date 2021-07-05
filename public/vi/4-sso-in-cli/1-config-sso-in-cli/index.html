@@ -12,21 +12,21 @@
     <title>Thiết lập SSO cho CLI :: Sử dụng AWS CLI trên Windows/Ubuntu</title>
 
     
-    <link href="/css/nucleus.css?1610760304" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1610760304" rel="stylesheet">
-    <link href="/css/hybrid.css?1610760304" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1610760304" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1610760304" rel="stylesheet">
-    <link href="/css/auto-complete.css?1610760304" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1610760304" rel="stylesheet">
-    <link href="/css/theme.css?1610760304" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1610760304" rel="stylesheet">
+    <link href="/css/nucleus.css?1625463095" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1625463095" rel="stylesheet">
+    <link href="/css/hybrid.css?1625463095" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1625463095" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1625463095" rel="stylesheet">
+    <link href="/css/auto-complete.css?1625463095" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1625463095" rel="stylesheet">
+    <link href="/css/theme.css?1625463095" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1625463095" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1610760304" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1625463095" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1610760304"></script>
+    <script src="/js/jquery-3.3.1.min.js?1625463095"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1610760304"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1610760304"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1625463095"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1625463095"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1610760304"></script>
+<script type="text/javascript" src="/js/search.js?1625463095"></script>
 
     
   </div>
@@ -94,74 +94,6 @@
           
       </a>
       
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/1-cli-installation/1-ver-1/" title="AWS CLI phiên bản 1" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/1-cli-installation/1-ver-1/">
-          <b>1.1. </b>AWS CLI phiên bản 1
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/1-cli-installation/2-ver-2/" title="AWS CLI phiên bản 2" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/1-cli-installation/2-ver-2/">
-          <b>1.2. </b>AWS CLI phiên bản 2
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
               
     </li>
   
@@ -421,11 +353,11 @@
     <section id="footer">
       <left>
     
-    
-
-    
-
-    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7834096&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
 </left>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -513,56 +445,83 @@
 
 
 
-	<p>Bạn có thể cấu hình một hoặc nhiều profile trong AWS CLI của mình sử dụng role từ AWS SSO. Bạn có thể tạo và cấu hình nhiều profile và cấu hình từng profile đó sử dụng AWS SSO user portal khác nhau hoặc role cấp bởi SSO khác nhau.</p>
+	
+<div class="notices note" ><p>Trước khi làm phần thực hành này, bạn cần phải hoàn thành xong bài <a href="https://000012.awsstudygroup.com/vi/">Thiết lập AWS SSO</a> để hiểu hơn về AWS SSO.</p>
+</div>
+
+<h4 id="tổng-quan">Tổng quan</h4>
+<p>Bạn có thể cấu hình một hoặc nhiều profile trong AWS CLI của mình để sử dụng role từ AWS SSO. Bạn cũng có thể tạo và thiết lập từng profile một để sử dụng AWS SSO user portal khác nhau hoặc role SSO khác nhau.</p>
 <p>Bạn có thể định cấu hình cấu hình theo những cách sau:</p>
 <ul>
 <li><strong>Tự động</strong>, sử dụng lệnh <code>aws configure sso</code></li>
 <li><strong>Thủ công</strong>, bằng cách chỉnh sửa <code>.aws/config</code> chứa thông tin profile.</li>
 </ul>
 <p><strong>Nội dung</strong></p>
-<ul>
-<li><a href="#1-c%E1%BA%A5u-h%C3%ACnh-t%E1%BB%B1-%C4%91%E1%BB%99ng">1. Cấu hình Tự động</a></li>
-<li><a href="#2-c%E1%BA%A5u-h%C3%ACnh-th%E1%BB%A7-c%C3%B4ng">2. Cấu hình Thủ công</a></li>
-</ul>
-<h4 id="1-cấu-hình-tự-động">1. Cấu hình Tự động</h4>
+<ol>
+<li><a href="#c%E1%BA%A5u-h%C3%ACnh-t%E1%BB%B1-%C4%91%E1%BB%99ng">Cấu hình Tự động</a></li>
+<li><a href="#c%E1%BA%A5u-h%C3%ACnh-th%E1%BB%A7-c%C3%B4ng">Cấu hình Thủ công</a></li>
+</ol>
+<h4 id="cấu-hình-tự-động">Cấu hình Tự động</h4>
+<ol>
+<li>
+<p>Truy cập vào máy tính sử dụng AWS CLI của bạn và mở terminal</p>
+</li>
+<li>
 <p>Bạn có thể thêm profile sử dụng AWS SSO vào AWS CLI của mình bằng cách chạy lệnh sau, cung cấp <strong>AWS SSO start URL</strong> và <strong>AWS Region</strong> đang chạy danh mục AWS SSO.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ aws configure sso
-SSO start URL <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: https://d-9667182f21.awsapps.com/start
+SSO start URL <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: https://d-9667182f21.awsapps.com/start
 SSO region <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: ap-southeast-1
-</code></pre></div><p>AWS CLI sẽ mở trình duyệt mặc định của bạn và bắt đầu quá trình đăng nhập tài khoản AWS SSO của bạn.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">SSO authorization page has automatically been opened in your default browser.  
-Follow the instructions in the browser to complete this authorization request.
-</code></pre></div><p><em>Nếu AWS CLI không thể mở trình duyệt, thông báo sau sẽ xuất hiện với hướng dẫn về cách bắt đầu quy trình đăng nhập theo cách thủ công.</em></p>
+</code></pre></div></li>
+<li>
+<p>AWS CLI sẽ mở trình duyệt mặc định của bạn và bắt đầu quá trình đăng nhập tài khoản AWS SSO của bạn. Nếu AWS CLI không thể mở trình duyệt, thông báo hướng dẫn về cách bắt đầu quy trình đăng nhập thủ công sẽ xuất hiện như sau.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Using a browser, open the following URL:  
 https://d-9667182f21.awsapps.com/verify  
 
-and enter the following code:  
+and enter the following code: 
+
 QCFK-N451  
-</code></pre></div><p>AWS SSO sử dụng mã để liên kết phiên AWS SSO với phiên ở AWS CLI hiện tại của bạn. Trang AWS SSO sẽ yêu cầu bạn đăng nhập bằng thông tin đăng nhập tài khoản AWS SSO của bạn. Việc này cho phép AWS CLI (thông qua các quyền sau khi được liên kết với tài khoản AWS SSO của bạn) truy xuất và hiển thị các tài khoản AWS và role mà bạn được phép sử dụng với AWS SSO.</p>
-<p>Tiếp theo, AWS CLI hiển thị các tài khoản AWS có thế sử dụng để bạn chọn. Nếu chỉ được phép sử dụng một tài khoản, AWS CLI sẽ tự động chọn tài khoản đó cho bạn và bỏ qua bước chọn. Các tài khoản AWS có sẵn để bạn sử dụng được xác định bởi cấu hình user của bạn trong AWS SSO. (Trong ví dụ này chúng ta có 4 Tài khoản)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">There are <span style="color:#ae81ff">2</span> AWS accounts available to you.
+</code></pre></div></li>
+<li>
+<p>AWS SSO sử dụng mã để liên kết phiên AWS SSO với phiên ở AWS CLI hiện tại của bạn. Trang AWS SSO sẽ yêu cầu bạn đăng nhập bằng AWS SSO User của bạn (Ví dụ: Super-User ở bài <a href="https://000012.awsstudygroup.com/vi/">Thiết lập AWS SSO</a>). Việc này cho phép AWS CLI truy xuất và hiển thị các tài khoản AWS và role mà bạn được phép sử dụng với AWS SSO.
+<img src="../../../images/4.1_LoginSuccess.png?width=90pc" alt="4.1_LoginSuccess"></p>
+</li>
+<li>
+<p>Tiếp theo, AWS CLI hiển thị các tài khoản AWS có thế sử dụng để bạn chọn. Nếu chỉ được phép sử dụng một tài khoản, AWS CLI sẽ tự động chọn tài khoản đó cho bạn và bỏ qua bước chọn. Các tài khoản AWS có sẵn để bạn sử dụng được xác định bởi cấu hình của AWS SSO User. (Trong ví dụ này chúng ta có 4 Tài khoản có từ bài <a href="https://000012.awsstudygroup.com/vi/">Thiết lập AWS SSO</a>)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">There are <span style="color:#ae81ff">4</span> AWS accounts available to you.
 &gt; Application One Account, App1@example.com <span style="color:#f92672">(</span>433335275042<span style="color:#f92672">)</span> 
   Shared Services, ShareServices@example.com <span style="color:#f92672">(</span>999068268442<span style="color:#f92672">)</span>
   Logging Account, Logging@example.com <span style="color:#f92672">(</span>595678361589<span style="color:#f92672">)</span>
   Security Account, Security@example.com <span style="color:#f92672">(</span>156859547066<span style="color:#f92672">)</span>
-</code></pre></div><p>Sử dụng các phím mũi tên để chọn tài khoản bạn muốn sử dụng với profile này. Ký tự &ldquo;&gt;&rdquo; ở bên trái trỏ đến lựa chọn hiện tại. Nhấn <!-- raw HTML omitted --> để chọn.</p>
-<p>Tiếp theo, AWS CLI xác nhận lựa chọn tài khoản của bạn và hiển thị các role IAM có thế sử dụng cho bạn trong tài khoản vừa chọn. Nếu tài khoản đã chọn chỉ có một role, AWS CLI sẽ tự động chọn role đó cho bạn và bỏ qua bước chọn. Các role bạn có thể sử dụng tùy thuộc vào cấu hình user của bạn trong AWS SSO.</p>
+</code></pre></div></li>
+<li>
+<p>Sử dụng các phím mũi tên để chọn tài khoản bạn muốn sử dụng với profile này. Ký tự <strong>&ldquo;&gt;&rdquo;</strong> ở bên trái trỏ đến lựa chọn hiện tại. Nhấn <strong>ENTER</strong> để chọn.</p>
+</li>
+<li>
+<p>Tiếp theo, AWS CLI xác nhận lựa chọn tài khoản của bạn và hiển thị các role IAM có thế sử dụng trong tài khoản vừa chọn. Nếu tài khoản đã chọn chỉ có một role, AWS CLI sẽ tự động chọn role đó cho bạn và bỏ qua bước chọn. Các role bạn có thể sử dụng tùy thuộc vào cấu hình user của bạn trong AWS SSO. (Trong ví dụ này chúng ta có 2 role để lựa chọn).</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Using the account ID 433335275042
 There are <span style="color:#ae81ff">2</span> roles available to you.
 &gt; ReadOnly
   FullAccess
-</code></pre></div><p>Như bước ở trên, sử dụng các phím mũi tên để chọn IAM role mà bạn muốn sử dụng trong profile này. Ký tự &ldquo;&gt;&rdquo; ở bên trái trỏ đến lựa chọn hiện tại. Nhấn <!-- raw HTML omitted --> để chọn.</p>
+</code></pre></div></li>
+<li>
+<p>Như bước ở trên, sử dụng các phím mũi tên để chọn IAM role mà bạn muốn sử dụng trong profile này. Ký tự <strong>&ldquo;&gt;&rdquo;</strong> ở bên trái trỏ đến lựa chọn hiện tại. Nhấn <strong>ENTER</strong> để chọn.</p>
+</li>
+<li>
 <p>AWS CLI sẽ xác nhận lựa chọn role của bạn.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Using the role name <span style="color:#e6db74">&#34;ReadOnly&#34;</span>
-</code></pre></div><p>Bây giờ, bạn có thể hoàn thành cấu hình profile của mình, bằng cách chỉ định định dạng đầu ra mặc định, AWS Region mặc định để gửi lệnh đến và cung cấp tên cho profile để bạn có thể tham chiếu đến profile này. Trong ví dụ sau, người dùng nhập default Region, định dạng đầu ra mặc định và tên của cấu hình.
-Ngoài ra, bạn có thể nhấn <!-- raw HTML omitted --> để chọn bất kỳ giá trị mặc định nào được hiển thị giữa các dấu ngoặc vuông. Tên profile được đề xuất là &lt;ID tài khoản_Role&gt;_.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">CLI default client Region <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: us-west-2&lt;ENTER&gt;
-CLI default output format <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: json&lt;ENTER&gt;
-CLI profile name <span style="color:#f92672">[</span>433335275042_ReadOnly<span style="color:#f92672">]</span>: my-test-profile&lt;ENTER&gt;
-</code></pre></div><p>Thông báo cuối cùng mô tả cấu hình profile hoàn thành.</p>
-<p>Để sử dụng profile này, ta chỉ định tên profile cho tham số &ndash;profile, như bên dưới:</p>
+</code></pre></div></li>
+<li>
+<p>Bây giờ, bạn có thể hoàn thành thiết lập profile của mình bằng cách chỉ định Output Format, Region, và tên profile để bạn có thể tham chiếu đến profile này. Ngoài ra, bạn có thể nhấn <strong>ENTER</strong> để chọn bất kỳ giá trị mặc định nào được hiển thị giữa các dấu ngoặc vuông.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">CLI default client Region <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: us-west-2
+CLI default output format <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: json
+CLI profile name <span style="color:#f92672">[</span>433335275042_ReadOnly<span style="color:#f92672">]</span>: my-test-profile
+</code></pre></div></li>
+<li>
+<p>Để kiểm tra profile này, ta chỉ định tên profile cho tham số <code>--profile</code>, như bên dưới:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws s3 ls --profile my-test-profile
-</code></pre></div><p>Ở các ví dụ trước đó sẽ dẫn đến một profile được thêm vào trong <code>~/.aws/config</code> có nội dung tương tự nhu sau:</p>
+</code></pre></div></li>
+<li>
+<p>Profile vừa được tạo sẽ được thêm vào trong <code>~/.aws/config</code> có nội dung tương tự nhu sau:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[profile my-test-profile]
 sso_start_url = https://d-9667182f21.awsapps.com/start
 sso_region = ap-southeast-1
@@ -570,21 +529,32 @@ sso_account_id = 433335275042
 sso_role_name = readOnly
 region = us-west-2
 output = json
-</code></pre></div><p>Đến đây, bạn đã có profile mà bạn có thể sử dụng để yêu cầu thông tin xác thực tạm thời. Bạn phải sử dụng lệnh <code>aws sso login</code> để thực sự yêu cầu và truy xuất thông tin đăng nhập tạm thời cần thiết trước khi chạy lệnh.</p>
-<h4 id="2-cấu-hình-thủ-công">2. Cấu hình Thủ công</h4>
-<p>Để thêm thủ công AWS SSO vào profile, bạn phải thêm các khóa và giá trị sau vào tập tin cấu hình profile <code>~/.aws/config</code> (Linux or macOS) or <code>%USERPROFILE%/.aws/config</code> (Windows).</p>
+</code></pre></div></li>
+</ol>
+<p>Đến đây, bạn đã có profile mà bạn có thể sử dụng để yêu cầu thông tin xác thực tạm thời. Bạn phải sử dụng lệnh <code>aws sso login</code> để thực sự yêu cầu và truy xuất thông tin đăng nhập tạm thời cần thiết trước khi chạy lệnh.</p>
+<h4 id="cấu-hình-thủ-công">Cấu hình Thủ công</h4>
+<ol>
+<li>
+<p>Để thêm thủ công AWS SSO vào profile, bạn phải thêm các cặp khóa và giá trị (<em>Key-Value</em>) sau vào tập tin cấu hình profile <code>~/.aws/config</code> (Linux or macOS) or <code>%USERPROFILE%/.aws/config</code> (Windows).</p>
 <ul>
-<li><strong>sso_start_url</strong>: URL trỏ đến AWS SSO user portal của organization.<br>
+<li><strong>sso_start_url</strong>: URL trỏ đến AWS SSO user portal của organization. Ví dụ: 
 <code>sso_start_url = https://d-9667182f21.awsapps.com/start</code></li>
-<li><strong>sso_region</strong>: AWS Region đang thiết lập sẵn AWS SSO portal. Giá trị này là riêng biệt và có thể khác với <code>region</code> (tham số Region khi cấu hình profile cho CLI).
+<li><strong>sso_region</strong>: AWS Region đang thiết lập sẵn AWS SSO portal. Giá trị này là riêng biệt và có thể khác với tham số Region khi cấu hình profile cho CLI. Ví dụ:
 <code>sso_region = ap-southeast-1</code></li>
-<li><strong>sso_account_id</strong>: AWS account ID chứa các IAM role mà bạn muốn sử dụng với profile này.<br>
+<li><strong>sso_account_id</strong>: AWS account ID chứa các IAM role mà bạn muốn sử dụng với profile này. Ví dụ:
 <code>sso_account_id = 433335275042</code></li>
-<li><strong>sso_role_name</strong>: Tên của IAM role xác định quyền của người dùng khi sử dụng profile này.<br>
-<code>sso_role_name = ReadAccess</code></li>
+<li><strong>sso_role_name</strong>: Tên của IAM role xác định quyền của người dùng khi sử dụng profile này. Ví dụ:
+<code>sso_role_name = ReadAccess</code>
+
+<div class="notices note" ><p>Các key trên dùng để xác định rằng profile này là một profile sử dụng AWS SSO để xác thực người dùng.</p>
+</div>
+</li>
 </ul>
-<p>Các key này dùng để xác định profile này như một profile sử dụng AWS SSO để xác thực người dùng.</p>
-<p>Bạn cũng có thể bao gồm bất kỳ khóa và giá trị nào khác hợp lệ trong tập tin <code>.aws/config</code>, như region, outut hay s3. Tuy nhiên, bạn không thể thêm bất kì giá trị định danh nào như <strong>role_arn</strong> hoắc <strong>aws_secret_access_key</strong>. Nếu bạn làm vậy, AWS CLI sẽ xuất hiện lỗi.</p>
+</li>
+<li>
+<p>Bạn cũng có thể bao gồm bất kỳ cặp khóa và giá trị (<em>Key-Value</em>) nào khác hợp lệ trong tập tin <code>.aws/config</code>, như region và output. Tuy nhiên, bạn không thể thêm bất kì giá trị định danh nào như <strong>role_arn</strong> hoắc <strong>aws_secret_access_key</strong>. Nếu bạn làm vậy, AWS CLI sẽ xuất hiện lỗi.</p>
+</li>
+<li>
 <p>Vậy là, một profile AWS SSO điển hình trong <code>.aws/config</code> có thể là tương tự với ví dụ sau:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[profile my-test-profile]
 sso_start_url = https://d-9667182f21.awsapps.com/start
@@ -593,7 +563,9 @@ sso_account_id = 433335275042
 sso_role_name = readOnly
 region = us-west-2
 output = json
-</code></pre></div><p>Đến đây, giống như ở cấu hình tự động, bạn có một profile mà bạn có thể sử dụng để yêu cầu thông tin đăng nhập tạm thời. Tuy nhiên, bạn chưa thể chạy lệnh dịch vụ AWS CLI. Đầu tiên bạn phải sử dụng lệnh <code>aws sso login</code> để hoàn thiện yêu cầu và truy xuất thông tin đăng nhập tạm thời cần thiết để chạy lệnh.
+</code></pre></div></li>
+</ol>
+<p>Đến đây, giống như ở phần <a href="#c%E1%BA%A5u-h%C3%ACnh-t%E1%BB%B1-%C4%91%E1%BB%99ng">Cấu hình Tự động</a>, bạn có một profile mà bạn có thể sử dụng để yêu cầu thông tin đăng nhập tạm thời. Tuy nhiên, bạn chưa thể chạy lệnh dịch vụ AWS CLI. Đầu tiên bạn phải sử dụng lệnh <code>aws sso login</code> để hoàn thiện yêu cầu và truy xuất thông tin đăng nhập tạm thời cần thiết để chạy lệnh.
 Ở phần tiếp theo bạn sẽ biết cách sử dụng profile AWS SSO.</p>
 
 
@@ -643,42 +615,8 @@ output = json
 
                     
                     
-                        
-                    
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
             
         
@@ -808,19 +746,19 @@ output = json
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1610760304"></script>
-    <script src="/js/perfect-scrollbar.min.js?1610760304"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1610760304"></script>
-    <script src="/js/jquery.sticky.js?1610760304"></script>
-    <script src="/js/featherlight.min.js?1610760304"></script>
-    <script src="/js/highlight.pack.js?1610760304"></script>
+    <script src="/js/clipboard.min.js?1625463095"></script>
+    <script src="/js/perfect-scrollbar.min.js?1625463095"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1625463095"></script>
+    <script src="/js/jquery.sticky.js?1625463095"></script>
+    <script src="/js/featherlight.min.js?1625463095"></script>
+    <script src="/js/highlight.pack.js?1625463095"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1610760304"></script>
-    <script src="/js/learn.js?1610760304"></script>
-    <script src="/js/hugo-learn.js?1610760304"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1625463095"></script>
+    <script src="/js/learn.js?1625463095"></script>
+    <script src="/js/hugo-learn.js?1625463095"></script>
 
-    <link href="/mermaid/mermaid.css?1610760304" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1610760304"></script>
+    <link href="/mermaid/mermaid.css?1625463095" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1625463095"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

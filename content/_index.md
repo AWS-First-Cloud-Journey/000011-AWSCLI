@@ -1,17 +1,32 @@
 +++
-title = "Working with AWS CLI on Windows/Ubuntu"
+title = "Sử dụng AWS CLI trên Windows/Ubuntu"
 date = 2020
 weight = 1
 chapter = false
 +++
 
-# Working with AWS CLI on Windows/Ubuntu
-The AWS Command Line Interface (AWS CLI) is an open source tool that enables you to interact with AWS services using commands in your command-line shell. With minimal configuration, the AWS CLI enables you to start running commands that implement functionality equivalent to that provided by the browser-based AWS Management Console from the command prompt in your terminal program:
+# Sử dụng AWS CLI trên Windows/Ubuntu
 
-* **Linux shells** – Use common shell programs such as bash, zsh, and tcsh to run commands in Linux or macOS.
-* **Windows command line** – On Windows, run commands at the Windows command prompt or in PowerShell.
-* **Remotely** – Run commands on Amazon Elastic Compute Cloud (Amazon EC2) instances through a remote terminal program such as PuTTY or SSH, or with AWS Systems Manager.
+#### Tổng quan
 
-All IaaS (infrastructure as a service) AWS administration, management, and access functions in the AWS Management Console are available in the AWS API and CLI. New AWS IaaS features and services provide full AWS Management Console functionality through the API and CLI at launch or within 180 days of launch.
+Ở bài thực hành này, bạn sẽ được tìm hiểu về AWS CLI và sử dụng nó để tương tác với dịch vụ AWS SSO. Ngoài ra, bạn còn có thể xem thêm các ví dụ về cách thiết lập tài nguyên AWS với AWS CLI ở phần ví dụ.
 
-The AWS CLI provides direct access to the public APIs of AWS services. You can explore a service's capabilities with the AWS CLI, and develop shell scripts to manage your resources. In addition to the low-level, API-equivalent commands, several AWS services provide customizations for the AWS CLI. Customizations can include higher-level commands that simplify using a service with a complex API.
+#### AWS CLI
+**AWS Command Line Interface (AWS CLI)** là một công cụ mã nguồn mở (*open source*) cho phép bạn tương tác với các dịch vụ AWS bằng cách sử dụng các lệnh trong cửa sổ lệnh (*command-line shell*). Với quá trình thiết lập đơn giản, AWS CLI cho phép bạn chạy các lệnh triển khai các chức năng tương đương với chức năng được cung cấp bởi AWS Management Console trên trình duyệt.
+
+AWS CLI hỗ trợ các cửa sổ lệnh sau:
+
+- **Linux shells** – Sử dụng các chương trình cửa sổ lệnh phổ biến như bash, zsh và tcsh để chạy các lệnh trong Linux hoặc macOS.
+- **Windows command line** – Trên Windows, chạy lệnh trong cửa sổ lệnh Windows (*command prompt*) hoặc trong PowerShell.
+- **Remotely** – Chạy lệnh trong máy ảo Amazon Elastic Compute Cloud (Amazon EC2) thông qua cửa sổ lệnh như PuTTY hoặc SSH hoặc AWS Systems Manager.
+
+Tất cả các chức năng quản trị, quản lý và truy cập tài nguyên AWS trong AWS Management Console đều có sẵn trong AWS API và CLI. Các tính năng và dịch vụ AWS mới sẽ được cung cấp đầy đủ như trên AWS Management Console thông qua API và CLI ngay sau khi ra mắt hoặc trong vòng 180 ngày sau đó.
+
+AWS CLI cung cấp quyền truy cập trực tiếp vào các API công khai của các dịch vụ AWS. Bạn có thể khám phá khả năng của một dịch vụ AWS với AWS CLI và phát triển các tập lệnh shell scripts để quản lý tài nguyên của bạn. Ngoài các lệnh cấp thấp tương đương với API, nhiều dịch vụ AWS cho phép các tùy chỉnh (*customization*) trên AWS CLI. Các tùy chỉnh có thể bao gồm các lệnh cấp cao hơn giúp đơn giản hóa việc sử dụng dịch vụ có API phức tạp.
+
+#### Nội dung
+1. [Cài đặt AWS CLI](1-cli-installation)
+2. [Thiết lập AWS CLI cơ bản](2-basic-setup)
+3. [Thiết lập Multi-profile](3-multi-profile)
+4. [Thiết lập SSO trong CLI](4-sso-in-cli)
+5. [Các ví dụ với AWS CLI](5-examples)

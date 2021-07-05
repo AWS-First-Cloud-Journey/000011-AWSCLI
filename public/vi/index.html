@@ -12,21 +12,21 @@
     <title>Sử dụng AWS CLI trên Windows/Ubuntu :: Sử dụng AWS CLI trên Windows/Ubuntu</title>
 
     
-    <link href="/css/nucleus.css?1610760304" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1610760304" rel="stylesheet">
-    <link href="/css/hybrid.css?1610760304" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1610760304" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1610760304" rel="stylesheet">
-    <link href="/css/auto-complete.css?1610760304" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1610760304" rel="stylesheet">
-    <link href="/css/theme.css?1610760304" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1610760304" rel="stylesheet">
+    <link href="/css/nucleus.css?1625463095" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1625463095" rel="stylesheet">
+    <link href="/css/hybrid.css?1625463095" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1625463095" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1625463095" rel="stylesheet">
+    <link href="/css/auto-complete.css?1625463095" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1625463095" rel="stylesheet">
+    <link href="/css/theme.css?1625463095" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1625463095" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1610760304" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1625463095" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1610760304"></script>
+    <script src="/js/jquery-3.3.1.min.js?1625463095"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1610760304"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1610760304"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1625463095"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1625463095"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1610760304"></script>
+<script type="text/javascript" src="/js/search.js?1625463095"></script>
 
     
   </div>
@@ -94,74 +94,6 @@
           
       </a>
       
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/1-cli-installation/1-ver-1/" title="AWS CLI phiên bản 1" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/1-cli-installation/1-ver-1/">
-          <b>1.1. </b>AWS CLI phiên bản 1
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/1-cli-installation/2-ver-2/" title="AWS CLI phiên bản 2" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/1-cli-installation/2-ver-2/">
-          <b>1.2. </b>AWS CLI phiên bản 2
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
               
     </li>
   
@@ -421,11 +353,11 @@
     <section id="footer">
       <left>
     
-    
-
-    
-
-    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7834096&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
 </left>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -456,14 +388,26 @@
 
  
 <h1 id="sử-dụng-aws-cli-trên-windowsubuntu">Sử dụng AWS CLI trên Windows/Ubuntu</h1>
-<p>AWS Command Line Interface (AWS CLI) là một công cụ mã nguồn mở cho phép bạn tương tác với các dịch vụ AWS bằng cách sử dụng các lệnh trong cửa sổ lệnh. Với cấu hình tối thiểu, AWS CLI cho phép bạn bắt đầu chạy các lệnh triển khai chức năng tương đương với chức năng được cung cấp bởi AWS Management Console trên trình duyệt:</p>
+<h4 id="tổng-quan">Tổng quan</h4>
+<p>Ở bài thực hành này, bạn sẽ được tìm hiểu về AWS CLI và sử dụng nó để tương tác với dịch vụ AWS SSO. Ngoài ra, bạn còn có thể xem thêm các ví dụ về cách thiết lập tài nguyên AWS với AWS CLI ở phần ví dụ.</p>
+<h4 id="aws-cli">AWS CLI</h4>
+<p><strong>AWS Command Line Interface (AWS CLI)</strong> là một công cụ mã nguồn mở (<em>open source</em>) cho phép bạn tương tác với các dịch vụ AWS bằng cách sử dụng các lệnh trong cửa sổ lệnh (<em>command-line shell</em>). Với quá trình thiết lập đơn giản, AWS CLI cho phép bạn chạy các lệnh triển khai các chức năng tương đương với chức năng được cung cấp bởi AWS Management Console trên trình duyệt.</p>
+<p>AWS CLI hỗ trợ các cửa sổ lệnh sau:</p>
 <ul>
 <li><strong>Linux shells</strong> – Sử dụng các chương trình cửa sổ lệnh phổ biến như bash, zsh và tcsh để chạy các lệnh trong Linux hoặc macOS.</li>
-<li><strong>Windows command line</strong> – Trên Windows, chạy lệnh trong cửa sổ lệnh Windows hoặc trong PowerShell.</li>
+<li><strong>Windows command line</strong> – Trên Windows, chạy lệnh trong cửa sổ lệnh Windows (<em>command prompt</em>) hoặc trong PowerShell.</li>
 <li><strong>Remotely</strong> – Chạy lệnh trong máy ảo Amazon Elastic Compute Cloud (Amazon EC2) thông qua cửa sổ lệnh như PuTTY hoặc SSH hoặc AWS Systems Manager.</li>
 </ul>
-<p>Tất cả các chức năng quản trị, quản lý và truy cập AWS IaaS (infrastructure as a service) trong AWS Management Console có sẵn trong AWS API và CLI. Các tính năng và dịch vụ AWS IaaS mới sẽ được cung cấp đầy đủ như AWS Management Console thông qua API và CLI ngay sau khi ra mắt hoặc trong vòng 180 ngày sau đó.</p>
-<p>AWS CLI cung cấp quyền truy cập trực tiếp vào các API công khai của các dịch vụ AWS. Bạn có thể khám phá khả năng của dịch vụ với AWS CLI và phát triển các tập lệnh để quản lý tài nguyên của bạn. Ngoài các lệnh cấp thấp, tương đương với API, nhiều dịch vụ AWS cho phép các tùy chỉnh trên AWS CLI. Các tùy chỉnh có thể bao gồm các lệnh cấp cao hơn giúp đơn giản hóa việc sử dụng dịch vụ có API phức tạp.</p>
+<p>Tất cả các chức năng quản trị, quản lý và truy cập tài nguyên AWS trong AWS Management Console đều có sẵn trong AWS API và CLI. Các tính năng và dịch vụ AWS mới sẽ được cung cấp đầy đủ như trên AWS Management Console thông qua API và CLI ngay sau khi ra mắt hoặc trong vòng 180 ngày sau đó.</p>
+<p>AWS CLI cung cấp quyền truy cập trực tiếp vào các API công khai của các dịch vụ AWS. Bạn có thể khám phá khả năng của một dịch vụ AWS với AWS CLI và phát triển các tập lệnh shell scripts để quản lý tài nguyên của bạn. Ngoài các lệnh cấp thấp tương đương với API, nhiều dịch vụ AWS cho phép các tùy chỉnh (<em>customization</em>) trên AWS CLI. Các tùy chỉnh có thể bao gồm các lệnh cấp cao hơn giúp đơn giản hóa việc sử dụng dịch vụ có API phức tạp.</p>
+<h4 id="nội-dung">Nội dung</h4>
+<ol>
+<li><a href="1-cli-installation">Cài đặt AWS CLI</a></li>
+<li><a href="2-basic-setup">Thiết lập AWS CLI cơ bản</a></li>
+<li><a href="3-multi-profile">Thiết lập Multi-profile</a></li>
+<li><a href="4-sso-in-cli">Thiết lập SSO trong CLI</a></li>
+<li><a href="5-examples">Các ví dụ với AWS CLI</a></li>
+</ol>
 	
   
         
@@ -505,42 +449,8 @@
 
                     
                     
-                        
-                    
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
             
         
@@ -663,19 +573,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1610760304"></script>
-    <script src="/js/perfect-scrollbar.min.js?1610760304"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1610760304"></script>
-    <script src="/js/jquery.sticky.js?1610760304"></script>
-    <script src="/js/featherlight.min.js?1610760304"></script>
-    <script src="/js/highlight.pack.js?1610760304"></script>
+    <script src="/js/clipboard.min.js?1625463095"></script>
+    <script src="/js/perfect-scrollbar.min.js?1625463095"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1625463095"></script>
+    <script src="/js/jquery.sticky.js?1625463095"></script>
+    <script src="/js/featherlight.min.js?1625463095"></script>
+    <script src="/js/highlight.pack.js?1625463095"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1610760304"></script>
-    <script src="/js/learn.js?1610760304"></script>
-    <script src="/js/hugo-learn.js?1610760304"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1625463095"></script>
+    <script src="/js/learn.js?1625463095"></script>
+    <script src="/js/hugo-learn.js?1625463095"></script>
 
-    <link href="/mermaid/mermaid.css?1610760304" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1610760304"></script>
+    <link href="/mermaid/mermaid.css?1625463095" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1625463095"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

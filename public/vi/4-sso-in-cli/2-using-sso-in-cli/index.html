@@ -12,21 +12,21 @@
     <title>Dùng AWS SSO trong CLI :: Sử dụng AWS CLI trên Windows/Ubuntu</title>
 
     
-    <link href="/css/nucleus.css?1610760304" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1610760304" rel="stylesheet">
-    <link href="/css/hybrid.css?1610760304" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1610760304" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1610760304" rel="stylesheet">
-    <link href="/css/auto-complete.css?1610760304" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1610760304" rel="stylesheet">
-    <link href="/css/theme.css?1610760304" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1610760304" rel="stylesheet">
+    <link href="/css/nucleus.css?1625463095" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1625463095" rel="stylesheet">
+    <link href="/css/hybrid.css?1625463095" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1625463095" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1625463095" rel="stylesheet">
+    <link href="/css/auto-complete.css?1625463095" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1625463095" rel="stylesheet">
+    <link href="/css/theme.css?1625463095" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1625463095" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1610760304" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1625463095" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1610760304"></script>
+    <script src="/js/jquery-3.3.1.min.js?1625463095"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1610760304"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1610760304"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1625463095"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1625463095"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1610760304"></script>
+<script type="text/javascript" src="/js/search.js?1625463095"></script>
 
     
   </div>
@@ -94,74 +94,6 @@
           
       </a>
       
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/1-cli-installation/1-ver-1/" title="AWS CLI phiên bản 1" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/1-cli-installation/1-ver-1/">
-          <b>1.1. </b>AWS CLI phiên bản 1
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/1-cli-installation/2-ver-2/" title="AWS CLI phiên bản 2" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/1-cli-installation/2-ver-2/">
-          <b>1.2. </b>AWS CLI phiên bản 2
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
               
     </li>
   
@@ -421,11 +353,11 @@
     <section id="footer">
       <left>
     
-    
-
-    
-
-    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7834096&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
 </left>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -513,7 +445,8 @@
 
 
 
-	<p>Phần này mô tả cách sử dụng profile AWS SSO mà bạn đã tạo trong phần trước.</p>
+	<h4 id="tổng-quan">Tổng quan</h4>
+<p>Phần này mô tả cách sử dụng profile AWS SSO mà bạn đã tạo trong phần trước.</p>
 <p><strong>Nội dung</strong></p>
 <ul>
 <li><a href="#1-%C4%91%C4%83ng-nh%E1%BA%ADp-v%C3%A0-l%E1%BA%A5y-danh-t%C3%ADnh-t%E1%BA%A1m-th%E1%BB%9Di">1. Đăng nhập và lấy danh tính tạm thời</a></li>
@@ -521,26 +454,30 @@
 <li><a href="#3-%C4%91%C4%83ng-xu%E1%BA%A5t-kh%E1%BB%8Fi-phi%C3%AAn-aws-sso">3. Đăng xuất khỏi phiên AWS SSO</a></li>
 </ul>
 <h4 id="1-đăng-nhập-và-lấy-danh-tính-tạm-thời">1. Đăng nhập và lấy danh tính tạm thời</h4>
-<p>Sau khi bạn cấu hình profile tự động hoặc thủ công, bạn có thể sử dụng profile đó để yêu cầu thông tin xác thực tạm thời từ AWS. Trước khi có thể chạy lệnh thao tác với dịch vụ bằng AWS CLI, bạn phải truy xuất và lưu vào bộ nhớ cache một bộ thông tin xác thực tạm thời. Để có các thông tin xác thực tạm thời này, hãy chạy lệnh sau.</p>
+<p>Sau khi bạn cấu hình profile tự động hoặc thủ công, bạn có thể sử dụng profile đó để yêu cầu thông tin xác thực tạm thời từ AWS.</p>
+<ol>
+<li>
+<p>Trước khi có thể chạy lệnh thao tác với dịch vụ bằng AWS CLI, bạn phải truy xuất và lưu vào bộ nhớ cache một bộ thông tin xác thực tạm thời. Để có các thông tin xác thực tạm thời này, hãy chạy lệnh sau.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ aws sso login --profile my-test-profile
-</code></pre></div><p>AWS CLI sẽ mở trình duyệt mặc định của bạn và xác minh thông tin đăng nhập AWS SSO của bạn.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">SSO authorization page has automatically been opened in your default browser. 
-Follow the instructions in the browser to complete this authorization request.
-Successully logged into Start URL: https://d-9667182f21.awsapps.com/start
-</code></pre></div><p>Nếu bạn hiện chưa đăng nhập vào tài khoản AWS SSO của mình, bạn phải cung cấp username và password AWS SSO của mình.</p>
-<p><em>Nếu AWS CLI không thể mở trình duyệt, thông báo sau sẽ xuất hiện với hướng dẫn về cách bắt đầu quy trình đăng nhập theo cách thủ công.</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ aws sso login --profile my-test-profile
-Using a browser, open the following URL:
- 
-https://d-9667182f21.awsapps.com/verify
+</code></pre></div></li>
+<li>
+<p>AWS CLI sẽ mở trình duyệt mặc định của bạn và xác minh thông tin đăng nhập AWS SSO của bạn với thông báo dưới đây.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Successully logged into Start URL: https://d-9667182f21.awsapps.com/start
+</code></pre></div></li>
+</ol>
 
-and enter the following code:
-QCFK-N451
-</code></pre></div><p>AWS CLI sẽ mở trình duyệt mặc định của bạn (hoặc bạn sẽ mở thủ công) và truy cập đến trang yêu cầu và nhập mã xác thực được cung cấp. Trang web hỏi bạn về tài khoản AWS SSO.</p>
+<div class="notices note" ><p>Nếu bạn hiện chưa đăng nhập vào tài khoản AWS SSO của mình, bạn phải cung cấp username và password AWS SSO của mình. Nếu AWS CLI không thể mở trình duyệt, AWS CLI sẽ xuất thông báo với hướng dẫn về quy trình đăng nhập theo cách thủ công.</p>
+</div>
+
+<ol start="3">
+<li>
 <p>Phiên đăng nhập SSO của bạn lúc này đã được cache và sẽ có thời gian vô hiệu. Khi bị vô hiệu, AWS CLI sẽ yêu cầu bạn đăng nhập trở lại vào AWS SSO.</p>
+</li>
+<li>
 <p>Nếu thông tin đăng nhập SSO chính xác, AWS CLI sẽ sử dụng chúng để truy xuất thông tin đăng nhập tạm thời nhằm sử dụng IAM role được chỉ định trong profile.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Welcome, you have successfully signed-in to the AWS-CLI.
-</code></pre></div><h4 id="2-sử-dụng-lệnh-với-profile-được-thiết-lập-aws-sso">2. Sử dụng lệnh với profile được thiết lập AWS SSO</h4>
+</li>
+</ol>
+<h4 id="2-sử-dụng-lệnh-với-profile-được-thiết-lập-aws-sso">2. Sử dụng lệnh với profile được thiết lập AWS SSO</h4>
 <p>Bạn có thể sử dụng các thông tin đăng nhập tạm thời này để gọi lệnh AWS CLI với profile được thiết lập. Ví dụ sau cho thấy rằng lệnh được chạy thông qua role đã được assume từ tài khoản được chỉ định.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ aws sts get-caller-identity --profile my-test-profile
 <span style="color:#f92672">{</span>
@@ -553,33 +490,32 @@ QCFK-N451
 Your short-term credentials have expired. Please sign-in to renew your credentials
 SSO authorization page has automatically been opened in your default browser. 
 Follow the instructions in the browser to complete this authorization request.
-</code></pre></div><p>You can create multiple AWS SSO enabled named profiles that each point to a different AWS account or role. You can also use the aws sso login command on more than one profile at a time. If any of them share the same AWS SSO user account, you must log in to that AWS SSO user account only once and then they all share a single set of AWS SSO cached credentials.
-Bạn có thể tạo nhiều profile sử dụng AWS SSO với mỗi profile sử dụng tài khoản hoặc role khác nhau. Bạn cũng có thể sử dụng lệnh <code>aws sso login</code> trên nhiều profile cùng một lúc. Nếu bất kỳ profile trong số chúng có cùng một tài khoản người dùng AWS SSO, bạn phải đăng nhập vào tài khoản người dùng AWS SSO đó một lần và sau đó tất cả profile đều chia sẻ một thông tin đăng nhập AWS SSO được lưu trong bộ nhớ cache.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># The following command retrieves temporary credentials for the AWS account and role 
-# specified in one named profile. If you are not yet signed in to AWS SSO or your 
-# cached credentials have expired, it opens your browser and prompts you for your 
-# AWS SSO user name and password. It then retrieves AWS temporary credentials for
-# the IAM role associated with this profile.
+</code></pre></div><p>Bạn có thể tạo nhiều profile sử dụng AWS SSO với mỗi profile sử dụng tài khoản hoặc role khác nhau. Bạn cũng có thể sử dụng lệnh <code>aws sso login</code> trên nhiều profile cùng một lúc. Nếu bất kỳ profile nào có cùng một tài khoản người dùng AWS SSO, bạn chỉ cần đăng nhập vào AWS SSO User đó một lần và sau đó tất cả profile đều chia sẻ thông tin đăng nhập của AWS SSO User đã được tự động lưu trong bộ nhớ cache.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># The following command retrieves temporary credentials for the AWS account and role</span> 
+<span style="color:#75715e"># specified in one named profile. If you are not yet signed in to AWS SSO or your</span> 
+<span style="color:#75715e"># cached credentials have expired, it opens your browser and prompts you for your</span> 
+<span style="color:#75715e"># AWS SSO user name and password. It then retrieves AWS temporary credentials for</span>
+<span style="color:#75715e"># the IAM role associated with this profile.</span>
 $ aws sso login --profile my-first-sso-profile
 
-# The next command retrieves a different set of temporary credentials for the AWS 
-# account and role specified in the second named profile. It does not overwrite or 
-# in any way compromise the first profile&#39;s credentials. If this profile specifies the
-# same AWS SSO portal, then it uses the SSO credentials that you retrieved in the 
-# previoius command. The AWS CLI then retrieves AWS temporary credentials for the
-# IAM role associated with the second profile. You don&#39;t have to sign in to 
-# AWS SSO again.
+<span style="color:#75715e"># The next command retrieves a different set of temporary credentials for the AWS</span> 
+<span style="color:#75715e"># account and role specified in the second named profile. It does not overwrite or</span> 
+<span style="color:#75715e"># in any way compromise the first profile&#39;s credentials. If this profile specifies the</span>
+<span style="color:#75715e"># same AWS SSO portal, then it uses the SSO credentials that you retrieved in the</span> 
+<span style="color:#75715e"># previoius command. The AWS CLI then retrieves AWS temporary credentials for the</span>
+<span style="color:#75715e"># IAM role associated with the second profile. You don&#39;t have to sign in to</span> 
+<span style="color:#75715e"># AWS SSO again.</span>
 $ aws sso login --profile my-second-sso-profile
 
-# The following command lists the Amazon EC2 instances accessible to the role 
-# identified in the first profile.
+<span style="color:#75715e"># The following command lists the Amazon EC2 instances accessible to the role</span> 
+<span style="color:#75715e"># identified in the first profile.</span>
 $ aws ec2 describe-instances --profile my-first-sso-profile
 
-# The following command lists the Amazon EC2 instances accessible to the role 
-# identified in the second profile.
+<span style="color:#75715e"># The following command lists the Amazon EC2 instances accessible to the role</span> 
+<span style="color:#75715e"># identified in the second profile.</span>
 $ aws ec2 describe-instances --profile my-second-sso-profile
 </code></pre></div><h4 id="3-đăng-xuất-khỏi-phiên-aws-sso">3. Đăng xuất khỏi phiên AWS SSO</h4>
-<p>Khi bạn hoàn tất làm việc với các profile thiết lập SSO, bạn có thể chọn không làm gì cả và để thông tin đăng nhập tạm thời vào AWS và thông tin đăng nhập AWS SSO tự hết hạn. Tuy nhiên, bạn cũng có thể chọn chạy lệnh sau để xóa ngay lập tức tất cả thông tin đăng nhập đã lưu trong thư mục cache và tất cả thông tin đăng nhập tạm thời vào AWS dựa trên AWS SSO. Việc này sẽ vô hiệu hóa những thông tin đăng nhập đó, làm chúng không thể dùng cho bất kỳ lệnh nào sau đó.</p>
+<p>Khi bạn hoàn tất làm việc với các profile thiết lập SSO, bạn có thể chọn không làm gì cả và để thông tin đăng nhập tạm thời tự hết hạn. Tuy nhiên, bạn cũng có thể chọn chạy lệnh sau để xóa ngay lập tức tất cả thông tin đăng nhập đã lưu trong thư mục cache và tất cả thông tin đăng nhập tạm thời vào AWS dựa trên AWS SSO. Việc này sẽ vô hiệu hóa những thông tin đăng nhập đó và làm chúng không thể dùng cho bất kỳ lệnh nào sau đó.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ aws sso logout
 Successfully signed out of all SSO profiles.
 </code></pre></div>
@@ -630,42 +566,8 @@ Successfully signed out of all SSO profiles.
 
                     
                     
-                        
-                    
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
             
         
@@ -798,19 +700,19 @@ Successfully signed out of all SSO profiles.
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1610760305"></script>
-    <script src="/js/perfect-scrollbar.min.js?1610760305"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1610760305"></script>
-    <script src="/js/jquery.sticky.js?1610760305"></script>
-    <script src="/js/featherlight.min.js?1610760305"></script>
-    <script src="/js/highlight.pack.js?1610760305"></script>
+    <script src="/js/clipboard.min.js?1625463095"></script>
+    <script src="/js/perfect-scrollbar.min.js?1625463095"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1625463095"></script>
+    <script src="/js/jquery.sticky.js?1625463095"></script>
+    <script src="/js/featherlight.min.js?1625463095"></script>
+    <script src="/js/highlight.pack.js?1625463095"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1610760305"></script>
-    <script src="/js/learn.js?1610760305"></script>
-    <script src="/js/hugo-learn.js?1610760305"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1625463095"></script>
+    <script src="/js/learn.js?1625463095"></script>
+    <script src="/js/hugo-learn.js?1625463095"></script>
 
-    <link href="/mermaid/mermaid.css?1610760305" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1610760305"></script>
+    <link href="/mermaid/mermaid.css?1625463095" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1625463095"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

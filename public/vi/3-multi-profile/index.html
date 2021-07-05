@@ -12,21 +12,21 @@
     <title>Thiết lập Multi-profile :: Sử dụng AWS CLI trên Windows/Ubuntu</title>
 
     
-    <link href="/css/nucleus.css?1610760304" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1610760304" rel="stylesheet">
-    <link href="/css/hybrid.css?1610760304" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1610760304" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1610760304" rel="stylesheet">
-    <link href="/css/auto-complete.css?1610760304" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1610760304" rel="stylesheet">
-    <link href="/css/theme.css?1610760304" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1610760304" rel="stylesheet">
+    <link href="/css/nucleus.css?1625463095" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1625463095" rel="stylesheet">
+    <link href="/css/hybrid.css?1625463095" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1625463095" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1625463095" rel="stylesheet">
+    <link href="/css/auto-complete.css?1625463095" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1625463095" rel="stylesheet">
+    <link href="/css/theme.css?1625463095" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1625463095" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1610760304" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1625463095" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1610760304"></script>
+    <script src="/js/jquery-3.3.1.min.js?1625463095"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1610760304"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1610760304"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1625463095"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1625463095"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1610760304"></script>
+<script type="text/javascript" src="/js/search.js?1625463095"></script>
 
     
   </div>
@@ -94,74 +94,6 @@
           
       </a>
       
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/1-cli-installation/1-ver-1/" title="AWS CLI phiên bản 1" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/1-cli-installation/1-ver-1/">
-          <b>1.1. </b>AWS CLI phiên bản 1
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/1-cli-installation/2-ver-2/" title="AWS CLI phiên bản 2" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/1-cli-installation/2-ver-2/">
-          <b>1.2. </b>AWS CLI phiên bản 2
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
               
     </li>
   
@@ -421,11 +353,11 @@
     <section id="footer">
       <left>
     
-    
-
-    
-
-    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7834096&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
 </left>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -479,8 +411,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#1-profile">1. Profile</a></li>
-        <li><a href="#2-multiple-profiles">2. Multiple Profiles</a></li>
+        <li></li>
       </ul>
     </li>
   </ul>
@@ -508,61 +439,143 @@
 
 
 
-	<p><strong>Nội dung</strong></p>
+	<h4 id="tổng-quan">Tổng quan</h4>
+<p>Ở phần này, bạn sẽ tìm hiểu về khái niệm profile trong AWS CLI và làm các bài tập thực hành như tạo <strong>default profile</strong>, tạo <strong>profile riêng</strong>, cập nhật profile, và quản lý nhiều profile (<em>multi-profile management</em>)</p>
+<h4 id="profile">Profile</h4>
 <ul>
-<li><a href="#1-profile">1. Profile</a></li>
-<li><a href="#2-multiple-profiles">2. Multiple Profiles</a>
+<li><strong>Profile</strong> là tập các thiết lập và định danh cho phép bạn sử dụng các lệnh có trong AWS CLI. Mặc định, AWS CLI sử dụng <strong>default profile</strong>. Ngoài ra, bạn còn có thể tạo thêm nhiều profile khác gọi là <strong>profile riêng</strong> với thông số <code>--profile</code>.</li>
+<li>AWS CLI lưu trữ thông tin của các profile trong tập tin <strong>config</strong> và <strong>credentials</strong>. Ngoài việc tạo thêm profile với thông số <code>--profile</code>, bạn có thể tạo thêm các profile khác bằng cách thêm các thiết lập trực tiếp vào các tập tin <strong>config</strong> và <strong>credentials</strong>.</li>
+<li>Với thông số <code>--profile</code>, bạn có thể chỉ định một profile cụ thể để nó thực hiện những câu lệnh trong AWS CLI. Ngoài ra, bạn cũng có thể chỉ định một profile trong biến môi trường (AWS_PROFILE) để thay thế default profile ở một session nào dó.</li>
+</ul>
+<p><strong>Nội dung</strong></p>
+<ol>
+<li><a href="#t%E1%BA%A1o-default-profile">Tạo Default Profile</a></li>
+<li><a href="#t%E1%BA%A1o-profile-ri%C3%AAng">Tạo profile riêng</a></li>
+<li><a href="#c%E1%BA%ADp-nh%E1%BA%ADt-profile">Cập nhật profile</a></li>
+<li><a href="#qu%E1%BA%A3n-l%C3%BD-nhi%E1%BB%81u-profile-multi-profile-management">Quản lý nhiều profile (<em>multi-profile management</em>)</a></li>
+</ol>
+<h4 id="tạo-default-profile">Tạo Default Profile</h4>
+<ol>
+<li>Truy cập vào máy tính mà bạn đã cài đặt AWS CLI và khởi chạy Terminal
 <ul>
-<li><a href="#t%E1%BA%A1o-m%E1%BB%99t-named-profile">Tạo một Named Profile</a></li>
-<li><a href="#qu%E1%BA%A3n-l%C3%BD-thi%E1%BA%BFt-l%E1%BA%ADp-v%E1%BB%9Bi-multiple-profile">Quản lý thiết lập với Multiple Profile</a></li>
+<li><strong>Linux shells</strong> cho các máy sử dụng Linux hoặc MacOS</li>
+<li><strong>Windows Command Line</strong> cho các máy sử dụng Windows</li>
 </ul>
 </li>
-</ul>
-<h3 id="1-profile">1. Profile</h3>
-<p>Tập hợp các cài đặt được gọi là profile. Mặc định, AWS CLI sử dụng profile <strong>default</strong>. Bạn có thể tạo và sử dụng thêm các profile với tên khác chứa thông tin định danh khác nhau và các thiết lập khác nhau bằng thông số &ndash;profile và gán tên.
-Bạn có thể lưu các thiết lập cấu hình thường dùng và thông tin định danh vào tập tin quản lý bởi AWS CLI.</p>
-<p>Ví dụ sau sẽ là cấu hình profile <strong>default</strong>.</p>
+<li>Nhập dòng lệnh sau để khởi tạo <strong>default profile</strong>:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ aws configure
-AWS Access Key ID <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: *AKIAIOSFODNN7EXAMPLE*
-AWS Secret Access Key <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: *wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY*
-Default region name <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: *us-west-2*
-Default output format <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: *json*
-</code></pre></div><h3 id="2-multiple-profiles">2. Multiple Profiles</h3>
-<p>AWS CLI hỗ trợ sử dụng bất kỳ các profile riêng nào được lưu trữ trong tập tin <strong>config</strong> và <strong>credentials</strong>. Bạn có thể tạo và sử dụng thêm các profile với tên khác chứa thông tin định danh khác nhau và các thiết lập khác nhau bằng thông số &ndash;profile và gán tên hoặc thêm các thiết lập trực tiếp vào tập tin credentials.</p>
-<p>Tập tin chia thành các profile. Profile riêng là tập các thiết lập và định danh mà bạn có thể sử dụng trong các lệnh ở AWS CLI. Khi bạn chỉ định một profile để chạy một lệnh, thiết lập và thông tin định danh được lưu trữ sẽ được sử dụng để chạy lệnh. Bạn có chỉ định một profile được gọi là &ldquo;default&rdquo; và được sử dụng khi không có profile nào được chỉ định trực tiếp trong lệnh. Các profile riêng khác bạn có thể chỉ định trong các tham số của từng lệnh riêng biệt. Thay vào đó, bạn có thể chỉ định ra một profile trong biến môi trường (AWS_PROFILE) thay thế default profile chạy lệnh ở session dó.</p>
-<p>The files are divided into profiles. A named profile is a collection of settings and credentials that you can apply to a AWS CLI command. When you specify a profile to run a command, the settings and credentials are used to run that command. You can specify one profile that is the &ldquo;default&rdquo;, and is used when no profile is explicitly referenced. Other profiles have names that you can specify as a parameter on the command line for individual commands. Alternatively, you can specify a profile in an environment variable (AWS_PROFILE) which essentially overrides the default profile for commands that run in that session.</p>
-<h4 id="tạo-một-named-profile">Tạo một Named Profile</h4>
-<p>Ví dụ sau tạo một profile có tên <strong>testuser</strong>.</p>
+</code></pre></div></li>
+<li>Lần lượt nhập những thông tin về Access Key, Region, và Output Format mà bạn muốn <em>(Lưu ý: bạn nên sử dụng Access Key mà bạn đã tạo)</em>. Sau đây là ví dụ:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">AWS Access Key ID <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: AKIAIOSFODNN7EXAMPLE
+AWS Secret Access Key <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+Default region name <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: us-west-2
+Default output format <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: json
+</code></pre></div></li>
+<li>Như vậy, default profile của bạn đã được tạo thành công</li>
+</ol>
+<h4 id="tạo-profile-riêng">Tạo profile riêng</h4>
+<ol>
+<li>Truy cập vào máy tính mà bạn đã cài đặt AWS CLI và khởi chạy Terminal
+<ul>
+<li><strong>Linux shells</strong> cho các máy sử dụng Linux hoặc MacOS</li>
+<li><strong>Windows Command Line</strong> cho các máy sử dụng Windows</li>
+</ul>
+</li>
+<li>Để khởi tạo <strong>profile riêng</strong> có tên là <strong>testuser</strong>, bạn cần thêm thông số <code>--profile</code>:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ aws configure --profile testuser
-AWS Access Key ID <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: AKIAI44QH8DHBEXAMPLE
+</code></pre></div></li>
+<li>Lần lượt nhập những thông tin về Access Key, Region, và Output Format mà bạn muốn <em>(Lưu ý: bạn nên sử dụng Access Key mà bạn đã tạo)</em>. Sau đây là ví dụ:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">AWS Access Key ID <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: AKIAI44QH8DHBEXAMPLE
 AWS Secret Access Key <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: je7MtGbClwBF/2Zp9Utk/h3yCo8nvbEXAMPLEKEY
 Default region name <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: us-east-1
 Default output format <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: text
-</code></pre></div><p>Bạn có thể sử dụng tham số <code>--profile &lt;ProfileName&gt;</code> và sử dụng các định danh và thiết lập ở profile đó cho các lệnh.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws s3 ls --profile produser
-</code></pre></div><p>Để cập nhật các thiết lập này, chạy <code>aws configure</code> một lần nữa (có hoặc không có tham số <code>--profile *profilename*</code>, tùy vào profile bạn muốn cập nhật) và nhập vào các giá trị mới phù hợp . Ở mục tiếp theo sẽ đi sâu hơn về tập tin mà khi chạy lệnh <code>aws configure</code> sẽ được tạo ra, các thông tin bổ sung và named profile.</p>
-<h4 id="quản-lý-thiết-lập-với-multiple-profile">Quản lý thiết lập với Multiple Profile</h4>
-<p>The following example shows a credentials file with two profiles. The first [default] is used when you run a CLI command with no profile. The second is used when you run a CLI command with the &ndash;profile user1 parameter.</p>
-<p>Ví dụ sau cho thấy một tập tin credentials với hai profile. Đầu tiên là profile [default] được sử dụng khi bạn chạy lệnh CLI không truyền profile cụ thể. Lệnh thứ hai được sử dụng khi bạn chạy lệnh CLI với tham số &ndash;profile user1.<br>
-<code>~/.aws/credentials</code> (Linux &amp; Mac) hoặc <code>%USERPROFILE%\.aws\credentials</code> (Windows).</p>
-<pre><code>[default]
-aws_access_key_id=AKIAIOSFODNN7EXAMPLE
-aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+</code></pre></div></li>
+<li>Như vậy, profile riêng có tên là <strong>testuser</strong> của bạn đã được tạo thành công</li>
+</ol>
+<h4 id="cập-nhật-profile">Cập nhật profile</h4>
+<ol>
+<li>Truy cập vào máy tính mà bạn đã cài đặt AWS CLI và khởi chạy Terminal
+<ul>
+<li><strong>Linux shells</strong> cho các máy sử dụng Linux hoặc MacOS</li>
+<li><strong>Windows Command Line</strong> cho các máy sử dụng Windows</li>
+</ul>
+</li>
+<li>Nhập dòng lệnh sau để cập nhật profile:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ aws configure <span style="color:#75715e">#nếu bạn muốn cập nhật default profile</span>
+$ aws configure --profile testuser <span style="color:#75715e">#nếu bạn muốn cập nhật profile riêng có tên là testuser. Bạn có thể thay thế tên testuser với một profile khác</span>
+</code></pre></div></li>
+<li>Lần lượt nhập những thông tin về Access Key, Region, và Output Format mà bạn muốn cập nhật. Sau đây là ví dụ:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">AWS Access Key ID <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: AKIAIOSFODNN7EXAMPLE
+AWS Secret Access Key <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+Default region name <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: ap-southeast-1
+Default output format <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: yaml
+</code></pre></div></li>
+<li>Như vậy, bạn đã cập nhật profile thành công.</li>
+</ol>
+<h4 id="quản-lý-nhiều-profile-multi-profile-management">Quản lý nhiều profile (<em>multi-profile management</em>)</h4>
+<p>Ở bước này, bạn sẽ truy cập vào hai tập tin <strong>config</strong> và <strong>credentials</strong> để xem thông tin lưu trữ của các profile vừa được tạo.</p>
+<p>Địa chỉ của hai tập tin trên sẽ được tìm thấy ở đường dẫn:</p>
+<table>
+<thead>
+<tr>
+<th align="center">HĐH</th>
+<th align="center">Địa chỉ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Linux và MacOS</td>
+<td align="center"><code>~/.aws/config</code> và <code>~/.aws/credentials</code></td>
+</tr>
+<tr>
+<td align="center">Windows</td>
+<td align="center"><code>%USERPROFILE%\.aws\config</code> và <code>%USERPROFILE%\.aws\credentials</code></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Truy cập vào máy tính mà bạn đã cài đặt AWS CLI và khởi chạy Terminal
+<ul>
+<li><strong>Linux shells</strong> cho các máy sử dụng Linux hoặc MacOS</li>
+<li><strong>Windows Command Line</strong> cho các máy sử dụng Windows</li>
+</ul>
+</li>
+<li>Đi tới thư mục chứa hai tập tin <strong>config</strong> và <strong>credentials</strong> bằng câu lệnh sau:
+<ul>
+<li><strong>Linux và MacOS</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd ~/.aws/
+</code></pre></div></li>
+<li><strong>Windows</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd %USERPROFILE%<span style="color:#ae81ff">\.</span>aws<span style="color:#ae81ff">\</span>
+</code></pre></div></li>
+</ul>
+</li>
+<li>Xem nội dung của hai tập tin <strong>config</strong> và <strong>credentials</strong> bằng lệnh:
+<ul>
+<li><strong>Linux và MacOS</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat config
+$ cat credentials
+</code></pre></div></li>
+<li><strong>Windows</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ more config
+$ more credentials  
+</code></pre></div></li>
+</ul>
+</li>
+<li>Màn hình của bạn sẽ hiện ra kết quả tương tự như hình sau:
+<ul>
+<li><strong>Linux và MacOS</strong>
+<img src="../../images/3_Linux.png?width=90pc" alt="3_Linux"></li>
+<li><strong>Windows</strong>
+<img src="../../images/3_Windows.png?width=90pc" alt="3_Windows"></li>
+</ul>
+</li>
+</ol>
 
-[testuser]
-aws_access_key_id=AKIAI44QH8DHBEXAMPLE
-aws_secret_access_key=je7MtGbClwBF/2Zp9Utk/h3yCo8nvbEXAMPLEKEY
-</code></pre><p>Each profile can specify different credentials—perhaps from different IAM users—and can also specify different AWS Regions and output formats.
-Mỗi hồ sơ có thể chỉ định các thông tin xác thực khác nhau — từ những người dùng IAM khác nhau — và cũng có thể chỉ định các AWS Region và định dạng đầu ra khác nhau.
-<code>~/.aws/config</code> (Linux &amp; Mac) hoặc <code>%USERPROFILE%\.aws\config</code> (Windows).</p>
-<pre><code>[default]
-region=us-west-2
-output=json
+<div class="notices info" ><p>Bạn có thể thêm hoặc chỉnh sửa profile trực tiếp bằng cách chỉnh sửa hai tập tin <strong>config</strong> và <strong>credentials</strong> bằng trình chỉnh sửa của hệ điều hành của bạn.</p>
+</div>
 
-[profile testuser]
-region=us-east-1
-output=text
-</code></pre>
+
 
 
 
@@ -610,42 +623,8 @@ output=text
 
                     
                     
-                        
-                    
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
             
         
@@ -774,19 +753,19 @@ output=text
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1610760304"></script>
-    <script src="/js/perfect-scrollbar.min.js?1610760304"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1610760304"></script>
-    <script src="/js/jquery.sticky.js?1610760304"></script>
-    <script src="/js/featherlight.min.js?1610760304"></script>
-    <script src="/js/highlight.pack.js?1610760304"></script>
+    <script src="/js/clipboard.min.js?1625463095"></script>
+    <script src="/js/perfect-scrollbar.min.js?1625463095"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1625463095"></script>
+    <script src="/js/jquery.sticky.js?1625463095"></script>
+    <script src="/js/featherlight.min.js?1625463095"></script>
+    <script src="/js/highlight.pack.js?1625463095"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1610760304"></script>
-    <script src="/js/learn.js?1610760304"></script>
-    <script src="/js/hugo-learn.js?1610760304"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1625463095"></script>
+    <script src="/js/learn.js?1625463095"></script>
+    <script src="/js/hugo-learn.js?1625463095"></script>
 
-    <link href="/mermaid/mermaid.css?1610760304" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1610760304"></script>
+    <link href="/mermaid/mermaid.css?1625463095" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1625463095"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

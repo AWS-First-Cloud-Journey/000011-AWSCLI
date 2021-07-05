@@ -1,64 +1,90 @@
 +++
-title = "AWS CLI Basic Setup"
+title = "Thiết Lập AWS CLI Cơ Bản"
 date = 2020
 weight = 2
 chapter = false
 pre = "<b>2. </b>"
 +++
+#### Tổng quan
 
-This section explains how to quickly configure basic settings that the AWS Command Line Interface (AWS CLI) uses to interact with AWS. These include your security credentials, the default output format, and the default AWS Region.
+Ở phần này, chúng ta sẽ đi qua việc thiết lập nhanh các cài đặt cơ bản mà AWS CLI sử dụng để tương tác với AWS. Các thiết lập bao gồm thông tin định danh (*security credentials*), định dạng đầu ra mặc định (*default output format*) và vùng mặc định (*default AWS Region*).
 
-**Contents**
-- [1. Quick configuration](#1-quick-configuration)
-- [2. Access key ID and secret access key](#2-access-key-id-and-secret-access-key)
-- [3. Region](#3-region)
-- [4. Output format](#4-output-format)
+**Nội dung**
+1. [Cơ bản về cấu hình](#thiết-lập-cấu-hình-cơ-bản)
+2. [Access key ID và secret access key](#access-key-id-và-secret-access-key)
+3. [Region (Vùng)](#region-vùng)
+4. [Output format (Định dạng xuất)](#output-format-định-dạng-xuất)
 
-#### 1. Quick configuration
-For general use, the ```aws configure``` command is the fastest way to set up your AWS CLI installation.
-This quick configuration will prompt to ask you four pieces of information:
-- Access key ID
+#### Cơ bản về cấu hình
+Chúng ta sẽ sử dụng lệnh ```aws configure```. Đây được xem là cách nhanh nhất để thiết lập cho AWS CLI.
+Cửa sổ lệnh sẽ xuất hiện yêu cầu về 4 thông tin như sau:
+- Access key ID 
 - Secret access key
-- AWS Region
-- Output format
-These information will be explained clearly in next parts.
+- AWS Region (Vùng)
+- Output format (Định dạng xuất)
 
-The AWS CLI stores this information in a *profile* (a collection of settings) named **default** in the **credentials** file. By default, the information in this profile is used when you run an AWS CLI command that **doesn't explicitly** specify a profile to use.
+Ví dụ:
+
 ```bash
-$ aws configure
 AWS Access Key ID [None]: *AKIAIOSFODNN7EXAMPLE*
 AWS Secret Access Key [None]: *wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY*
 Default region name [None]: *us-west-2*
 Default output format [None]: *json*
 ```
 
-#### 2. Access key ID and secret access key
-Access keys consist of an **access key ID** and **secret access key**, which are used to sign programmatic requests that you make to AWS. If you don't have access keys, you can create them from the **AWS Management Console**. As a best practice, **do not use** the AWS account root user access keys for any task where it's not required. Instead, create a new administrator IAM user with access keys for yourself.
+AWS CLI lưu trữ bộ thông tin này trong *profile* (tập hợp các cài đặt) có tên **default** trong tập tin **credentials**. Theo mặc định, thông tin trong cấu hình này được AWS CLI sử dụng khi bạn chạy lệnh ```aws configure``` mà **không** chỉ định rõ ràng một **profile**.
 
-The **only time** that you can view or download the secret access key is when you create the keys. You **cannot recover** them later. However, you can create new access keys at any time. You must also have permissions to perform the required IAM actions. 
+#### Access key ID và secret access key
 
-**Create access keys for an IAM user**
-1. Sign in to the **AWS Management Console** and open the **IAM console** at https://console.aws.amazon.com/iam/.
-2. In the navigation pane, choose **Users**.
-3. Choose the name of the user whose access keys you want to create, and then choose the **Security credentials** tab.
-4. In the **Access keys** section, choose **Create access key**.
-5. To view the new access key pair, choose **Show**. You **will not have access** to the secret access key again after this dialog box closes. Your credentials will look something like this:
-    - **Access key ID**: AKIAIOSFODNN7EXAMPLE
-    - **Secret access key**: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-6. To download the key pair, choose **Download .csv file**. Store the keys in a secure location. You will not have access to the secret access key again after this dialog box closes.  
-Keep the keys confidential in order to protect your AWS account and never email them. Do not share them outside your organization, even if an inquiry appears to come from AWS or Amazon.com. No one who legitimately represents Amazon will ever ask you for your secret key.
-7. After you download the .csv file, choose **Close**. When you create an access key, the key pair is **active by default**, and you can use the pair right away.
+```bash
+AWS Access Key ID [None]: *AKIAIOSFODNN7EXAMPLE*
+AWS Secret Access Key [None]: *wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY*
+```
 
-#### 3. Region
-The **Default region name** identifies the AWS Region whose servers you want to send your requests to by default. This is typically the Region closest to you, but it can be any Region. For example, you can type **us-west-2** to use **US West (Oregon)**. This is the Region that all later requests are sent to, unless you specify otherwise in an individual command.
-{{% notice info %}}
-You must specify an AWS Region when using the AWS CLI, either explicitly or by setting a default Region.
+Access key bao gồm **access key ID** và **secret access key**, được sử dụng để ký các yêu cầu ứng dụng mà bạn gửi tới AWS. 
+
+{{% notice note %}}
+**Đừng sử dụng** các access key của *root user* cho bất kỳ tác vụ nào không cần thiết. Thay vào đó, hãy tạo user IAM Administrator mới với các access key để sử dụng.
 {{% /notice %}}
 
-#### 4. Output format
-The **Default output format** specifies how the results are formatted. The value can be any of the values in the following list. If you don't specify an output format, **json is used as the default**.
-- **json** – The output is formatted as a JSON string.
-- **yaml** – The output is formatted as a YAML string. **(Available in the AWS CLI version 2 only.)**
-- **yaml-stream** – The output is streamed and formatted as a YAML string. Streaming allows for faster handling of large data types. **(Available in the AWS CLI version 2 only.)**
-- **text** – The output is formatted as multiple lines of tab-separated string values. This can be useful to pass the output to a text processor, like grep, sed, or awk.
-- **table** – The output is formatted as a table using the characters +|- to form the cell borders. It typically presents the information in a "human-friendly" format that is much easier to read than the others, but not as programmatically useful.
+**Tạo access key cho IAM user**
+1. Đăng nhập vào **AWS Management Console** và truy cập vào [IAM console](https://console.aws.amazon.com/iam/)
+2. Ở thanh điều hướng, chọn **Users**, sau đó chọn tên của user bạn muốn tạo access key.
+![IAMUser](../../images/2_IAMUser.png?width=90pc)
+3. Chọn **Security credentials**.
+4. Trong mục **Access keys**, chọn **Create access key**.
+![IAMUser](../../images/2_CreateAccessKey.png?width=90pc)
+5. Để xem access key pair mới, chọn **Show**. Bạn sẽ **không thể** truy cập xem lại secret access key sau khi đóng hộp thoại này.
+{{% notice note %}}
+Thời điểm **duy nhất** mà bạn có thể xem và tải secret access key là lúc tạo ra nó. Bạn **không thể khôi phục** chúng về sau. Tuy vậy, bạn có thể tạo mới một access key bất kì lúc nào. Bạn cũng buộc phải có quyền để thao tác với IAM.
+{{% /notice %}}
+6. Để tải xuống key pair, chọn **Download .csv file**. Cất giữ key ở một nơi an toàn. Bạn sẽ **không thể** truy cập xem lại secret access key sau khi đóng hộp thoại này.  
+{{% notice warning %}}
+Giữ bí mật các key để bảo vệ tài khoản AWS của bạn và không bao giờ gửi chúng qua email. Không chia sẻ chúng ra bên ngoài doanh nghiệp của bạn, ngay cả khi gặp một câu hỏi dường như đến từ AWS hoặc Amazon.com. Không ai đại diện hợp pháp cho Amazon sẽ yêu cầu bạn cung cấp key của bạn.
+{{% /notice %}}
+7. Sau khi bạn tải xuống tập tin .csv, chọn **Close**. Khi bạn tạo access key, cặp key này sẽ được **kích hoạt mặc định** và bạn có thể sử dụng key pair này ngay lập tức.
+
+#### Region (Vùng)
+
+```bash
+Default region name [None]: *us-west-2*
+```
+
+**Default region name** xác định Khu vực AWS có máy chủ mà bạn muốn gửi yêu cầu của mình theo mặc định. Đây thường là Region gần bạn nhất, nhưng nó có thể là bất kỳ Region nào. Ví dụ: bạn có thể nhập **us-west-2** để sử dụng **US West (Oregon)**. Đây là Region mặc định mà tất cả các yêu cầu sau này sẽ được gửi đến, trừ khi bạn chỉ định khác.
+
+{{% notice info %}}
+Bạn phải truyền vào Region khi sử dụng lệnh trong AWS CLI một cách rõ ràng hoặc bằng cách thiết lập trước một Region mặc định.
+{{% /notice %}}
+
+#### Output format (Định dạng xuất)
+
+```bash
+Default output format [None]: *json*
+```
+
+**Default output format** chỉ định cách các kết quả trả về được định dạng. Loại có thể là bất kỳ giá trị nào trong danh sách bên dưới. Nếu bạn không chỉ định định dạng đầu ra thì **json được sử dụng mặc định**.
+- **json** – Đầu ra được định dạng dưới dạng chuỗi JSON.
+- **yaml** – Đầu ra được định dạng dưới dạng chuỗi YAML. **(Chỉ hỗ trợ ở AWS CLI v2.)**
+- **yaml-stream** – Đầu ra là luồng và được định dạng dưới dạng chuỗi YAML. Luồng cho phép xử lý nhanh hơn các loại dữ liệu lớn. **(Chỉ hỗ trợ ở AWS CLI phiên bản 2.)**
+- **text** – Đầu ra được định dạng dưới dạng nhiều dòng giá trị chuỗi được phân tách bằng tab. Định dạng này có thể hữu ích để chuyển đầu ra tới trình xử lý văn bản, như grep, sed hoặc awk.
+- **table** – Đầu ra được định dạng dưới dạng bảng sử dụng các ký tự +|- để tạo thành các đường viền ô. Nó thường trình bày thông tin ở định dạng "thân thiện với con người", dễ đọc hơn nhiều so với các định dạng khác, nhưng không hiệu quả về mặt lập trình.

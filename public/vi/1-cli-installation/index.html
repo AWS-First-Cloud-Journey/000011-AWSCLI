@@ -12,21 +12,21 @@
     <title>Cài đặt AWS CLI :: Sử dụng AWS CLI trên Windows/Ubuntu</title>
 
     
-    <link href="/css/nucleus.css?1610760304" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1610760304" rel="stylesheet">
-    <link href="/css/hybrid.css?1610760304" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1610760304" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1610760304" rel="stylesheet">
-    <link href="/css/auto-complete.css?1610760304" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1610760304" rel="stylesheet">
-    <link href="/css/theme.css?1610760304" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1610760304" rel="stylesheet">
+    <link href="/css/nucleus.css?1625463095" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1625463095" rel="stylesheet">
+    <link href="/css/hybrid.css?1625463095" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1625463095" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1625463095" rel="stylesheet">
+    <link href="/css/auto-complete.css?1625463095" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1625463095" rel="stylesheet">
+    <link href="/css/theme.css?1625463095" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1625463095" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1610760304" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1625463095" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1610760304"></script>
+    <script src="/js/jquery-3.3.1.min.js?1625463095"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1610760304"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1610760304"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1625463095"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1625463095"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1610760304"></script>
+<script type="text/javascript" src="/js/search.js?1625463095"></script>
 
     
   </div>
@@ -94,74 +94,6 @@
           
       </a>
       
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/1-cli-installation/1-ver-1/" title="AWS CLI phiên bản 1" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/1-cli-installation/1-ver-1/">
-          <b>1.1. </b>AWS CLI phiên bản 1
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/1-cli-installation/2-ver-2/" title="AWS CLI phiên bản 2" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/1-cli-installation/2-ver-2/">
-          <b>1.2. </b>AWS CLI phiên bản 2
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
               
     </li>
   
@@ -421,11 +353,11 @@
     <section id="footer">
       <left>
     
-    
-
-    
-
-    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7834096&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
 </left>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -475,7 +407,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -499,12 +439,74 @@
 
 
 
-	<p>AWS Command Line Interface (AWS CLI) có hai phiên bản.</p>
-<p>Để kiểm tra phiên bản đang cài đặt trên hệ thống của bạn, chạy lệnh <code>aws --version</code>. Giá trị trả về là thông tin phiên bản mà bạn đã cài đặt.</p>
+	<h4 id="tổng-quan">Tổng quan</h4>
+<p>AWS Command Line Interface (AWS CLI) có hai phiên bản. Để đảm bảo tính thực tế của bài lab này, bạn sẽ chỉ thực hành cài đặt AWS CLI v2 cho Windows và Ubuntu vì nó đơn giản, thuận tiện, và đầy đủ hơn AWS CLI v1 rất nhiều.</p>
 <ul>
-<li><a href="1-ver-1/">AWS CLI phiên bản 1</a>: AWS CLI phiên bản 1 là bản AWS CLI nguyên bản đầu tiên và vẫn sẽ được AWS hỗ trợ.</li>
-<li><a href="2-ver-2/">AWS CLI phiên bản 2</a>: AWS CLI phiên bản 2 là bản AWS CLI mới nhất hỗ trợ tất cả các tính năng mới nhất của AWS. Một số tính năng có ở phiên bản 2 không được hỗ trợ tại phiên bản 1 và bạn cần phải nâng cấp phiên bản để sử dụng các tính năng đó.</li>
+<li><strong>AWS CLI phiên bản 1</strong> (AWS CLI v1): là bản AWS CLI nguyên bản đầu tiên và vẫn sẽ được AWS hỗ trợ.</li>
+<li><strong>AWS CLI phiên bản 2</strong> (AWS CLI v2): là bản AWS CLI mới nhất hỗ trợ tất cả các tính năng mới nhất của AWS. Một số tính năng có ở phiên bản 2 không được hỗ trợ tại phiên bản 1 và bạn cần phải nâng cấp phiên bản để sử dụng các tính năng đó.</li>
 </ul>
+
+<div class="notices note" ><p>Nếu bạn đã cài đặt cả hai phiên bản, máy tính của bạn sẽ sử dụng phiên bản đầu tiên được tìm thấy vì AWS CLI phiên bản 1 và 2 sử dụng cùng một lệnh <code>aws</code>. Do đó, AWS khuyến nghị gỡ cài đặt AWS CLI phiên bản 1 và chỉ sử dụng AWS CLI phiên bản 2.</p>
+</div>
+
+<p><strong>Nội dung</strong></p>
+<ul>
+<li><a href="#t%E1%BB%95ng-quan">Tổng quan</a></li>
+<li><a href="#c%C3%A0i-%C4%91%E1%BA%B7t-aws-cli-tr%C3%AAn-windows">Cài đặt AWS CLI trên Windows</a></li>
+<li><a href="#c%C3%A0i-%C4%91%E1%BA%B7t-aws-cli-tr%C3%AAn-ubuntu">Cài đặt AWS CLI trên Ubuntu</a></li>
+</ul>
+<h4 id="cài-đặt-aws-cli-trên-windows">Cài đặt AWS CLI trên Windows</h4>
+<p>Trước khi cài đặt hoặc cập nhật AWS CLI phiên bản 2 trên Windows, hãy đảm bảo rằng bạn có phiên bản hệ điều hành là <strong>64-bit</strong> của Windows XP hoặc mới hơn và Quyền <strong>Administrator</strong> để cài đặt phần mềm.</p>
+<ol>
+<li>Tải bộ cài MSI tương ứng với hệ điều hành Windows (64-bit):
+<ul>
+<li>Bộ cài AWS CLI phiên bản mới nhất: <a href="https://awscli.amazonaws.com/AWSCLIV2.msi">https://awscli.amazonaws.com/AWSCLIV2.msi</a></li>
+<li>Để tải phiên bản AWS CLI nhất định: Thêm dấu gạch nối và số phiên bản vào tên tập tin. (VD: phiên bản 2.0.30 sẽ là AWSCLIV2-2.0.30.msi và liên kết sẽ là <a href="https://awscli.amazonaws.com/AWSCLIV2-2.0.30.msi">https://awscli.amazonaws.com/AWSCLIV2-2.0.30.msi</a>)</li>
+</ul>
+</li>
+<li>Chạy bộ cài MSI vừa tải và thực hiện theo các hướng dẫn trên màn hình. Mặc định, AWS CLI phiên bản 2 cài đặt tại đường dẫn <strong>C:\Program Files\Amazon\AWSCLIV2</strong>.</li>
+<li>Để kiểm tra lại kết quả cài đặt, dùng lệnh <code>aws --version</code> trong cửa sổ lệnh Windows (Mở <strong>Start menu</strong>, tìm <strong>cmd</strong> để chạy <strong>Command prompt</strong>).</li>
+</ol>
+<p><img src="../../images/1_SuccessWindows.png?width=60pc" alt="Success Windows">
+
+<div class="notices tip" ><p>Nếu Windows không thể tìm thấy lệnh khi chạy lệnh, bạn có thể cần phải đóng và mở lại cửa sổ lệnh để làm mới đường dẫn hoặc phải tự tay <a href="https://docs.aws.amazon.com/cli/latest/userguide/install-windows.html#awscli-install-windows-path">thêm thư mục cài đặt vào biến môi trường PATH của hệ điều hành</a>.</p>
+</div>
+</p>
+<h4 id="cài-đặt-aws-cli-trên-ubuntu">Cài đặt AWS CLI trên Ubuntu</h4>
+<p>Bạn có thể thử cài đặt AWS CLI trên Ubuntu bằng cách khởi tạo một EC2 chạy hệ điều hành Ubuntu.</p>
+
+<div class="notices info" ><p>AWS CLI v2 sử dụng <strong>glibc</strong>, <strong>groff</strong>, và <strong>less</strong>. AWS hỗ trợ AWS CLI v2 trên phiên bản 64 bit của các Linux distro của CentOS, Fedora, Ubuntu, Linux ARM, Amazon Linux 1 và Amazon Linux 2. Ngoài ra, vì AWS không quản lý các repository của bên thứ ba, AWS không đảm bảo rằng chúng chứa phiên bản AWS CLI mới nhất.</p>
+</div>
+
+<ol>
+<li>Tải file cài đặt AWS CLI v2:
+<ul>
+<li><strong>Sử dụng lệnh curl</strong> – Tùy chọn <strong>-o</strong> chỉ định gói được tải xuống từ URL sẽ được ghi vào tệp tên <strong>awscliv2.zip</strong>.
+<ul>
+<li>Tải phiên bản hiện tại của AWS CLI, sử dụng lệnh sau:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl <span style="color:#e6db74">&#34;https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip&#34;</span> -o <span style="color:#e6db74">&#34;awscliv2.zip&#34;</span>
+</code></pre></div></li>
+<li>Tải phiên bản cụ thể của AWS CLI, thêm dấu gạch nối và số phiên bản vào tên tập tin. Phiên bản 2.0.30 sẽ là <strong>awscli-exe-linux-x86_64-2.0.30.zip</strong> và câu lệnh sẽ là:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl <span style="color:#e6db74">&#34;https://awscli.amazonaws.com/*awscli-exe-linux-x86_64-2.0.30.zip*&#34;</span> -o <span style="color:#e6db74">&#34;awscliv2.zip&#34;</span>
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Tải chương trình giải nén tập tin của Ubunut bằng lệnh
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ Sudo apt install unzip
+</code></pre></div></li>
+<li>Giải nén file <strong>awscliv2.zip</strong>.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ unzip awscliv2.zip
+</code></pre></div></li>
+<li>Chạy bộ cài đặt. Lệnh cài đặt sử dụng tập tin <strong>install</strong> trong thư mục vừa giải nén. Mặc định, chương trình sẽ được cài đặt vào <strong>/usr/local/aws-cli</strong> và được tạo symbolic link trong <strong>/usr/local/bin</strong>. Lệnh cài đặt sẽ cần đến <strong>sudo</strong> nhằm có quyền ghi tập tin vào các thư mục hệ thống.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo ./aws/install
+</code></pre></div></li>
+<li>Chắc chắn rằng AWS CLI đã được cài đặt với
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ aws --version
+</code></pre></div></li>
+</ol>
+<p><img src="../../images/1_SuccessUbuntu.png?width=60pc" alt="Success Ubuntu"></p>
 
 
 
@@ -551,24 +553,6 @@
 
                     
                     
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
                     
 
                     
@@ -580,24 +564,8 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
                         
-            
-            
-                
+                        
                     
                 
                 
@@ -704,7 +672,7 @@
 			<a class="nav nav-prev" href="/vi/" title="Sử dụng AWS CLI trên Windows/Ubuntu"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/vi/1-cli-installation/1-ver-1/" title="AWS CLI phiên bản 1" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/vi/2-basic-setup/" title="Thiết Lập AWS CLI Cơ Bản" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -714,19 +682,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1610760304"></script>
-    <script src="/js/perfect-scrollbar.min.js?1610760304"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1610760304"></script>
-    <script src="/js/jquery.sticky.js?1610760304"></script>
-    <script src="/js/featherlight.min.js?1610760304"></script>
-    <script src="/js/highlight.pack.js?1610760304"></script>
+    <script src="/js/clipboard.min.js?1625463095"></script>
+    <script src="/js/perfect-scrollbar.min.js?1625463095"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1625463095"></script>
+    <script src="/js/jquery.sticky.js?1625463095"></script>
+    <script src="/js/featherlight.min.js?1625463095"></script>
+    <script src="/js/highlight.pack.js?1625463095"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1610760304"></script>
-    <script src="/js/learn.js?1610760304"></script>
-    <script src="/js/hugo-learn.js?1610760304"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1625463095"></script>
+    <script src="/js/learn.js?1625463095"></script>
+    <script src="/js/hugo-learn.js?1625463095"></script>
 
-    <link href="/mermaid/mermaid.css?1610760304" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1610760304"></script>
+    <link href="/mermaid/mermaid.css?1625463095" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1625463095"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

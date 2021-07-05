@@ -12,21 +12,21 @@
     <title>Các Ví Dụ với AWS CLI :: Sử dụng AWS CLI trên Windows/Ubuntu</title>
 
     
-    <link href="/css/nucleus.css?1610760305" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1610760305" rel="stylesheet">
-    <link href="/css/hybrid.css?1610760305" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1610760305" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1610760305" rel="stylesheet">
-    <link href="/css/auto-complete.css?1610760305" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1610760305" rel="stylesheet">
-    <link href="/css/theme.css?1610760305" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1610760305" rel="stylesheet">
+    <link href="/css/nucleus.css?1625463095" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1625463095" rel="stylesheet">
+    <link href="/css/hybrid.css?1625463095" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1625463095" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1625463095" rel="stylesheet">
+    <link href="/css/auto-complete.css?1625463095" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1625463095" rel="stylesheet">
+    <link href="/css/theme.css?1625463095" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1625463095" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1610760305" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1625463095" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1610760305"></script>
+    <script src="/js/jquery-3.3.1.min.js?1625463095"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1610760305"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1610760305"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1625463095"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1625463095"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1610760305"></script>
+<script type="text/javascript" src="/js/search.js?1625463095"></script>
 
     
   </div>
@@ -94,74 +94,6 @@
           
       </a>
       
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/1-cli-installation/1-ver-1/" title="AWS CLI phiên bản 1" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/1-cli-installation/1-ver-1/">
-          <b>1.1. </b>AWS CLI phiên bản 1
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/1-cli-installation/2-ver-2/" title="AWS CLI phiên bản 2" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/1-cli-installation/2-ver-2/">
-          <b>1.2. </b>AWS CLI phiên bản 2
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
               
     </li>
   
@@ -421,11 +353,11 @@
     <section id="footer">
       <left>
     
-    
-
-    
-
-    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7834096&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
 </left>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -507,8 +439,11 @@
 
 
 
-	<p>This section describes how to use the AWS CLI to work on creating infrastructure on AWS.</p>
-<p><strong>Nội dung:</strong></p>
+	<p>Ở phần này, bạn sẽ trải nghiệm việc sử dụng AWS CLI để tạo tài nguyên trên AWS. Các lệnh ví dụ bên dưới được áp dụng cho hệ điều hành Linux hoặc MacOS. Bạn có thể sử dụng <strong>VI Editor</strong> để ghi các lệnh dưới vào các shell scripts và khởi chạy chúng. Hãy ôn lại cách sử dụng <strong>Vi Editor</strong> ở bài <a href="https://000006.awsstudygroup.com/vi/1-prerequisite/3-deploy-sharenote/">TRIỂN KHAI MÁY ẢO SHARENOTE</a></p>
+<p>Các câu lệnh <strong>VI Editor</strong> cần dùng:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo vi &lt;file.sh&gt; <span style="color:#75715e">#tạo và chỉnh sửa shell script</span>
+$ sudo chmod +x &lt;file.sh&gt; <span style="color:#75715e">#thiết lập thuộc tính khởi chạy cho shell script</span>
+</code></pre></div><p><strong>Nội dung:</strong></p>
 <ul>
 <li><a href="#1-t%E1%BA%A1o-m%E1%BB%99t-vpc">1. Tạo một VPC</a></li>
 <li><a href="#2-t%E1%BA%A1o-c%C3%A1c-subnet-trong-vpc">2. Tạo các Subnet trong VPC</a></li>
@@ -711,7 +646,7 @@ aws s3api put-bucket-policy --bucket<span style="color:#f92672">=</span>$S3_BUCK
 					<a href="/5-examples/_index.vi.files/1-CreateVpc.sh" >
 						1-CreateVpc.sh
 					</a>
-					(0 ko)
+					(0 KB)
 				</li>
 			
 		
@@ -723,7 +658,7 @@ aws s3api put-bucket-policy --bucket<span style="color:#f92672">=</span>$S3_BUCK
 					<a href="/5-examples/_index.vi.files/2-CreateSubnets.sh" >
 						2-CreateSubnets.sh
 					</a>
-					(2 ko)
+					(2 KB)
 				</li>
 			
 		
@@ -735,7 +670,7 @@ aws s3api put-bucket-policy --bucket<span style="color:#f92672">=</span>$S3_BUCK
 					<a href="/5-examples/_index.vi.files/3-CreateIGW-NGW.sh" >
 						3-CreateIGW-NGW.sh
 					</a>
-					(0 ko)
+					(0 KB)
 				</li>
 			
 		
@@ -747,7 +682,7 @@ aws s3api put-bucket-policy --bucket<span style="color:#f92672">=</span>$S3_BUCK
 					<a href="/5-examples/_index.vi.files/4-CreateRouteTable.sh" >
 						4-CreateRouteTable.sh
 					</a>
-					(0 ko)
+					(0 KB)
 				</li>
 			
 		
@@ -759,7 +694,7 @@ aws s3api put-bucket-policy --bucket<span style="color:#f92672">=</span>$S3_BUCK
 					<a href="/5-examples/_index.vi.files/5-CreateTransitGW.sh" >
 						5-CreateTransitGW.sh
 					</a>
-					(0 ko)
+					(0 KB)
 				</li>
 			
 		
@@ -771,7 +706,7 @@ aws s3api put-bucket-policy --bucket<span style="color:#f92672">=</span>$S3_BUCK
 					<a href="/5-examples/_index.vi.files/6-ImplementCloudTrail.sh" >
 						6-ImplementCloudTrail.sh
 					</a>
-					(1 ko)
+					(1 KB)
 				</li>
 			
 		
@@ -783,7 +718,7 @@ aws s3api put-bucket-policy --bucket<span style="color:#f92672">=</span>$S3_BUCK
 					<a href="/5-examples/_index.vi.files/7-S3GW-VPCEndpoint.sh" >
 						7-S3GW-VPCEndpoint.sh
 					</a>
-					(1 ko)
+					(1 KB)
 				</li>
 			
 		
@@ -841,42 +776,8 @@ aws s3api put-bucket-policy --bucket<span style="color:#f92672">=</span>$S3_BUCK
 
                     
                     
-                        
-                    
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
             
         
@@ -1002,19 +903,19 @@ aws s3api put-bucket-policy --bucket<span style="color:#f92672">=</span>$S3_BUCK
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1610760305"></script>
-    <script src="/js/perfect-scrollbar.min.js?1610760305"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1610760305"></script>
-    <script src="/js/jquery.sticky.js?1610760305"></script>
-    <script src="/js/featherlight.min.js?1610760305"></script>
-    <script src="/js/highlight.pack.js?1610760305"></script>
+    <script src="/js/clipboard.min.js?1625463095"></script>
+    <script src="/js/perfect-scrollbar.min.js?1625463095"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1625463095"></script>
+    <script src="/js/jquery.sticky.js?1625463095"></script>
+    <script src="/js/featherlight.min.js?1625463095"></script>
+    <script src="/js/highlight.pack.js?1625463095"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1610760305"></script>
-    <script src="/js/learn.js?1610760305"></script>
-    <script src="/js/hugo-learn.js?1610760305"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1625463095"></script>
+    <script src="/js/learn.js?1625463095"></script>
+    <script src="/js/hugo-learn.js?1625463095"></script>
 
-    <link href="/mermaid/mermaid.css?1610760305" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1610760305"></script>
+    <link href="/mermaid/mermaid.css?1625463095" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1625463095"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
