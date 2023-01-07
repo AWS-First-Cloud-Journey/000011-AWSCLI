@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
-    <loc>/vi/1-cli-installation/</loc>
-    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
+    <loc>/vi/8-network/8.1-vpc/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/1-cli-installation/"
+                href="/8-network/8.1-vpc/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/1-cli-installation/"
+                href="/vi/8-network/8.1-vpc/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>/vi/1-introduce/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/1-introduce/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/1-introduce/"
+                />
+  </url><url>
     <loc>/vi/</loc>
-    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -30,99 +37,139 @@
                 hreflang="vi"
                 href="/vi/"
                 />
-  </url>
-  
-  <url>
-    <loc>/vi/4-sso-in-cli/1-config-sso-in-cli/</loc>
-    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
+  </url><url>
+    <loc>/vi/8-network/8.2-igw/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/4-sso-in-cli/1-config-sso-in-cli/"
+                href="/8-network/8.2-igw/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/4-sso-in-cli/1-config-sso-in-cli/"
+                href="/vi/8-network/8.2-igw/"
                 />
-  </url>
-  
-  <url>
-    <loc>/vi/4-sso-in-cli/2-using-sso-in-cli/</loc>
-    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
+  </url><url>
+    <loc>/vi/2-prerequiste/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/4-sso-in-cli/2-using-sso-in-cli/"
+                href="/2-prerequiste/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/4-sso-in-cli/2-using-sso-in-cli/"
+                href="/vi/2-prerequiste/"
                 />
-  </url>
-  
-  <url>
-    <loc>/vi/2-basic-setup/</loc>
-    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
+  </url><url>
+    <loc>/vi/3-installcli/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/2-basic-setup/"
+                href="/3-installcli/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/2-basic-setup/"
+                href="/vi/3-installcli/"
                 />
-  </url>
-  
-  <url>
-    <loc>/vi/3-multi-profile/</loc>
-    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
+  </url><url>
+    <loc>/vi/4-infras/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/3-multi-profile/"
+                href="/4-infras/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/3-multi-profile/"
+                href="/vi/4-infras/"
                 />
-  </url>
-  
-  <url>
-    <loc>/vi/4-sso-in-cli/</loc>
-    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
+  </url><url>
+    <loc>/vi/5-s3/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/4-sso-in-cli/"
+                href="/5-s3/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/4-sso-in-cli/"
+                href="/vi/5-s3/"
                 />
-  </url>
-  
-  <url>
-    <loc>/vi/5-examples/</loc>
-    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
+  </url><url>
+    <loc>/vi/6-sns/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/5-examples/"
+                href="/6-sns/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/5-examples/"
+                href="/vi/6-sns/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>/vi/7-iam/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/7-iam/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/7-iam/"
+                />
+  </url><url>
+    <loc>/vi/8-network/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/8-network/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/8-network/"
+                />
+  </url><url>
+    <loc>/vi/9-ec2/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/9-ec2/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/9-ec2/"
+                />
+  </url><url>
+    <loc>/vi/10-troubleshoot/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/10-troubleshoot/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/10-troubleshoot/"
+                />
+  </url><url>
+    <loc>/vi/11-cleanup/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/11-cleanup/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/11-cleanup/"
+                />
+  </url><url>
     <loc>/vi/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -134,9 +181,7 @@
                 hreflang="vi"
                 href="/vi/categories/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/vi/tags/</loc>
     <xhtml:link
                 rel="alternate"
@@ -149,5 +194,4 @@
                 href="/vi/tags/"
                 />
   </url>
-  
 </urlset>
