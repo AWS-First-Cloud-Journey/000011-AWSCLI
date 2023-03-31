@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>AWS CLI với Internet Gateway on Thực hành với AWS CLI</title>
+    <title>AWS CLI với Internet Gateway on LÀM QUEN VỚI AWS CLI</title>
     <link>/vi/8-network/8.2-igw/</link>
-    <description>Recent content in AWS CLI với Internet Gateway on Thực hành với AWS CLI</description>
+    <description>Recent content in AWS CLI với Internet Gateway on LÀM QUEN VỚI AWS CLI</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="/vi/8-network/8.2-igw/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
