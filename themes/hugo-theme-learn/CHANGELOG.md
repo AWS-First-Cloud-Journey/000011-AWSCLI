@@ -11,7 +11,7 @@
 
 #### Enhancements
 
-- [**enhancement**] **Delete** html5shiv-printshiv.min.js [#319](https://github.com/matcornic/hugo-theme-learn/pull/319)
+- [**enhancement**] Delete html5shiv-printshiv.min.js [#319](https://github.com/matcornic/hugo-theme-learn/pull/319)
 - [**enhancement**] remove html5shiv [#315](https://github.com/matcornic/hugo-theme-learn/pull/315)
 - [**enhancement**] Fix deprecated .Hugo, .UniqueID and .URL references [#303](https://github.com/matcornic/hugo-theme-learn/pull/303)
 - [**enhancement**] remove unneeded type="text/css" [#297](https://github.com/matcornic/hugo-theme-learn/pull/297)
@@ -172,7 +172,7 @@
 
 - [**closed**] Extracted menu footer content to separate partial file [#35](https://github.com/matcornic/hugo-theme-learn/pull/35)
 - [**closed**] feat: style Hugo figure shortcode [#33](https://github.com/matcornic/hugo-theme-learn/pull/33)
-- [**closed**] Fix URL for 'Edit this page' on **Windows** [#27](https://github.com/matcornic/hugo-theme-learn/pull/27)
+- [**closed**] Fix URL for 'Edit this page' on Windows [#27](https://github.com/matcornic/hugo-theme-learn/pull/27)
 - [**closed**] Revert "Menu generation using Content file instead directories" [#10](https://github.com/matcornic/hugo-theme-learn/pull/10)
 - [**closed**] (#25) use .Site.BaseURL to lcoate static assets [#26](https://github.com/matcornic/hugo-theme-learn/pull/26)
 - [**closed**] Menu ordering and definition in config.toml [#8](https://github.com/matcornic/hugo-theme-learn/pull/8)
