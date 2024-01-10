@@ -4,8 +4,6 @@
     <title>Creating EC2 Using AWS CLI on GETTING STARTED WITH THE AWS CLI</title>
     <link>/9-ec2/</link>
     <description>Recent content in Creating EC2 Using AWS CLI on GETTING STARTED WITH THE AWS CLI</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <atom:link href="/9-ec2/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="/9-ec2/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
