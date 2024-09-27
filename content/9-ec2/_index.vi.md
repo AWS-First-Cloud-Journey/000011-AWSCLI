@@ -1,6 +1,6 @@
 ---
 title : "Tạo EC2 sử dụng AWS CLI"
-date :  "`r Sys.Date()`" 
+date : "`r Sys.Date()`"
 weight : 9
 chapter : false
 pre : " <b> 9. </b> "
@@ -8,78 +8,87 @@ pre : " <b> 9. </b> "
 
 #### Tạo EC2 sử dụng AWS CLI
 
-1. Từ hạ tầng mạng đã tạo bằng **CLI**, chúng ta sẽ tạo **EC2**. Trước hết, tạo **AWS Key pair**
+1. Từ hạ tầng mạng đã tạo bằng **CLI**, chúng ta sẽ tạo **EC2**. Trước hết, tạo **AWS Key pair**:
 
-```
-aws ec2 create-key-pair --key-name MyKeyPair --query "KeyMaterial" --output text > MyKeyPair.pem
-```
+    ```bash
+    aws ec2 create-key-pair --key-name MyKeyPair --query "KeyMaterial" --output text > MyKeyPair.pem
+    ```
 
-![AWS CLI](/images/ec2-net/0001.png?featherlight=false&width=90pc)
+    ![AWS CLI](/images/ec2-net/0001.png?featherlight=false&width=90pc)
 
-2. Kiểm tra trên giao diện, chúng ta xác nhận đã tạo thành công **Key pair**
+2. Kiểm tra trên giao diện, xác nhận đã tạo thành công **Key pair**.
 
-![AWS CLI](/images/ec2-net/0002.png?featherlight=false&width=90pc)
+    ![AWS CLI](/images/ec2-net/0002.png?featherlight=false&width=90pc)
 
-3. Sử dụng lệnh để phân quyền:
+3. Phân quyền cho file **Key pair**:
 
-```
-chmod 400 MyKeyPair.pem
-```
+    ```bash
+    chmod 400 MyKeyPair.pem
+    ```
 
-![AWS CLI](/images/ec2-net/0003.png?featherlight=false&width=90pc)
+    ![AWS CLI](/images/ec2-net/0003.png?featherlight=false&width=90pc)
 
-4. Tạo **Security group** cho **EC2**
+4. Tạo **Security group** cho **EC2**:
 
-```
-aws ec2 create-security-group --group-name SSHAccess --description "Security group for SSH access" --vpc-id **VPC ID**
-```
+    ```bash
+    aws ec2 create-security-group --group-name SSHAccess --description "Security group for SSH access" --vpc-id <VPC ID>
+    ```
 
-![AWS CLI](/images/ec2-net/0004.png?featherlight=false&width=90pc)
+    ![AWS CLI](/images/ec2-net/0004.png?featherlight=false&width=90pc)
 
-5. Sau đó, chúng ta kiểm tra **Security group** đã tạo.
+5. Kiểm tra **Security group** vừa tạo.
 
-![AWS CLI](/images/ec2-net/0005.png?featherlight=false&width=90pc)
+    ![AWS CLI](/images/ec2-net/0005.png?featherlight=false&width=90pc)
 
-6. Thực hiện cho phép để SSH:
+6. Cấp quyền để SSH:
 
-```
-aws ec2 authorize-security-group-ingress --group-id **SG ID** --protocol tcp --port 22 --cidr 0.0.0.0/0
-```
+    ```bash
+    aws ec2 authorize-security-group-ingress --group-id <SG ID> --protocol tcp --port 22 --cidr 0.0.0.0/0
+    ```
 
-![AWS CLI](/images/ec2-net/0006.png?featherlight=false&width=90pc)
+    ![AWS CLI](/images/ec2-net/0006.png?featherlight=false&width=90pc)
 
-7. Chuẩn bị hoàn tất, chúng ta thực hiện khởi tạo **EC2**
+7. Khởi tạo **EC2**:
 
-```
-aws ec2 run-instances --image-id **AMI** --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids **SG ID** --subnet-id **Subnet ID**
-```
+    ```bash
+    aws ec2 run-instances --image-id <AMI ID> --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids <SG ID> --subnet-id <Subnet ID>
+    ```
 
-![AWS CLI](/images/ec2-net/0007.png?featherlight=false&width=90pc)
+    ![AWS CLI](/images/ec2-net/0007.png?featherlight=false&width=90pc)
 
-8. Đợi khoảng 2 phút, xem trạng thái của **EC2 isntance**
+8. Chờ khoảng 2 phút, kiểm tra trạng thái của **EC2 instance**:
 
-```
-aws ec2 describe-instances --instance-id **Instance ID** --query "Reservations[*].Instances[*].{State:State.Name,Address:PublicIpAddress}"
-```
+    ```bash
+    aws ec2 describe-instances --instance-id <Instance ID> --query "Reservations[*].Instances[*].{State:State.Name,Address:PublicIpAddress}"
+    ```
 
-![AWS CLI](/images/ec2-net/0008.png?featherlight=false&width=90pc)
+    ![AWS CLI](/images/ec2-net/0008.png?featherlight=false&width=90pc)
 
-9. Khi instance đang ở trạng thái **running**. Chúng ta thực hiện kết nối
+9. Khi **instance** đang ở trạng thái **running**, thực hiện kết nối:
 
-```
-ssh -i "MyKeyPair.pem" ec2-user@IP Public
-```
+    ```bash
+    ssh -i "MyKeyPair.pem" ec2-user@<IP Public>
+    ```
 
-![AWS CLI](/images/ec2-net/0009.png?featherlight=false&width=90pc)
+    ![AWS CLI](/images/ec2-net/0009.png?featherlight=false&width=90pc)
 
-10. Sau khi đã sử dụng, chúng ta thực hiện **terminate** bằng lệnh:
+10. Sau khi hoàn thành, **terminate** instance:
 
-```
-aws ec2 terminate-instance --instances-ids **Instance ID**
-```
+    ```bash
+    aws ec2 terminate-instances --instance-ids <Instance ID>
+    ```
 
-![AWS CLI](/images/ec2-net/00010.png?featherlight=false&width=90pc)
+    ![AWS CLI](/images/ec2-net/00010.png?featherlight=false&width=90pc)
 
-11. Sau khoảng 2-3 phút sau. chúng ta kiểm tra lại trạng thái của **instance**
+11. Sau 2-3 phút, kiểm tra lại trạng thái **instance**:
 
-![AWS CLI](/images/ec2-net/00011.png?featherlight=false&width=90pc)
+    ```bash
+    aws ec2 describe-instances --instance-id <Instance ID> --query "Reservations[*].Instances[*].State.Name"
+    ```
+
+    ![AWS CLI](/images/ec2-net/00011.png?featherlight=false&width=90pc)
+
+{{% notice tip %}} 
+Lưu ý: Hãy bảo mật key pair của bạn cẩn thận và xóa nó khi không sử dụng.
+{{% /notice %}}
+

@@ -1,50 +1,79 @@
 ---
-title : "AWS CLI với Amazon S3"
-date :  "`r Sys.Date()`" 
-weight : 5
-chapter : false
-pre : " <b> 5. </b> "
+title: "AWS CLI với Amazon S3"
+date: "2024-09-27"
+weight: 5
+chapter: false
+pre: " <b> 5. </b> "
 ---
 
-#### Sử dụng AWS CLI để khởi tạo tài nguyên S3.
+#### **Mục lục**
+<!-- TOC created with Markdown All in One -->
+<!-- toc -->
 
-1. Thực hiện sử dụng **CLI** để tương tác với S3. Tạo **S3** bucket.
+- [**Mục lục**](#mục-lục)
+- [Sử dụng AWS CLI để khởi tạo tài nguyên S3](#sử-dụng-aws-cli-để-khởi-tạo-tài-nguyên-s3)
 
-```
-aws s3 mb s3://aws-cli-2000
-```
+<!-- /TOC -->
 
-![AWS CLI](/images/3-s3/0001.png?featherlight=false&width=10pc)
+#### Sử dụng AWS CLI để khởi tạo tài nguyên S3
 
-2. Kiểm tra danh sách **s3 bucket**
+{{% notice info %}} **Giới thiệu**: Trong phần này, chúng ta sẽ sử dụng AWS CLI để tương tác với dịch vụ S3 của AWS. Các thao tác bao gồm việc tạo và quản lý các **bucket** và **object** trong S3. {{% /notice %}}
 
-```
-aws s3 ls
-```
+1. **Tạo S3 bucket**
 
-![AWS CLI](/images/3-s3/0002.png?featherlight=false&width=10pc)
+   Để tạo một **S3 bucket**, sử dụng lệnh sau:
 
-3. Kiểm tra object trong s3 bucket.
+   ```bash
+   aws s3 mb s3://aws-cli-2000
+   ```
 
-```
-aws s3 ls s3://bucket-name
-```
+   ![AWS CLI Tạo Bucket](/images/3-s3/0001.png?featherlight=false&width=90pc)
 
-![AWS CLI](/images/3-s3/0004.png?featherlight=false&width=10pc)
+{{% notice tip %}} Đảm bảo rằng bạn chọn một tên bucket duy nhất trên toàn cầu. {{% /notice %}}
 
-4. Sau đó chúng ta sẽ xóa object
+2. **Liệt kê danh sách các S3 bucket**
 
-```
-aws s3 rm s3://bucket-name/object
-```
+   Để xem danh sách các **bucket** hiện có trong tài khoản của bạn:
 
-![AWS CLI](/images/3-s3/0005.png?featherlight=false&width=10pc)
+   ```bash
+   aws s3 ls
+   ```
 
-5. Sau đó chúng ta xóa bucket.
+   ![AWS CLI Liệt Kê Bucket](/images/3-s3/0002.png?featherlight=false&width=90pc)
 
-```
-aws s3 rb s3://bucket-name
-```
+{{% notice warning %}} Nếu không thấy bucket nào, bạn cần đảm bảo rằng bạn đã có quyền truy cập vào AWS S3. {{% /notice %}}
 
-![AWS CLI](/images/3-s3/0006.png?featherlight=false&width=10pc)
+3. **Kiểm tra object trong S3 bucket**
+
+   Để liệt kê các **object** trong một bucket cụ thể:
+
+   ```bash
+   aws s3 ls s3://bucket-name
+   ```
+
+   ![AWS CLI Kiểm Tra Object](/images/3-s3/0004.png?featherlight=false&width=90pc)
+
+4. **Xóa object trong S3 bucket**
+
+   Khi cần xóa một **object** từ bucket:
+
+   ```bash
+   aws s3 rm s3://bucket-name/object
+   ```
+
+   ![AWS CLI Xóa Object](/images/3-s3/0005.png?featherlight=false&width=90pc)
+
+{{% notice note %}} **Lưu ý**: Việc xóa object không thể hoàn tác, hãy cẩn thận khi thực hiện lệnh này. {{% /notice %}}
+
+5. **Xóa S3 bucket**
+
+   Sau khi đã xóa toàn bộ object trong bucket, bạn có thể xóa bucket bằng lệnh sau:
+
+   ```bash
+   aws s3 rb s3://bucket-name
+   ```
+
+   ![AWS CLI Xóa Bucket](/images/3-s3/0006.png?featherlight=false&width=90pc)
+
+{{% notice warning %}} **Cảnh báo**: Chỉ có thể xóa bucket nếu nó rỗng. {{% /notice %}}
 

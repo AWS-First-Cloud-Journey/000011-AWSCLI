@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.99.1" />
+    <meta name="generator" content="Hugo 0.133.0">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>AWS CLI with Amazon S3 :: GETTING STARTED WITH THE AWS CLI</title>
 
     
-    <link href="/css/nucleus.css?1704870653" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1704870653" rel="stylesheet">
-    <link href="/css/hybrid.css?1704870653" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1704870653" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1704870653" rel="stylesheet">
-    <link href="/css/auto-complete.css?1704870653" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1704870653" rel="stylesheet">
-    <link href="/css/theme.css?1704870653" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1704870653" rel="stylesheet">
+    <link href="/css/nucleus.css?1727415373" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1727415373" rel="stylesheet">
+    <link href="/css/hybrid.css?1727415373" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1727415373" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1727415373" rel="stylesheet">
+    <link href="/css/auto-complete.css?1727415373" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1727415373" rel="stylesheet">
+    <link href="/css/theme.css?1727415373" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1727415373" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1704870653" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1727415373" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1704870653"></script>
+    <script src="/js/jquery-3.3.1.min.js?1727415373"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1704870653"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1704870653"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1727415373"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1727415373"></script>
 <script type="text/javascript">
     
-        var baseurl = "";
+        var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1704870653"></script>
+<script type="text/javascript" src="/js/search.js?1727415373"></script>
 
     
   </div>
@@ -88,7 +88,7 @@
         
         ">
       <a href="/1-introduce/">
-           <b> 1. </b> Introduction
+          <b> 1. </b>Introduction
           
             <i class="fas fa-check read-icon"></i>
           
@@ -114,7 +114,7 @@
         
         ">
       <a href="/2-prerequiste/">
-           <b> 2. </b> Preparation
+          <b>2.</b>Preparation
           
             <i class="fas fa-check read-icon"></i>
           
@@ -187,7 +187,7 @@
   
     
     <li data-nav-id="/5-s3/" title="AWS CLI with Amazon S3" class="dd-item 
-        parent
+        
         active
         
         ">
@@ -467,7 +467,7 @@
                   
                     
                     
-                      <option id="en" value="/5-s3/" selected>English</option>
+                      <option id="en" value="//localhost:1313/5-s3/" selected>English</option>
                     
                   
               
@@ -481,7 +481,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/5-s3/">Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/5-s3/">Tiếng Việt</option>
                     
                   
               
@@ -519,7 +519,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>10-01-2024</font></i>
+        <i><font color=orange>27-09-2024</font></i>
     </left>
     <left>
         <br>
@@ -609,32 +609,44 @@
 
 
 
-	<h4 id="use-the-aws-cli-to-initialize-an-s3-resource">Use the AWS CLI to initialize an S3 resource.</h4>
-<ol>
-<li>Implement using <strong>CLI</strong> to interact with S3. For example, create <strong>S3</strong> bucket.</li>
-</ol>
-<pre tabindex="0"><code>aws s3 mb s3://aws-cli-2000
-</code></pre><p><img src="/images/3-s3/0001.png?featherlight=false&amp;width=10pc" alt="AWS CLI"></p>
-<ol start="2">
-<li>Checklist <strong>s3 bucket</strong></li>
-</ol>
-<pre tabindex="0"><code>aws s3 ls
-</code></pre><p><img src="/images/3-s3/0002.png?featherlight=false&amp;width=10pc" alt="AWS CLI"></p>
-<ol start="3">
-<li>Check the object in the s3 bucket.</li>
-</ol>
-<pre tabindex="0"><code>aws s3 ls s3://bucket-name
-</code></pre><p><img src="/images/3-s3/0004.png?featherlight=false&amp;width=10pc" alt="AWS CLI"></p>
-<ol start="4">
-<li>Then, we will delete the object</li>
-</ol>
-<pre tabindex="0"><code>aws s3 rm s3://bucket-name/object
-</code></pre><p><img src="/images/3-s3/0005.png?featherlight=false&amp;width=10pc" alt="AWS CLI"></p>
-<ol start="5">
-<li>Then, we delete the bucket.</li>
-</ol>
-<pre tabindex="0"><code>aws s3 rb s3://bucket-name
-</code></pre><p><img src="/images/3-s3/0006.png?featherlight=false&amp;width=10pc" alt="AWS CLI"></p>
+	<h4 id="introduction"><strong>Introduction</strong></h4>
+<p>In this guide, we will walk through how to use the AWS CLI to perform basic operations with Amazon S3, such as creating a bucket, listing objects, and deleting both objects and the bucket.</p>
+<h4 id="step-1-create-an-s3-bucket"><strong>Step 1: Create an S3 Bucket</strong></h4>
+<p>To create an S3 bucket using the AWS CLI, execute the following command. Make sure to replace <code>aws-cli-2000</code> with your desired bucket name.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws s3 mb s3://aws-cli-2000
+</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/3-s3/0001.png?featherlight=false&width=90pc"></p>
+
+<div class="notices info" ><p>Make sure your bucket name is unique and complies with AWS naming conventions.</p>
+</div>
+
+<h4 id="step-2-list-all-s3-buckets"><strong>Step 2: List All S3 Buckets</strong></h4>
+<p>After creating the bucket, use the following command to list all the available S3 buckets:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws s3 ls
+</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/3-s3/0002.png?featherlight=false&width=90pc"></p>
+<h4 id="step-3-list-objects-in-a-specific-bucket"><strong>Step 3: List Objects in a Specific Bucket</strong></h4>
+<p>To view the contents of a specific S3 bucket, use the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws s3 ls s3://bucket-name
+</span></span></code></pre></div><p>Replace <code>bucket-name</code> with the name of the bucket you want to inspect.</p>
+<p><img alt="AWS CLI" src="/images/3-s3/0004.png?featherlight=false&width=90pc"></p>
+<h4 id="step-4-delete-an-object-from-the-bucket"><strong>Step 4: Delete an Object from the Bucket</strong></h4>
+<p>To remove an object from the S3 bucket, run the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws s3 rm s3://bucket-name/object
+</span></span></code></pre></div><p>Replace <code>bucket-name</code> with your bucket name and <code>object</code> with the specific object you want to delete.</p>
+<p><img alt="AWS CLI" src="/images/3-s3/0005.png?featherlight=false&width=90pc"></p>
+
+<div class="notices warning" ><p>Deleting an object is permanent and cannot be undone.</p>
+</div>
+
+<h4 id="step-5-delete-the-s3-bucket"><strong>Step 5: Delete the S3 Bucket</strong></h4>
+<p>Finally, once all objects are removed, you can delete the bucket itself with the command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws s3 rb s3://bucket-name
+</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/3-s3/0006.png?featherlight=false&width=90pc"></p>
+
+<div class="notices tip" ><p>Ensure the bucket is empty before attempting to delete it. Use <code>--force</code> to delete non-empty buckets, but exercise caution.</p>
+</div>
+
+<h4 id="conclusion"><strong>Conclusion</strong></h4>
+<p>By following these steps, you’ve learned how to create, list, and delete S3 buckets and objects using the AWS CLI. These fundamental commands will help you manage your S3 resources efficiently.</p>
 
 
 
@@ -909,19 +921,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1704870653"></script>
-    <script src="/js/perfect-scrollbar.min.js?1704870653"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1704870653"></script>
-    <script src="/js/jquery.sticky.js?1704870653"></script>
-    <script src="/js/featherlight.min.js?1704870653"></script>
-    <script src="/js/highlight.pack.js?1704870653"></script>
+    <script src="/js/clipboard.min.js?1727415373"></script>
+    <script src="/js/perfect-scrollbar.min.js?1727415373"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1727415373"></script>
+    <script src="/js/jquery.sticky.js?1727415373"></script>
+    <script src="/js/featherlight.min.js?1727415373"></script>
+    <script src="/js/highlight.pack.js?1727415373"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1704870653"></script>
-    <script src="/js/learn.js?1704870653"></script>
-    <script src="/js/hugo-learn.js?1704870653"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1727415373"></script>
+    <script src="/js/learn.js?1727415373"></script>
+    <script src="/js/hugo-learn.js?1727415373"></script>
 
-    <link href="/mermaid/mermaid.css?1704870653" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1704870653"></script>
+    <link href="/mermaid/mermaid.css?1727415373" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1727415373"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

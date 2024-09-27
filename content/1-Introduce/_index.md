@@ -1,25 +1,32 @@
 ---
-title : "Introduction"
-date : "`r Sys.Date()`"
-weight : 1
-chapter : false
-pre : " <b> 1. </b> "
+title: "Introduction"
+date: "`r Sys.Date()`"
+weight: 1
+chapter: false
+pre: "<b> 1. </b>"
 ---
 
 #### Overview
 
-In this exercise, you will learn about the AWS CLI and use it to interact with AWS services.
+In this exercise, you will learn how to use the AWS Command Line Interface (CLI) to interact with AWS services.
 
 #### AWS CLI
 
-The AWS Command Line Interface (AWS CLI) is an open-source tool that allows you to interact with AWS services using command-line shell commands. With a simple setup process, the AWS CLI will enable you to run commands that deploy functionality equivalent to that provided by the AWS Management Console in the browser.
+The **AWS Command Line Interface (CLI)** is an open-source tool that enables you to interact with AWS services using commands in a terminal. It provides functionality equivalent to the AWS Management Console, allowing you to automate tasks and manage AWS resources more efficiently.
 
-AWS CLI supports the following command windows:
+The AWS CLI supports various command environments:
 
-- **Linux shells** – Use popular command window programs like bash, zsh and tcsh to run commands in Linux or macOS.
-- **Windows command line** – On Windows, run the command in the Windows command prompt (command prompt) or PowerShell.
-- **Remotely** – Run commands in an Amazon Elastic Compute Cloud (Amazon EC2) virtual machine through a command window such as PuTTY, SSH, or AWS Systems Manager.
+- **Linux Shells** – Use popular shells like Bash, Zsh, or Tcsh on Linux or macOS.
+- **Windows Command Line** – Run commands in the Windows Command Prompt or PowerShell.
+- **Remote Access** – Use tools like PuTTY, SSH, or AWS Systems Manager to run commands on an Amazon EC2 instance.
 
-All administration, management, and access to AWS resources in the AWS Management Console are available in the AWS API and CLI. New AWS features and services will be made available on the AWS Management Console via API and CLI immediately upon launch or within 180 days after that.
+All administrative tasks available in the AWS Management Console can be performed using the AWS CLI or API. New AWS services and features are made available in the CLI and API either immediately upon release or within 180 days.
 
-AWS CLI provides direct access to public APIs of AWS services. You can explore the capabilities of an AWS service with the AWS CLI and develop shell scripts to manage your resources. In addition to the API-equivalent low-level commands, many AWS services allow customizations on the AWS CLI. Customizations can include higher-level commands that simplify the use of services with complex APIs.
+The AWS CLI provides direct access to the public APIs of AWS services, enabling you to:
+
+- Explore and interact with AWS services.
+- Automate resource management through scripts.
+- Use higher-level commands that simplify interactions with services that have complex APIs.
+
+The AWS CLI is a powerful tool for managing cloud infrastructure efficiently and can be customized for advanced use cases.
+

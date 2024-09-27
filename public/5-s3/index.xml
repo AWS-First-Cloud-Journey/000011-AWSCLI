@@ -2,8 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AWS CLI with Amazon S3 on GETTING STARTED WITH THE AWS CLI</title>
-    <link>/5-s3/</link>
+    <link>//localhost:1313/5-s3/</link>
     <description>Recent content in AWS CLI with Amazon S3 on GETTING STARTED WITH THE AWS CLI</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="/5-s3/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="//localhost:1313/5-s3/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

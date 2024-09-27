@@ -2,8 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AWS CLI with Internet Gateway on GETTING STARTED WITH THE AWS CLI</title>
-    <link>/8-network/8.2-igw/</link>
+    <link>//localhost:1313/8-network/8.2-igw/</link>
     <description>Recent content in AWS CLI with Internet Gateway on GETTING STARTED WITH THE AWS CLI</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="/8-network/8.2-igw/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="//localhost:1313/8-network/8.2-igw/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

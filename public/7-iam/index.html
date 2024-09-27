@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.99.1" />
+    <meta name="generator" content="Hugo 0.133.0">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>AWS CLI with IAM :: GETTING STARTED WITH THE AWS CLI</title>
 
     
-    <link href="/css/nucleus.css?1704870653" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1704870653" rel="stylesheet">
-    <link href="/css/hybrid.css?1704870653" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1704870653" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1704870653" rel="stylesheet">
-    <link href="/css/auto-complete.css?1704870653" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1704870653" rel="stylesheet">
-    <link href="/css/theme.css?1704870653" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1704870653" rel="stylesheet">
+    <link href="/css/nucleus.css?1727415373" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1727415373" rel="stylesheet">
+    <link href="/css/hybrid.css?1727415373" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1727415373" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1727415373" rel="stylesheet">
+    <link href="/css/auto-complete.css?1727415373" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1727415373" rel="stylesheet">
+    <link href="/css/theme.css?1727415373" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1727415373" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1704870653" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1727415373" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1704870653"></script>
+    <script src="/js/jquery-3.3.1.min.js?1727415373"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1704870653"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1704870653"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1727415373"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1727415373"></script>
 <script type="text/javascript">
     
-        var baseurl = "";
+        var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1704870653"></script>
+<script type="text/javascript" src="/js/search.js?1727415373"></script>
 
     
   </div>
@@ -88,7 +88,7 @@
         
         ">
       <a href="/1-introduce/">
-           <b> 1. </b> Introduction
+          <b> 1. </b>Introduction
           
             <i class="fas fa-check read-icon"></i>
           
@@ -114,7 +114,7 @@
         
         ">
       <a href="/2-prerequiste/">
-           <b> 2. </b> Preparation
+          <b>2.</b>Preparation
           
             <i class="fas fa-check read-icon"></i>
           
@@ -239,7 +239,7 @@
   
     
     <li data-nav-id="/7-iam/" title="AWS CLI with IAM" class="dd-item 
-        parent
+        
         active
         
         ">
@@ -467,7 +467,7 @@
                   
                     
                     
-                      <option id="en" value="/7-iam/" selected>English</option>
+                      <option id="en" value="//localhost:1313/7-iam/" selected>English</option>
                     
                   
               
@@ -481,7 +481,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/7-iam/">Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/7-iam/">Tiếng Việt</option>
                     
                   
               
@@ -519,7 +519,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>10-01-2024</font></i>
+        <i><font color=orange>27-09-2024</font></i>
     </left>
     <left>
         <br>
@@ -610,37 +610,50 @@
 
 
 	<h4 id="aws-cli-with-iam">AWS CLI with IAM</h4>
-<p>We can quickly create <strong>IAM group</strong>, <strong>IAM user</strong>,<strong>policy</strong> using <strong>CLI</strong></p>
-<ol>
-<li>First, we will create an <strong>IAM group</strong></li>
-</ol>
-<pre tabindex="0"><code>aws iam create-group --group-names dev
-</code></pre><p><img src="/images/5-iam/0001.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
-<ol start="2">
-<li>Then, we create a user</li>
-</ol>
-<pre tabindex="0"><code>aws iam create-user --user-name dev-1
-</code></pre><p><img src="/images/5-iam/0002.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
-<ol start="3">
-<li>Add a user to the created group</li>
-</ol>
-<pre tabindex="0"><code>aws iam add-user-to-group --user-name dev-1 --group-name dev
-</code></pre><p><img src="/images/5-iam/0003.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
-<ol start="4">
-<li>Check the created user and group details.</li>
-</ol>
-<pre tabindex="0"><code>aws iam get-group --group-name dev
-</code></pre><p><img src="/images/5-iam/0004.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
-<ol start="5">
-<li>Generate <strong>Access key</strong></li>
-</ol>
-<pre tabindex="0"><code>aws iam create-access-key --user-name dev-1
-</code></pre><p><img src="/images/5-iam/0005.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
-<ol start="6">
-<li>To delete the created <strong>Accesskey</strong>, we do the following:</li>
-</ol>
-<pre tabindex="0"><code>aws iam delete-access-key --user-name dev-1 --access-key-id AKIAIOSFODNN7EXAMPLE
-</code></pre><p><img src="/images/5-iam/0006.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
+<p>We can quickly create <strong>IAM group</strong>, <strong>IAM user</strong>, and <strong>policy</strong> using <strong>CLI</strong>.</p>
+<ul>
+<li><a href="/7-iam/#aws-cli-with-iam">AWS CLI with IAM</a></li>
+<li><a href="/7-iam/#1-create-an-iam-group">1. Create an IAM Group</a></li>
+<li><a href="/7-iam/#2-create-an-iam-user">2. Create an IAM User</a></li>
+<li><a href="/7-iam/#3-add-user-to-group">3. Add User to Group</a></li>
+<li><a href="/7-iam/#4-check-group-details">4. Check Group Details</a></li>
+<li><a href="/7-iam/#5-generate-access-key">5. Generate Access Key</a></li>
+<li><a href="/7-iam/#6-delete-access-key">6. Delete Access Key</a></li>
+</ul>
+<hr>
+<h4 id="1-create-an-iam-group">1. Create an IAM Group</h4>
+<p>Use the following command to create a new <strong>IAM group</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws iam create-group --group-name dev
+</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/5-iam/0001.png?featherlight=false&width=90pc"></p>
+
+<div class="notices tip" >You can name the group whatever fits your use case.</div>
+
+<h4 id="2-create-an-iam-user">2. Create an IAM User</h4>
+<p>Next, create a new <strong>IAM user</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws iam create-user --user-name dev-1
+</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/5-iam/0002.png?featherlight=false&width=90pc"></p>
+
+<div class="notices info" >Ensure that each user is properly assigned unique permissions.</div>
+
+<h4 id="3-add-user-to-group">3. Add User to Group</h4>
+<p>Now, add the user to the created group:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws iam add-user-to-group --user-name dev-1 --group-name dev
+</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/5-iam/0003.png?featherlight=false&width=90pc"></p>
+<h4 id="4-check-group-details">4. Check Group Details</h4>
+<p>You can verify the group and user details with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws iam get-group --group-name dev
+</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/5-iam/0004.png?featherlight=false&width=90pc"></p>
+<h4 id="5-generate-access-key">5. Generate Access Key</h4>
+<p>Generate the <strong>Access Key</strong> for the user with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws iam create-access-key --user-name dev-1
+</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/5-iam/0005.png?featherlight=false&width=90pc"></p>
+<h4 id="6-delete-access-key">6. Delete Access Key</h4>
+<p>To delete an <strong>Access Key</strong>, use the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws iam delete-access-key --user-name dev-1 --access-key-id AKIAIOSFODNN7EXAMPLE
+</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/5-iam/0006.png?featherlight=false&width=90pc"></p>
+
+<div class="notices warning" >Always ensure to securely manage and delete access keys that are no longer in use.</div>
+
 
 
 
@@ -915,19 +928,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1704870653"></script>
-    <script src="/js/perfect-scrollbar.min.js?1704870653"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1704870653"></script>
-    <script src="/js/jquery.sticky.js?1704870653"></script>
-    <script src="/js/featherlight.min.js?1704870653"></script>
-    <script src="/js/highlight.pack.js?1704870653"></script>
+    <script src="/js/clipboard.min.js?1727415373"></script>
+    <script src="/js/perfect-scrollbar.min.js?1727415373"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1727415373"></script>
+    <script src="/js/jquery.sticky.js?1727415373"></script>
+    <script src="/js/featherlight.min.js?1727415373"></script>
+    <script src="/js/highlight.pack.js?1727415373"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1704870653"></script>
-    <script src="/js/learn.js?1704870653"></script>
-    <script src="/js/hugo-learn.js?1704870653"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1727415373"></script>
+    <script src="/js/learn.js?1727415373"></script>
+    <script src="/js/hugo-learn.js?1727415373"></script>
 
-    <link href="/mermaid/mermaid.css?1704870653" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1704870653"></script>
+    <link href="/mermaid/mermaid.css?1727415373" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1727415373"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

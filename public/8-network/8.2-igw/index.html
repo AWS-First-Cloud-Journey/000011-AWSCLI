@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.99.1" />
+    <meta name="generator" content="Hugo 0.133.0">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>AWS CLI with Internet Gateway :: GETTING STARTED WITH THE AWS CLI</title>
 
     
-    <link href="/css/nucleus.css?1704870653" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1704870653" rel="stylesheet">
-    <link href="/css/hybrid.css?1704870653" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1704870653" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1704870653" rel="stylesheet">
-    <link href="/css/auto-complete.css?1704870653" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1704870653" rel="stylesheet">
-    <link href="/css/theme.css?1704870653" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1704870653" rel="stylesheet">
+    <link href="/css/nucleus.css?1727415373" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1727415373" rel="stylesheet">
+    <link href="/css/hybrid.css?1727415373" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1727415373" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1727415373" rel="stylesheet">
+    <link href="/css/auto-complete.css?1727415373" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1727415373" rel="stylesheet">
+    <link href="/css/theme.css?1727415373" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1727415373" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1704870653" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1727415373" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1704870653"></script>
+    <script src="/js/jquery-3.3.1.min.js?1727415373"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1704870653"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1704870653"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1727415373"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1727415373"></script>
 <script type="text/javascript">
     
-        var baseurl = "";
+        var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1704870653"></script>
+<script type="text/javascript" src="/js/search.js?1727415373"></script>
 
     
   </div>
@@ -88,7 +88,7 @@
         
         ">
       <a href="/1-introduce/">
-           <b> 1. </b> Introduction
+          <b> 1. </b>Introduction
           
             <i class="fas fa-check read-icon"></i>
           
@@ -114,7 +114,7 @@
         
         ">
       <a href="/2-prerequiste/">
-           <b> 2. </b> Preparation
+          <b>2.</b>Preparation
           
             <i class="fas fa-check read-icon"></i>
           
@@ -324,7 +324,7 @@
   
     
     <li data-nav-id="/8-network/8.2-igw/" title="AWS CLI with Internet Gateway" class="dd-item 
-        parent
+        
         active
         
         ">
@@ -467,7 +467,7 @@
                   
                     
                     
-                      <option id="en" value="/8-network/8.2-igw/" selected>English</option>
+                      <option id="en" value="//localhost:1313/8-network/8.2-igw/" selected>English</option>
                     
                   
               
@@ -481,7 +481,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/8-network/8.2-igw/">Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/8-network/8.2-igw/">Tiếng Việt</option>
                     
                   
               
@@ -519,7 +519,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>10-01-2024</font></i>
+        <i><font color=orange>27-09-2024</font></i>
     </left>
     <left>
         <br>
@@ -616,41 +616,44 @@
 
 
 	<h4 id="aws-cli-with-internet-gateway">AWS CLI with Internet Gateway</h4>
-<ol>
-<li>Create <strong>Internet Gateway</strong></li>
-</ol>
-<pre tabindex="0"><code>aws ec2 create-internet-gateway --query InternetGateway.InternetGatewayId --output text
-</code></pre><p><img src="/images/igw/0001.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
-<ol start="2">
-<li>We will confirm the successful creation of <strong>Internet Gateway</strong> and use <strong>Internet gateway ID</strong> to perform the following steps.</li>
-</ol>
-<p><img src="/images/igw/0002.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
-<ol start="3">
-<li>Then, we will check <strong>VPC</strong> to use <strong>VPC ID</strong> for the next step.</li>
-</ol>
-<p><img src="/images/igw/0003.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
-<ol start="4">
-<li>After checking Internet Gateway and VPC, we execute <strong>attach internet gateway</strong></li>
-</ol>
-<pre tabindex="0"><code>aws ec2 attach-internet-gateway --vpc-id **VPC-ID** --internet-gateway-id **IGW ID**
-</code></pre><p><img src="/images/igw/0004.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
-<ol start="5">
-<li>Similarly, create network resources like <strong>Route Table</strong></li>
-</ol>
-<pre tabindex="0"><code>aws ec2 create-route-table --vpc-id **VPC-ID** --query RouteTable.RouteTableId --output text
-</code></pre><ul>
-<li>Then route <strong>Route table</strong></li>
-</ul>
-<pre tabindex="0"><code>aws ec2 create-route --route-table-id **RTB ID** --destination-cidr-block 0.0.0.0/0 --gateway-id **IGW ID**
-</code></pre><ul>
-<li>Check <strong>Route table</strong></li>
-</ul>
-<pre tabindex="0"><code>aws ec2 describe-route-tables --route-table-id **RTB-ID**
-</code></pre><ul>
-<li>Implement <strong>associate route table</strong></li>
-</ul>
-<pre tabindex="0"><code>aws ec2 associate-route-table --subnet-id **Subnet ID** --route-table-id **RTB ID**
-</code></pre>
+<h4 id="introduction">Introduction</h4>
+<p>This guide provides step-by-step instructions for creating and managing an Internet Gateway using AWS CLI.</p>
+
+<div class="notices tip" ><p>This guide assumes you have AWS CLI configured on your system with appropriate IAM permissions.</p>
+</div>
+
+<h4 id="steps-to-create-and-attach-an-internet-gateway">Steps to Create and Attach an Internet Gateway</h4>
+<h4 id="1-create-internet-gateway">1. Create <strong>Internet Gateway</strong></h4>
+<p>To create an Internet Gateway, use the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws ec2 create-internet-gateway --query InternetGateway.InternetGatewayId --output text
+</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/igw/0001.png?featherlight=false&width=90pc"></p>
+<h4 id="2-confirm-internet-gateway-creation">2. Confirm Internet Gateway Creation</h4>
+<p>Once the Internet Gateway is created, confirm the successful creation and retrieve the <strong>Internet Gateway ID</strong> for the next steps.</p>
+<p><img alt="AWS CLI" src="/images/igw/0002.png?featherlight=false&width=90pc"></p>
+<h4 id="3-check-the-vpc">3. Check the VPC</h4>
+<p>Next, check your <strong>VPC</strong> and retrieve the <strong>VPC ID</strong> to use in subsequent commands:</p>
+<p><img alt="AWS CLI" src="/images/igw/0003.png?featherlight=false&width=90pc"></p>
+<h4 id="4-attach-internet-gateway-to-vpc">4. Attach Internet Gateway to VPC</h4>
+<p>Attach the Internet Gateway to your VPC by using the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws ec2 attach-internet-gateway --vpc-id &lt;VPC-ID&gt; --internet-gateway-id &lt;IGW-ID&gt;
+</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/igw/0004.png?featherlight=false&width=90pc"></p>
+<h4 id="5-create-and-manage-network-resources">5. Create and Manage Network Resources</h4>
+<p>Create a <strong>Route Table</strong> for the VPC:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws ec2 create-route-table --vpc-id &lt;VPC-ID&gt; --query RouteTable.RouteTableId --output text
+</span></span></code></pre></div><p>After creating the route table, create a route for the Internet Gateway:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws ec2 create-route --route-table-id &lt;RTB-ID&gt; --destination-cidr-block 0.0.0.0/0 --gateway-id &lt;IGW-ID&gt;
+</span></span></code></pre></div><p>Check the route table:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws ec2 describe-route-tables --route-table-id &lt;RTB-ID&gt;
+</span></span></code></pre></div><p>Finally, associate the route table with a <strong>Subnet</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws ec2 associate-route-table --subnet-id &lt;Subnet-ID&gt; --route-table-id &lt;RTB-ID&gt;
+</span></span></code></pre></div><h4 id="notes">Notes</h4>
+
+<div class="notices info" ><p>Make sure to replace placeholders like <code>&lt;VPC-ID&gt;</code>, <code>&lt;IGW-ID&gt;</code>, <code>&lt;RTB-ID&gt;</code>, and <code>&lt;Subnet-ID&gt;</code> with actual values from your AWS environment.</p>
+</div>
+
+<h4 id="conclusion">Conclusion</h4>
+<p>By following the steps in this guide, you can successfully create and manage an Internet Gateway in AWS. The Internet Gateway allows your VPC to communicate with the Internet, enabling inbound and outbound traffic for your resources.</p>
+
 
 
 
@@ -928,19 +931,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1704870653"></script>
-    <script src="/js/perfect-scrollbar.min.js?1704870653"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1704870653"></script>
-    <script src="/js/jquery.sticky.js?1704870653"></script>
-    <script src="/js/featherlight.min.js?1704870653"></script>
-    <script src="/js/highlight.pack.js?1704870653"></script>
+    <script src="/js/clipboard.min.js?1727415373"></script>
+    <script src="/js/perfect-scrollbar.min.js?1727415373"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1727415373"></script>
+    <script src="/js/jquery.sticky.js?1727415373"></script>
+    <script src="/js/featherlight.min.js?1727415373"></script>
+    <script src="/js/highlight.pack.js?1727415373"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1704870653"></script>
-    <script src="/js/learn.js?1704870653"></script>
-    <script src="/js/hugo-learn.js?1704870653"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1727415373"></script>
+    <script src="/js/learn.js?1727415373"></script>
+    <script src="/js/hugo-learn.js?1727415373"></script>
 
-    <link href="/mermaid/mermaid.css?1704870653" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1704870653"></script>
+    <link href="/mermaid/mermaid.css?1727415373" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1727415373"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -1,41 +1,42 @@
 ---
-title : "Preparation"
-date : "`r Sys.Date()`"
-weight : 2
-chapter : false
-pre : " <b> 2. </b> "
+title: "Preparation"
+date: "`r Sys.Date()`"
+weight: 2
+chapter: false
+pre: "<b>2.</b>"
 ---
 
-#### Preparation
-This guide outlines the necessary steps to prepare for the exercise. We will be using Markdown format to write a blog post within an IDE environment.
+## Preparation
 
-#### Preparation Steps
+This guide outlines the necessary steps to prepare for the exercise. We'll use Markdown format to write a blog post within an IDE environment.
 
-Before getting started, follow these steps:
+### Preparation Steps
 
-- **Create an AWS Account**: To complete this exercise, you'll need an AWS account. If you don't have one, create an account on the official Amazon Web Services website.
+Before you get started, follow these steps:
 
-- **Create an IAM Group:**
+- **Create an AWS Account**: If you don't already have an AWS account, [sign up here](https://aws.amazon.com/). An AWS account is required to complete this exercise.
 
-- Log in to your AWS account.
-- In the dashboard, navigate to the "IAM" (Identity and Access Management) service.
-- Create a new IAM group, name the group, and define the required access permissions.
+- **Create an IAM Group**:
+  - Log in to your AWS Management Console.
+  - Navigate to the **IAM** (Identity and Access Management) service.
+  - Create a new IAM group, assign a name, and define the necessary permissions for your use case.
 
-**Create an IAM User:**
+- **Create an IAM User**:
+  - Still within the IAM service, create a new IAM user.
+  - Assign this user to the IAM group you just created.
+  - Take note of the **Access Key ID** and **Secret Access Key** for future use.
 
-- Continue in the IAM service.
-- Create an IAM user within the previously created group from the previous step.
-- Remember the login information for this user (Access Key ID and Secret Access Key).
+- **Generate AWS Access Keys**:
+  - Select the IAM user you created.
+  - Under the **Security Credentials** tab, generate a new pair of access keys.
+  - Safely store the **Access Key ID** and **Secret Access Key**—you will need them to authenticate with AWS services.
 
-**Generate AWS Access Keys:**
+- **Create an EC2 Instance for SSH Access**:
+  - In the AWS Management Console, navigate to the **EC2** (Elastic Compute Cloud) service.
+  - Launch a new EC2 instance with your preferred operating system (e.g., Amazon Linux, Ubuntu).
+  - Configure SSH access by creating or using an existing key pair.
+  - Ensure the security group allows SSH access (port 22) from your IP address or trusted sources.
 
-- In the IAM dashboard, select the user you just created.
-- In the "Security credentials" tab, generate a new pair of Access Keys.
-- Safely store the Access Key ID and Secret Access Key. This information is crucial for accessing your AWS account.
+### Final Notes
 
-**Create an EC2 Instance for SSH Access:**
-
-- Continue in the AWS dashboard and locate the EC2 (Elastic Compute Cloud) service.
-- Create an EC2 virtual machine with your desired operating system.
-- Ensure you have configured SSH key pair access to the EC2 instance for command-line access.
-- With these preparation steps completed, you are ready to proceed with the exercise. Ensure that you securely store all login information and access keys to avoid losing access to your AWS account.
+With these preparation steps completed, you are now ready to proceed with the exercise. Be sure to securely store all login credentials and access keys to avoid unauthorized access or loss of control over your AWS resources.

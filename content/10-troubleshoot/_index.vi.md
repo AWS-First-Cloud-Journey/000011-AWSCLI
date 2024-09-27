@@ -1,17 +1,19 @@
 ---
-title : "Khắc phục lỗi"
-date :  "`r Sys.Date()`" 
-weight : 10
-chapter : false
-pre : " <b> 10. </b> "
+title: "Khắc phục lỗi"
+date: "2024-09-27"
+weight: 10
+chapter: false
+pre: " <b> 10. </b> "
 ---
 
-#### Khắc phục lỗi:
+#### Khắc phục lỗi
 
 - Trong quá trình thực hành bài lab, không tránh được những lỗi:
 
- + Khắc phục lỗi đối với **[AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-troubleshooting.html)**
+  + Khắc phục lỗi đối với **[AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-troubleshooting.html)**
 
+<!-- TOC created automatically using Markdown All in One -->
+<!-- Ctrl + Shift + P -> Create Table of Contents -->
 
 #### Một số nguồn tham khảo liên quan:
 
@@ -22,3 +24,4 @@ pre : " <b> 10. </b> "
 - [How can I use the AWS CLI to call and store SAML credentials?](https://www.youtube.com/watch?v=ACWRmFjG9V8)
 - [How do I use an MFA token to authenticate access to my AWS resources through the AWS CLI?](https://www.youtube.com/watch?v=vwmKcw6I42I)
 - [AWS re:Invent 2019: [REPEAT] Introduction to the AWS CLI v2 (DOP343-R)](https://www.youtube.com/watch?v=U5y7JI_mHk8)
+

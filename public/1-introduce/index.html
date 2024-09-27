@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.99.1" />
+    <meta name="generator" content="Hugo 0.133.0">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Introduction :: GETTING STARTED WITH THE AWS CLI</title>
 
     
-    <link href="/css/nucleus.css?1704870653" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1704870653" rel="stylesheet">
-    <link href="/css/hybrid.css?1704870653" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1704870653" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1704870653" rel="stylesheet">
-    <link href="/css/auto-complete.css?1704870653" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1704870653" rel="stylesheet">
-    <link href="/css/theme.css?1704870653" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1704870653" rel="stylesheet">
+    <link href="/css/nucleus.css?1727415373" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1727415373" rel="stylesheet">
+    <link href="/css/hybrid.css?1727415373" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1727415373" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1727415373" rel="stylesheet">
+    <link href="/css/auto-complete.css?1727415373" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1727415373" rel="stylesheet">
+    <link href="/css/theme.css?1727415373" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1727415373" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1704870653" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1727415373" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1704870653"></script>
+    <script src="/js/jquery-3.3.1.min.js?1727415373"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1704870653"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1704870653"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1727415373"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1727415373"></script>
 <script type="text/javascript">
     
-        var baseurl = "";
+        var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1704870653"></script>
+<script type="text/javascript" src="/js/search.js?1727415373"></script>
 
     
   </div>
@@ -83,12 +83,12 @@
   
     
     <li data-nav-id="/1-introduce/" title="Introduction" class="dd-item 
-        parent
+        
         active
         
         ">
       <a href="/1-introduce/">
-           <b> 1. </b> Introduction
+          <b> 1. </b>Introduction
           
             <i class="fas fa-check read-icon"></i>
           
@@ -114,7 +114,7 @@
         
         ">
       <a href="/2-prerequiste/">
-           <b> 2. </b> Preparation
+          <b>2.</b>Preparation
           
             <i class="fas fa-check read-icon"></i>
           
@@ -467,7 +467,7 @@
                   
                     
                     
-                      <option id="en" value="/1-introduce/" selected>English</option>
+                      <option id="en" value="//localhost:1313/1-introduce/" selected>English</option>
                     
                   
               
@@ -481,7 +481,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/1-introduce/">Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/1-introduce/">Tiếng Việt</option>
                     
                   
               
@@ -519,7 +519,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>10-01-2024</font></i>
+        <i><font color=orange>27-09-2024</font></i>
     </left>
     <left>
         <br>
@@ -610,17 +610,23 @@
 
 
 	<h4 id="overview">Overview</h4>
-<p>In this exercise, you will learn about the AWS CLI and use it to interact with AWS services.</p>
+<p>In this exercise, you will learn how to use the AWS Command Line Interface (CLI) to interact with AWS services.</p>
 <h4 id="aws-cli">AWS CLI</h4>
-<p>The AWS Command Line Interface (AWS CLI) is an open-source tool that allows you to interact with AWS services using command-line shell commands. With a simple setup process, the AWS CLI will enable you to run commands that deploy functionality equivalent to that provided by the AWS Management Console in the browser.</p>
-<p>AWS CLI supports the following command windows:</p>
+<p>The <strong>AWS Command Line Interface (CLI)</strong> is an open-source tool that enables you to interact with AWS services using commands in a terminal. It provides functionality equivalent to the AWS Management Console, allowing you to automate tasks and manage AWS resources more efficiently.</p>
+<p>The AWS CLI supports various command environments:</p>
 <ul>
-<li><strong>Linux shells</strong> – Use popular command window programs like bash, zsh and tcsh to run commands in Linux or macOS.</li>
-<li><strong>Windows command line</strong> – On Windows, run the command in the Windows command prompt (command prompt) or PowerShell.</li>
-<li><strong>Remotely</strong> – Run commands in an Amazon Elastic Compute Cloud (Amazon EC2) virtual machine through a command window such as PuTTY, SSH, or AWS Systems Manager.</li>
+<li><strong>Linux Shells</strong> – Use popular shells like Bash, Zsh, or Tcsh on Linux or macOS.</li>
+<li><strong>Windows Command Line</strong> – Run commands in the Windows Command Prompt or PowerShell.</li>
+<li><strong>Remote Access</strong> – Use tools like PuTTY, SSH, or AWS Systems Manager to run commands on an Amazon EC2 instance.</li>
 </ul>
-<p>All administration, management, and access to AWS resources in the AWS Management Console are available in the AWS API and CLI. New AWS features and services will be made available on the AWS Management Console via API and CLI immediately upon launch or within 180 days after that.</p>
-<p>AWS CLI provides direct access to public APIs of AWS services. You can explore the capabilities of an AWS service with the AWS CLI and develop shell scripts to manage your resources. In addition to the API-equivalent low-level commands, many AWS services allow customizations on the AWS CLI. Customizations can include higher-level commands that simplify the use of services with complex APIs.</p>
+<p>All administrative tasks available in the AWS Management Console can be performed using the AWS CLI or API. New AWS services and features are made available in the CLI and API either immediately upon release or within 180 days.</p>
+<p>The AWS CLI provides direct access to the public APIs of AWS services, enabling you to:</p>
+<ul>
+<li>Explore and interact with AWS services.</li>
+<li>Automate resource management through scripts.</li>
+<li>Use higher-level commands that simplify interactions with services that have complex APIs.</li>
+</ul>
+<p>The AWS CLI is a powerful tool for managing cloud infrastructure efficiently and can be customized for advanced use cases.</p>
 
 
 
@@ -892,19 +898,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1704870653"></script>
-    <script src="/js/perfect-scrollbar.min.js?1704870653"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1704870653"></script>
-    <script src="/js/jquery.sticky.js?1704870653"></script>
-    <script src="/js/featherlight.min.js?1704870653"></script>
-    <script src="/js/highlight.pack.js?1704870653"></script>
+    <script src="/js/clipboard.min.js?1727415373"></script>
+    <script src="/js/perfect-scrollbar.min.js?1727415373"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1727415373"></script>
+    <script src="/js/jquery.sticky.js?1727415373"></script>
+    <script src="/js/featherlight.min.js?1727415373"></script>
+    <script src="/js/highlight.pack.js?1727415373"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1704870653"></script>
-    <script src="/js/learn.js?1704870653"></script>
-    <script src="/js/hugo-learn.js?1704870653"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1727415373"></script>
+    <script src="/js/learn.js?1727415373"></script>
+    <script src="/js/hugo-learn.js?1727415373"></script>
 
-    <link href="/mermaid/mermaid.css?1704870653" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1704870653"></script>
+    <link href="/mermaid/mermaid.css?1727415373" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1727415373"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

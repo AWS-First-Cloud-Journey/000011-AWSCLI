@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.99.1" />
+    <meta name="generator" content="Hugo 0.133.0">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Clean up resources :: GETTING STARTED WITH THE AWS CLI</title>
 
     
-    <link href="/css/nucleus.css?1704870653" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1704870653" rel="stylesheet">
-    <link href="/css/hybrid.css?1704870653" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1704870653" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1704870653" rel="stylesheet">
-    <link href="/css/auto-complete.css?1704870653" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1704870653" rel="stylesheet">
-    <link href="/css/theme.css?1704870653" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1704870653" rel="stylesheet">
+    <link href="/css/nucleus.css?1727415373" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1727415373" rel="stylesheet">
+    <link href="/css/hybrid.css?1727415373" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1727415373" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1727415373" rel="stylesheet">
+    <link href="/css/auto-complete.css?1727415373" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1727415373" rel="stylesheet">
+    <link href="/css/theme.css?1727415373" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1727415373" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1704870653" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1727415373" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1704870653"></script>
+    <script src="/js/jquery-3.3.1.min.js?1727415373"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1704870653"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1704870653"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1727415373"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1727415373"></script>
 <script type="text/javascript">
     
-        var baseurl = "";
+        var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1704870653"></script>
+<script type="text/javascript" src="/js/search.js?1727415373"></script>
 
     
   </div>
@@ -88,7 +88,7 @@
         
         ">
       <a href="/1-introduce/">
-           <b> 1. </b> Introduction
+          <b> 1. </b>Introduction
           
             <i class="fas fa-check read-icon"></i>
           
@@ -114,7 +114,7 @@
         
         ">
       <a href="/2-prerequiste/">
-           <b> 2. </b> Preparation
+          <b>2.</b>Preparation
           
             <i class="fas fa-check read-icon"></i>
           
@@ -411,7 +411,7 @@
   
     
     <li data-nav-id="/11-cleanup/" title="Clean up resources" class="dd-item 
-        parent
+        
         active
         
         ">
@@ -467,7 +467,7 @@
                   
                     
                     
-                      <option id="en" value="/11-cleanup/" selected>English</option>
+                      <option id="en" value="//localhost:1313/11-cleanup/" selected>English</option>
                     
                   
               
@@ -481,7 +481,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/11-cleanup/">Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/11-cleanup/">Tiếng Việt</option>
                     
                   
               
@@ -519,7 +519,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>10-01-2024</font></i>
+        <i><font color=orange>27-09-2024</font></i>
     </left>
     <left>
         <br>
@@ -614,32 +614,32 @@
 <li>Delete <strong>Security group</strong>.</li>
 </ol>
 <pre tabindex="0"><code>aws ec2 delete-security-group --group-id **SG ID**
-</code></pre><p><img src="/images/ec2-net/00012.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
+</code></pre><p><img alt="AWS CLI" src="/images/ec2-net/00012.png?featherlight=false&width=90pc"></p>
 <ol start="2">
 <li>Delete <strong>Subnet</strong></li>
 </ol>
 <pre tabindex="0"><code>aws ec2 delete-subnet --subnet-id **Subnet ID**
-</code></pre><p><img src="/images/ec2-net/00013.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
+</code></pre><p><img alt="AWS CLI" src="/images/ec2-net/00013.png?featherlight=false&width=90pc"></p>
 <ol start="3">
 <li>Delete <strong>Route table</strong></li>
 </ol>
 <pre tabindex="0"><code>aws ec2 delete-route-table --route-table-id **RTB ID**
-</code></pre><p><img src="/images/ec2-net/00014.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
+</code></pre><p><img alt="AWS CLI" src="/images/ec2-net/00014.png?featherlight=false&width=90pc"></p>
 <ol start="4">
 <li>Detach <strong>Internet Gateway</strong></li>
 </ol>
 <pre tabindex="0"><code>aws ec2 detach-internet-gateway --internet-gateway-id **IGW ID** --vpc-id **VPC ID**
-</code></pre><p><img src="/images/ec2-net/00015.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
+</code></pre><p><img alt="AWS CLI" src="/images/ec2-net/00015.png?featherlight=false&width=90pc"></p>
 <ol start="5">
 <li>Delete <strong>Internet gateway</strong></li>
 </ol>
 <pre tabindex="0"><code>aws ec2 delete-internet-gateway --internet-gateway-id **IGW**
-</code></pre><p><img src="/images/ec2-net/00016.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
+</code></pre><p><img alt="AWS CLI" src="/images/ec2-net/00016.png?featherlight=false&width=90pc"></p>
 <ol start="6">
 <li>Perform a <strong>VPC</strong> deletion</li>
 </ol>
 <pre tabindex="0"><code>aws ec2 delete-vpc --vpc-id **VPC ID**
-</code></pre><p><img src="/images/ec2-net/00017.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
+</code></pre><p><img alt="AWS CLI" src="/images/ec2-net/00017.png?featherlight=false&width=90pc"></p>
 
 
 
@@ -911,19 +911,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1704870653"></script>
-    <script src="/js/perfect-scrollbar.min.js?1704870653"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1704870653"></script>
-    <script src="/js/jquery.sticky.js?1704870653"></script>
-    <script src="/js/featherlight.min.js?1704870653"></script>
-    <script src="/js/highlight.pack.js?1704870653"></script>
+    <script src="/js/clipboard.min.js?1727415373"></script>
+    <script src="/js/perfect-scrollbar.min.js?1727415373"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1727415373"></script>
+    <script src="/js/jquery.sticky.js?1727415373"></script>
+    <script src="/js/featherlight.min.js?1727415373"></script>
+    <script src="/js/highlight.pack.js?1727415373"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1704870653"></script>
-    <script src="/js/learn.js?1704870653"></script>
-    <script src="/js/hugo-learn.js?1704870653"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1727415373"></script>
+    <script src="/js/learn.js?1727415373"></script>
+    <script src="/js/hugo-learn.js?1727415373"></script>
 
-    <link href="/mermaid/mermaid.css?1704870653" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1704870653"></script>
+    <link href="/mermaid/mermaid.css?1727415373" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1727415373"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

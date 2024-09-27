@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.99.1" />
+    <meta name="generator" content="Hugo 0.133.0">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Getting Started with the AWS CLI :: GETTING STARTED WITH THE AWS CLI</title>
 
     
-    <link href="/css/nucleus.css?1704870653" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1704870653" rel="stylesheet">
-    <link href="/css/hybrid.css?1704870653" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1704870653" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1704870653" rel="stylesheet">
-    <link href="/css/auto-complete.css?1704870653" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1704870653" rel="stylesheet">
-    <link href="/css/theme.css?1704870653" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1704870653" rel="stylesheet">
+    <link href="/css/nucleus.css?1727411655" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1727411655" rel="stylesheet">
+    <link href="/css/hybrid.css?1727411655" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1727411655" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1727411655" rel="stylesheet">
+    <link href="/css/auto-complete.css?1727411655" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1727411655" rel="stylesheet">
+    <link href="/css/theme.css?1727411655" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1727411655" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1704870653" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1727411655" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1704870653"></script>
+    <script src="/js/jquery-3.3.1.min.js?1727411655"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1704870653"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1704870653"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1727411655"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1727411655"></script>
 <script type="text/javascript">
     
-        var baseurl = "";
+        var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1704870653"></script>
+<script type="text/javascript" src="/js/search.js?1727411655"></script>
 
     
   </div>
@@ -88,7 +88,7 @@
         
         ">
       <a href="/1-introduce/">
-           <b> 1. </b> Introduction
+          <b> 1. </b>Introduction
           
             <i class="fas fa-check read-icon"></i>
           
@@ -114,7 +114,7 @@
         
         ">
       <a href="/2-prerequiste/">
-           <b> 2. </b> Preparation
+          <b>2.</b>Preparation
           
             <i class="fas fa-check read-icon"></i>
           
@@ -467,7 +467,7 @@
                   
                     
                     
-                      <option id="en" value="/" selected>English</option>
+                      <option id="en" value="//localhost:1313/" selected>English</option>
                     
                   
               
@@ -481,7 +481,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/">Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/">Tiếng Việt</option>
                     
                   
               
@@ -558,45 +558,46 @@
 
  
 <h1 id="getting-started-with-the-aws-cli">Getting Started with the AWS CLI</h1>
-<h4 id="overview">Overview</h4>
-<p>In this exercise, you will learn about the AWS CLI and how to use it to interact with AWS services.</p>
-<h4 id="aws-cli">AWS CLI</h4>
-<p>The AWS Command Line Interface (AWS CLI) is an open-source tool that enables you to interact with AWS services using command-line shell commands. With a straightforward setup process, the AWS CLI empowers you to execute commands that provide the same functionality as the AWS Management Console in your browser.</p>
-<h4 id="supported-command-windows">Supported Command Windows</h4>
+<h2 id="overview">Overview</h2>
+<p>In this guide, you will learn how to get started with the AWS CLI and use it to interact with AWS services.</p>
+<h2 id="aws-cli-overview">AWS CLI Overview</h2>
+<p>The AWS Command Line Interface (AWS CLI) is an open-source tool that enables you to interact with AWS services using command-line shell commands. The AWS CLI provides the same functionality as the AWS Management Console but allows for automation and scripting.</p>
+<h3 id="supported-command-line-interfaces">Supported Command Line Interfaces</h3>
 <ul>
-<li><strong>Linux Shells</strong>: Utilize popular command window programs such as bash, zsh, and tcsh to run commands on Linux or macOS.</li>
-<li><strong>Windows Command Line</strong>: On Windows, run commands in the Windows command prompt (command prompt) or PowerShell.</li>
-<li><strong>Remote Access</strong>: Execute commands on an Amazon Elastic Compute Cloud (Amazon EC2) virtual machine through command windows like PuTTY, SSH, or AWS Systems Manager.</li>
+<li><strong>Linux and macOS</strong>: You can use shells like <code>bash</code>, <code>zsh</code>, or <code>tcsh</code> to run AWS CLI commands.</li>
+<li><strong>Windows</strong>: The AWS CLI can be run in Command Prompt or PowerShell.</li>
+<li><strong>Remote Access</strong>: You can also run AWS CLI commands on Amazon EC2 instances through tools like PuTTY, SSH, or AWS Systems Manager.</li>
 </ul>
-<p>All administrative, management, and resource access tasks within the AWS Management Console are accessible via the AWS API and CLI. Any new AWS features and services are promptly available on the AWS Management Console through the API and CLI upon launch or within 180 days.</p>
-<p>The AWS CLI provides direct access to the public APIs of AWS services. You can explore the capabilities of an AWS service, develop shell scripts to manage your resources, and even utilize higher-level commands that simplify the use of services with complex APIs.</p>
-<h4 id="profile">Profile</h4>
-<p>A profile is a collection of settings and identifiers that grant access to the commands within the AWS CLI. By default, the AWS CLI uses the default profile. Additionally, you can create multiple other profiles known as private profiles using the <code>--profile</code> parameter.</p>
+<p>The AWS CLI allows you to perform administrative and resource management tasks on AWS, offering direct access to AWS services&rsquo; public APIs. The CLI is updated as AWS releases new features and services, often within 180 days of launch.</p>
+<h3 id="aws-cli-profiles">AWS CLI Profiles</h3>
+<p>Profiles are collections of settings that the AWS CLI uses to execute commands. By default, the AWS CLI uses the <strong>default</strong> profile, but you can define multiple custom profiles.</p>
 <ul>
-<li>AWS CLI stores profile information in configuration and credentials files. You can also create extra profiles by directly adding settings to these files.</li>
-<li>You can specify a particular profile for the AWS CLI to execute commands using the <code>--profile</code> parameter. Alternatively, you can set a profile in the <code>AWS_PROFILE</code> environment variable to replace the default profile for a specific session.</li>
+<li>Profile settings are stored in configuration and credentials files.</li>
+<li>To specify a profile for a command, use the <code>--profile</code> parameter or set the <code>AWS_PROFILE</code> environment variable to switch profiles for the current session.</li>
 </ul>
-<h4 id="basics-of-configuration">Basics of Configuration</h4>
-<p>We will use the <code>aws configure</code> command, which is the quickest method to set up the AWS CLI. The command prompt will prompt you for four pieces of information:</p>
+<h2 id="aws-cli-configuration">AWS CLI Configuration</h2>
+<p>You can configure the AWS CLI using the <code>aws configure</code> command. This command will prompt you for four pieces of information:</p>
+<ol>
+<li><strong>AWS Access Key ID</strong></li>
+<li><strong>AWS Secret Access Key</strong></li>
+<li><strong>Default region name</strong></li>
+<li><strong>Default output format</strong></li>
+</ol>
+<h3 id="aws-access-key-id-and-secret-access-key">AWS Access Key ID and Secret Access Key</h3>
+<p>Your AWS access keys consist of the <strong>Access Key ID</strong> and <strong>Secret Access Key</strong>. These are used to authenticate and sign requests made to AWS.</p>
+<h3 id="default-region">Default Region</h3>
+<p>The <strong>default region</strong> is where the AWS CLI will send requests unless a region is explicitly specified in a command. You should select the region closest to your infrastructure or where most of your AWS services reside, e.g., <code>us-west-2</code> for the US West (Oregon) region.</p>
+<h3 id="output-format">Output Format</h3>
+<p>The <strong>default output format</strong> determines how the results of AWS CLI commands are displayed. The available formats are:</p>
 <ul>
-<li>Access Key ID</li>
-<li>Secret Access Key</li>
-<li>AWS Region</li>
-<li>Output Format (Export Format)</li>
+<li><strong>json</strong>: Outputs results in JSON format (default).</li>
+<li><strong>yaml</strong>: Outputs results in YAML format (only available in AWS CLI v2).</li>
+<li><strong>yaml-stream</strong>: Streams large datasets in YAML format for faster processing (only available in AWS CLI v2).</li>
+<li><strong>text</strong>: Outputs tab-delimited text, useful for parsing with tools like <code>grep</code>, <code>sed</code>, or <code>awk</code>.</li>
+<li><strong>table</strong>: Displays results in a human-readable table format.</li>
 </ul>
-<h4 id="access-key-id-and-secret-access-key">Access Key ID and Secret Access Key</h4>
-<p>The access key comprises the access key ID and secret access key. It is utilized to sign application requests sent to AWS.</p>
-<h4 id="region">Region</h4>
-<p>The default region name specifies the AWS Region where server requests are sent by default. This is usually the region closest to you, but it can be any region. For instance, you can input <code>us-west-2</code> to use US West (Oregon). This default region will be used for all future requests unless you specify otherwise.</p>
-<h4 id="output-format">Output Format</h4>
-<p>The default output format defines how the returned results are formatted. The type can be any value from the list below. If you don&rsquo;t specify an output format, JSON is used by default.</p>
-<ul>
-<li><strong>json</strong>: Results are formatted as a JSON string.</li>
-<li><strong>yaml</strong>: Results are formatted as a YAML string. (Only available in AWS CLI v2.)</li>
-<li><strong>yaml-stream</strong>: Results are streamed and formatted as YAML. Streams enable faster processing of large data types. (Only available in AWS CLI version 2.)</li>
-<li><strong>text</strong>: Results are formatted as multiple lines of tab-separated string values. This format can be useful for passing output to tools like <code>grep</code>, <code>sed</code>, or <code>awk</code>.</li>
-<li><strong>table</strong>: Results are formatted as a table using <code>+</code> and <code>-</code> characters to create cell borders. This format is &ldquo;human-friendly&rdquo; and easier to read compared to other formats, though not as programmatically efficient.</li>
-</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>The AWS CLI is a powerful tool that can simplify AWS management through scripting and automation. Configuring the CLI properly allows you to efficiently manage AWS resources from your command line environment.</p>
 	
   
         
@@ -858,19 +859,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1704870653"></script>
-    <script src="/js/perfect-scrollbar.min.js?1704870653"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1704870653"></script>
-    <script src="/js/jquery.sticky.js?1704870653"></script>
-    <script src="/js/featherlight.min.js?1704870653"></script>
-    <script src="/js/highlight.pack.js?1704870653"></script>
+    <script src="/js/clipboard.min.js?1727411655"></script>
+    <script src="/js/perfect-scrollbar.min.js?1727411655"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1727411655"></script>
+    <script src="/js/jquery.sticky.js?1727411655"></script>
+    <script src="/js/featherlight.min.js?1727411655"></script>
+    <script src="/js/highlight.pack.js?1727411655"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1704870653"></script>
-    <script src="/js/learn.js?1704870653"></script>
-    <script src="/js/hugo-learn.js?1704870653"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1727411655"></script>
+    <script src="/js/learn.js?1727411655"></script>
+    <script src="/js/hugo-learn.js?1727411655"></script>
 
-    <link href="/mermaid/mermaid.css?1704870653" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1704870653"></script>
+    <link href="/mermaid/mermaid.css?1727411655" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1727411655"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
