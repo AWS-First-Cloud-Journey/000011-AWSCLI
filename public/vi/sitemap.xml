@@ -2,197 +2,204 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/vi/</loc>
+    <loc>/vi/8-network/8.1-vpc/</loc>
     <lastmod>2024-09-27T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/"
+                href="/8-network/8.1-vpc/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/"
+                href="/vi/8-network/8.1-vpc/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/8-network/8.1-vpc/</loc>
+    <loc>/vi/</loc>
+    <lastmod>2024-09-27T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/8-network/8.1-vpc/"
+                href="/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/8-network/8.1-vpc/"
+                href="/vi/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/1-introduce/</loc>
+    <loc>/vi/1-introduce/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/1-introduce/"
+                href="/1-introduce/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/1-introduce/"
+                href="/vi/1-introduce/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/8-network/8.2-igw/</loc>
+    <loc>/vi/8-network/8.2-igw/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/8-network/8.2-igw/"
+                href="/8-network/8.2-igw/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/8-network/8.2-igw/"
+                href="/vi/8-network/8.2-igw/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-prerequiste/</loc>
+    <loc>/vi/2-prerequiste/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-prerequiste/"
+                href="/2-prerequiste/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-prerequiste/"
+                href="/vi/2-prerequiste/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/3-installcli/</loc>
+    <loc>/vi/3-installcli/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/3-installcli/"
+                href="/3-installcli/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/3-installcli/"
+                href="/vi/3-installcli/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/4-infras/</loc>
+    <loc>/vi/4-infras/</loc>
+    <lastmod>2024-09-27T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/4-infras/"
+                href="/4-infras/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/4-infras/"
+                href="/vi/4-infras/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/5-s3/</loc>
+    <loc>/vi/5-s3/</loc>
+    <lastmod>2024-09-27T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/5-s3/"
+                href="/5-s3/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/5-s3/"
+                href="/vi/5-s3/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/6-sns/</loc>
+    <loc>/vi/6-sns/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/6-sns/"
+                href="/6-sns/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/6-sns/"
+                href="/vi/6-sns/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/7-iam/</loc>
+    <loc>/vi/7-iam/</loc>
+    <lastmod>2024-09-27T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/7-iam/"
+                href="/7-iam/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/7-iam/"
+                href="/vi/7-iam/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/8-network/</loc>
+    <loc>/vi/8-network/</loc>
+    <lastmod>2024-09-27T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/8-network/"
+                href="/8-network/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/8-network/"
+                href="/vi/8-network/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/9-ec2/</loc>
+    <loc>/vi/9-ec2/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/9-ec2/"
+                href="/9-ec2/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/9-ec2/"
+                href="/vi/9-ec2/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/10-troubleshoot/</loc>
+    <loc>/vi/10-troubleshoot/</loc>
+    <lastmod>2024-09-27T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/10-troubleshoot/"
+                href="/10-troubleshoot/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/10-troubleshoot/"
+                href="/vi/10-troubleshoot/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/11-cleanup/</loc>
+    <loc>/vi/11-cleanup/</loc>
+    <lastmod>2024-09-27T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/11-cleanup/"
+                href="/11-cleanup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/11-cleanup/"
+                href="/vi/11-cleanup/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/categories/</loc>
+    <loc>/vi/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/categories/"
+                href="/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/categories/"
+                href="/vi/categories/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/tags/</loc>
+    <loc>/vi/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/tags/"
+                href="/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/tags/"
+                href="/vi/tags/"
                 />
   </url>
 </urlset>
