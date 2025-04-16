@@ -6,7 +6,7 @@ chapter: false
 pre: "<b>2.</b>"
 ---
 
-## Preparation
+#### Preparation
 
 This guide outlines the necessary steps to prepare for the exercise. We'll use Markdown format to write a blog post within an IDE environment.
 

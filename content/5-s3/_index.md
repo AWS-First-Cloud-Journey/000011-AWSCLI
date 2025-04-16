@@ -18,9 +18,7 @@ aws s3 mb s3://aws-cli-2000
 
 ![AWS CLI](/images/3-s3/0001.png?featherlight=false&width=90pc)
 
-{{% notice info %}}
-Make sure your bucket name is unique and complies with AWS naming conventions.
-{{% /notice %}}
+> ℹ️ **Information**: Make sure your bucket name is unique and complies with AWS naming conventions.
 
 #### **Step 2: List All S3 Buckets**
 After creating the bucket, use the following command to list all the available S3 buckets:
@@ -53,9 +51,7 @@ Replace `bucket-name` with your bucket name and `object` with the specific objec
 
 ![AWS CLI](/images/3-s3/0005.png?featherlight=false&width=90pc)
 
-{{% notice warning %}}
-Deleting an object is permanent and cannot be undone.
-{{% /notice %}}
+> ⚠️ **Warning**: Deleting an object is permanent and cannot be undone.
 
 #### **Step 5: Delete the S3 Bucket**
 Finally, once all objects are removed, you can delete the bucket itself with the command:
@@ -66,11 +62,9 @@ aws s3 rb s3://bucket-name
 
 ![AWS CLI](/images/3-s3/0006.png?featherlight=false&width=90pc)
 
-{{% notice tip %}}
-Ensure the bucket is empty before attempting to delete it. Use `--force` to delete non-empty buckets, but exercise caution.
-{{% /notice %}}
+> 💡 **Pro Tip**: Ensure the bucket is empty before attempting to delete it. Use `--force` to delete non-empty buckets, but exercise caution.
 
 #### **Conclusion**
-By following these steps, you’ve learned how to create, list, and delete S3 buckets and objects using the AWS CLI. These fundamental commands will help you manage your S3 resources efficiently.
+By following these steps, you've learned how to create, list, and delete S3 buckets and objects using the AWS CLI. These fundamental commands will help you manage your S3 resources efficiently.
 
 

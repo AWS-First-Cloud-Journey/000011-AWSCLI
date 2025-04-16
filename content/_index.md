@@ -7,57 +7,58 @@ chapter: false
 
 # Getting Started with the AWS CLI
 
-## Overview
+In this workshop, you will learn how to use the AWS Command Line Interface (CLI) to interact with AWS services efficiently through the command line.
 
-In this guide, you will learn how to get started with the AWS CLI and use it to interact with AWS services.
+#### AWS Command Line Interface (CLI)
 
-## AWS CLI Overview
+**ℹ️ Information**: The **AWS Command Line Interface (CLI)** is an open-source tool that enables you to interact with AWS services using commands in your command-line shell. With the AWS CLI, you can control multiple AWS services directly from the command line and automate them through scripts.
 
-The AWS Command Line Interface (AWS CLI) is an open-source tool that enables you to interact with AWS services using command-line shell commands. The AWS CLI provides the same functionality as the AWS Management Console but allows for automation and scripting.
+#### Supported Command Environments
 
-### Supported Command Line Interfaces
+The AWS CLI supports various command environments:
 
-- **Linux and macOS**: You can use shells like `bash`, `zsh`, or `tcsh` to run AWS CLI commands.
-- **Windows**: The AWS CLI can be run in Command Prompt or PowerShell.
-- **Remote Access**: You can also run AWS CLI commands on Amazon EC2 instances through tools like PuTTY, SSH, or AWS Systems Manager.
+- **Linux and macOS Shells** – Use popular shells like Bash, Zsh, or Tcsh to run AWS CLI commands.
+- **Windows Command Line** – Execute commands in Windows Command Prompt or PowerShell.
+- **Remote Access** – Run commands on Amazon EC2 instances through PuTTY, SSH, or AWS Systems Manager.
 
-The AWS CLI allows you to perform administrative and resource management tasks on AWS, offering direct access to AWS services' public APIs. The CLI is updated as AWS releases new features and services, often within 180 days of launch.
+**💡 Pro Tip**: All administrative tasks available in the AWS Management Console can be performed using the AWS CLI or AWS API. New AWS services and features are typically made available in the CLI and API either immediately upon release or within 180 days.
 
-### AWS CLI Profiles
+#### AWS CLI Profiles
 
-Profiles are collections of settings that the AWS CLI uses to execute commands. By default, the AWS CLI uses the **default** profile, but you can define multiple custom profiles.
+AWS CLI profiles are collections of settings used to execute commands:
 
-- Profile settings are stored in configuration and credentials files.
-- To specify a profile for a command, use the `--profile` parameter or set the `AWS_PROFILE` environment variable to switch profiles for the current session.
+- The **default** profile is used when no specific profile is specified
+- Multiple named profiles can be created for different AWS environments
+- Profile settings are stored in configuration and credentials files
+- Use the `--profile` parameter or set the `AWS_PROFILE` environment variable to switch profiles
 
-## AWS CLI Configuration
+#### AWS CLI Configuration
 
-You can configure the AWS CLI using the `aws configure` command. This command will prompt you for four pieces of information:
+Configure the AWS CLI using the `aws configure` command, which prompts for:
 
 1. **AWS Access Key ID**
 2. **AWS Secret Access Key**
 3. **Default region name**
 4. **Default output format**
 
-### AWS Access Key ID and Secret Access Key
+**🔒 Security Note**: Store your AWS access keys securely and follow the principle of least privilege when configuring IAM permissions for CLI access. Consider using IAM roles for Amazon EC2 or AWS IAM Identity Center for enhanced security.
 
-Your AWS access keys consist of the **Access Key ID** and **Secret Access Key**. These are used to authenticate and sign requests made to AWS.
+#### Default Region
 
-### Default Region
+The default region determines where the AWS CLI sends requests. Select the region closest to your infrastructure or users for optimal performance and lower latency (e.g., `us-west-2` for US West Oregon).
 
-The **default region** is where the AWS CLI will send requests unless a region is explicitly specified in a command. You should select the region closest to your infrastructure or where most of your AWS services reside, e.g., `us-west-2` for the US West (Oregon) region.
+#### Output Formats
 
-### Output Format
+The AWS CLI supports multiple output formats:
 
-The **default output format** determines how the results of AWS CLI commands are displayed. The available formats are:
+- **json**: JSON-formatted output (default)
+- **yaml**: YAML-formatted output (AWS CLI v2 only)
+- **yaml-stream**: Streamed YAML for processing large datasets (AWS CLI v2 only)
+- **text**: Tab-delimited text output for parsing with Unix tools
+- **table**: Human-readable tabular format
 
-- **json**: Outputs results in JSON format (default).
-- **yaml**: Outputs results in YAML format (only available in AWS CLI v2).
-- **yaml-stream**: Streams large datasets in YAML format for faster processing (only available in AWS CLI v2).
-- **text**: Outputs tab-delimited text, useful for parsing with tools like `grep`, `sed`, or `awk`.
-- **table**: Displays results in a human-readable table format.
+**💡 Pro Tip**: Use the `text` output format with Unix tools like `grep`, `awk`, and `sed` for powerful command-line processing of AWS resource information.
 
-## Conclusion
+#### Conclusion
 
-The AWS CLI is a powerful tool that can simplify AWS management through scripting and automation. Configuring the CLI properly allows you to efficiently manage AWS resources from your command line environment.
-
+The AWS CLI is a powerful tool for managing cloud infrastructure efficiently and can be customized for advanced use cases. Throughout this workshop, you'll gain hands-on experience with essential AWS CLI commands and patterns.

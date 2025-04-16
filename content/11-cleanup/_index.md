@@ -8,50 +8,58 @@ pre : " <b> 11. </b> "
 
 #### Clean up resources
 
-1. Delete **Security group**.
+⚠️ **Warning**: Make sure to delete resources in the correct order to avoid dependency errors. Resources with dependencies must be deleted after their dependent resources.
 
-```
-aws ec2 delete-security-group --group-id **SG ID**
+#### Delete Security Group
+
+```bash
+aws ec2 delete-security-group --group-id <SECURITY_GROUP_ID>
 ```
 
 ![AWS CLI](/images/ec2-net/00012.png?featherlight=false&width=90pc)
 
-2. Delete **Subnet**
+#### Delete Subnet
 
-```
-aws ec2 delete-subnet --subnet-id **Subnet ID**
+```bash
+aws ec2 delete-subnet --subnet-id <SUBNET_ID>
 ```
 
 ![AWS CLI](/images/ec2-net/00013.png?featherlight=false&width=90pc)
 
-3. Delete **Route table**
+#### Delete Route Table
 
-```
-aws ec2 delete-route-table --route-table-id **RTB ID**
+```bash
+aws ec2 delete-route-table --route-table-id <ROUTE_TABLE_ID>
 ```
 
 ![AWS CLI](/images/ec2-net/00014.png?featherlight=false&width=90pc)
 
-4. Detach **Internet Gateway**
+#### Detach Internet Gateway
 
-```
-aws ec2 detach-internet-gateway --internet-gateway-id **IGW ID** --vpc-id **VPC ID**
+💡 **Pro Tip**: You must detach the Internet Gateway from the VPC before you can delete it.
+
+```bash
+aws ec2 detach-internet-gateway --internet-gateway-id <INTERNET_GATEWAY_ID> --vpc-id <VPC_ID>
 ```
 
 ![AWS CLI](/images/ec2-net/00015.png?featherlight=false&width=90pc)
 
-5. Delete **Internet gateway**
+#### Delete Internet Gateway
 
-```
-aws ec2 delete-internet-gateway --internet-gateway-id **IGW**
+```bash
+aws ec2 delete-internet-gateway --internet-gateway-id <INTERNET_GATEWAY_ID>
 ```
 
 ![AWS CLI](/images/ec2-net/00016.png?featherlight=false&width=90pc)
 
-6. Perform a **VPC** deletion
+#### Delete VPC
 
-```
-aws ec2 delete-vpc --vpc-id **VPC ID**
+ℹ️ **Information**: This should be the final step after all resources within the VPC have been deleted.
+
+```bash
+aws ec2 delete-vpc --vpc-id <VPC_ID>
 ```
 
 ![AWS CLI](/images/ec2-net/00017.png?featherlight=false&width=90pc)
+
+🔒 **Security Note**: To ensure complete cleanup and prevent unexpected charges, verify all resources have been successfully deleted by checking the AWS Management Console or using the CLI list commands.

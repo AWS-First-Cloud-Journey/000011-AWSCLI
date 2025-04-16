@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.133.0">
+    <meta name="generator" content="Hugo 0.123.7">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Làm quen với AWS CLI :: LÀM QUEN VỚI AWS CLI</title>
 
     
-    <link href="/css/nucleus.css?1733747341" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1733747341" rel="stylesheet">
-    <link href="/css/hybrid.css?1733747341" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1733747341" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1733747341" rel="stylesheet">
-    <link href="/css/auto-complete.css?1733747341" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1733747341" rel="stylesheet">
-    <link href="/css/theme.css?1733747341" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1733747341" rel="stylesheet">
+    <link href="/css/nucleus.css?1744797309" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1744797309" rel="stylesheet">
+    <link href="/css/hybrid.css?1744797309" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1744797309" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1744797309" rel="stylesheet">
+    <link href="/css/auto-complete.css?1744797309" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1744797309" rel="stylesheet">
+    <link href="/css/theme.css?1744797309" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1744797309" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1733747341" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1744797309" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1733747341"></script>
+    <script src="/js/jquery-3.3.1.min.js?1744797309"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1733747341"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1733747341"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1744797309"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1744797309"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1733747341"></script>
+<script type="text/javascript" src="/js/search.js?1744797309"></script>
 
     
   </div>
@@ -519,7 +519,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>10-12-2024</font></i>
+        <i><font color=orange>16-04-2025</font></i>
     </left>
     <left>
         <br>
@@ -560,36 +560,40 @@
 <h1 id="làm-quen-với-aws-cli">Làm quen với AWS CLI</h1>
 <h4 id="tổng-quan">Tổng quan</h4>
 <p>Ở bài thực hành này, bạn sẽ được tìm hiểu về AWS CLI và sử dụng nó để tương tác với dịch vụ AWS.</p>
-<h4 id="aws-cli">AWS CLI</h4>
-<p>AWS Command Line Interface (AWS CLI) là một công cụ mã nguồn mở (open source) cho phép bạn tương tác với các dịch vụ AWS bằng cách sử dụng các lệnh trong cửa sổ lệnh (command-line shell). Với quá trình thiết lập đơn giản, AWS CLI cho phép bạn chạy các lệnh triển khai các chức năng tương đương với chức năng được cung cấp bởi AWS Management Console trên trình duyệt.</p>
-<p>AWS CLI hỗ trợ các cửa sổ lệnh sau:</p>
+<h4 id="aws-cli-là-gì">AWS CLI là gì?</h4>
+<p>ℹ️ <strong>Thông tin</strong>: AWS Command Line Interface (AWS CLI) là một công cụ mã nguồn mở (open source) cho phép bạn tương tác với các dịch vụ AWS bằng cách sử dụng các lệnh trong cửa sổ lệnh (command-line shell). Với quá trình thiết lập đơn giản, AWS CLI cho phép bạn chạy các lệnh triển khai các chức năng tương đương với chức năng được cung cấp bởi AWS Management Console trên trình duyệt.</p>
+<h4 id="môi-trường-hỗ-trợ">Môi trường hỗ trợ</h4>
+<p>ℹ️ <strong>Thông tin</strong>: AWS CLI hỗ trợ các cửa sổ lệnh sau:</p>
 <ul>
 <li><strong>Linux shells</strong> – Sử dụng các chương trình cửa sổ lệnh phổ biến như bash, zsh và tcsh để chạy các lệnh trong Linux hoặc macOS.</li>
 <li><strong>Windows command line</strong> – Trên Windows, chạy lệnh trong cửa sổ lệnh Windows (command prompt) hoặc trong PowerShell.</li>
 <li><strong>Remotely</strong> – Chạy lệnh trong máy ảo Amazon Elastic Compute Cloud (Amazon EC2) thông qua cửa sổ lệnh như PuTTY hoặc SSH hoặc AWS Systems Manager.</li>
 </ul>
-<p>Tất cả các chức năng quản trị, quản lý và truy cập tài nguyên AWS trong AWS Management Console đều có sẵn trong AWS API và CLI. Các tính năng và dịch vụ AWS mới sẽ được cung cấp đầy đủ như trên AWS Management Console thông qua API và CLI ngay sau khi ra mắt hoặc trong vòng 180 ngày sau đó.</p>
-<p>AWS CLI cung cấp quyền truy cập trực tiếp vào các API công khai của các dịch vụ AWS. Bạn có thể khám phá khả năng của một dịch vụ AWS với AWS CLI và phát triển các tập lệnh shell scripts để quản lý tài nguyên của bạn. Ngoài các lệnh cấp thấp tương đương với API, nhiều dịch vụ AWS cho phép các tùy chỉnh (customization) trên AWS CLI. Các tùy chỉnh có thể bao gồm các lệnh cấp cao hơn giúp đơn giản hóa việc sử dụng dịch vụ có API phức tạp.</p>
-<h4 id="profile">Profile</h4>
+<p>💡 <strong>Pro Tip</strong>: Tất cả các chức năng quản trị, quản lý và truy cập tài nguyên AWS trong AWS Management Console đều có sẵn trong AWS API và CLI. Các tính năng và dịch vụ AWS mới sẽ được cung cấp đầy đủ như trên AWS Management Console thông qua API và CLI ngay sau khi ra mắt hoặc trong vòng 180 ngày sau đó.</p>
+<h4 id="khả-năng-của-aws-cli">Khả năng của AWS CLI</h4>
+<p>ℹ️ <strong>Thông tin</strong>: AWS CLI cung cấp quyền truy cập trực tiếp vào các API công khai của các dịch vụ AWS. Bạn có thể khám phá khả năng của một dịch vụ AWS với AWS CLI và phát triển các tập lệnh shell scripts để quản lý tài nguyên của bạn. Ngoài các lệnh cấp thấp tương đương với API, nhiều dịch vụ AWS cho phép các tùy chỉnh (customization) trên AWS CLI. Các tùy chỉnh có thể bao gồm các lệnh cấp cao hơn giúp đơn giản hóa việc sử dụng dịch vụ có API phức tạp.</p>
+<h4 id="profile-trong-aws-cli">Profile trong AWS CLI</h4>
+<p>ℹ️ <strong>Thông tin</strong>:</p>
 <ul>
 <li>Profile là tập các thiết lập và định danh cho phép bạn sử dụng các lệnh có trong AWS CLI. Mặc định, AWS CLI sử dụng <code>default</code> profile. Ngoài ra, bạn còn có thể tạo thêm nhiều profile khác gọi là profile riêng với thông số <code>--profile</code>.</li>
-<li>AWS CLI lưu trữ thông tin của các profile trong tập tin <code>config</code> và <code>credentials</code>. Bạn có thể tạo thêm các profile khác bằng cách thêm các thiết lập trực tiếp vào các tập tin <code>config</code> và <code>credentials</code>.</li>
-<li>Với thông số <code>--profile</code>, bạn có thể chỉ định một profile cụ thể để thực hiện những câu lệnh trong AWS CLI. Bạn cũng có thể chỉ định profile trong biến môi trường <code>AWS_PROFILE</code> để thay thế <code>default</code> profile ở một session cụ thể.</li>
+<li>AWS CLI lưu trữ thông tin của các profile trong tập tin <code>config</code> và <code>credentials</code>. Bạn có thể tạo thêm các profile khác bằng cách thêm các thiết lập trực tiếp vào các tập tin này.</li>
 </ul>
-<h4 id="cơ-bản-về-cấu-hình">Cơ bản về cấu hình</h4>
-<p>Chúng ta sẽ sử dụng lệnh <code>aws configure</code>. Đây được xem là cách nhanh nhất để thiết lập cho AWS CLI. Cửa sổ lệnh sẽ xuất hiện yêu cầu về 4 thông tin như sau:</p>
+<p>💡 <strong>Pro Tip</strong>: Với thông số <code>--profile</code>, bạn có thể chỉ định một profile cụ thể để thực hiện những câu lệnh trong AWS CLI. Bạn cũng có thể chỉ định profile trong biến môi trường <code>AWS_PROFILE</code> để thay thế <code>default</code> profile ở một session cụ thể.</p>
+<h4 id="cấu-hình-cơ-bản-aws-cli">Cấu hình cơ bản AWS CLI</h4>
+<p>ℹ️ <strong>Thông tin</strong>: Chúng ta sẽ sử dụng lệnh <code>aws configure</code>. Đây được xem là cách nhanh nhất để thiết lập cho AWS CLI. Cửa sổ lệnh sẽ xuất hiện yêu cầu về 4 thông tin như sau:</p>
 <ul>
 <li>Access key ID</li>
 <li>Secret access key</li>
 <li>AWS Region (Vùng)</li>
 <li>Output format (Định dạng xuất)</li>
 </ul>
-<h4 id="access-key-id-và-secret-access-key">Access key ID và secret access key</h4>
-<p>Access key bao gồm access key ID và secret access key, được sử dụng để ký các yêu cầu ứng dụng mà bạn gửi tới AWS.</p>
-<h4 id="region-vùng">Region (Vùng)</h4>
-<p><code>Default region name</code> xác định Khu vực AWS có máy chủ mà bạn muốn gửi yêu cầu của mình theo mặc định. Ví dụ: bạn có thể nhập <code>us-west-2</code> để sử dụng US West (Oregon). Đây là Region mặc định mà tất cả các yêu cầu sau này sẽ được gửi đến, trừ khi bạn chỉ định khác.</p>
-<h4 id="output-format-định-dạng-xuất">Output format (Định dạng xuất)</h4>
-<p><code>Default output format</code> chỉ định cách các kết quả trả về được định dạng. Nếu bạn không chỉ định định dạng đầu ra thì <code>json</code> được sử dụng mặc định.</p>
+<h4 id="thông-tin-xác-thực">Thông tin xác thực</h4>
+<p>🔒 <strong>Security Note</strong>: Access key bao gồm access key ID và secret access key, được sử dụng để ký các yêu cầu ứng dụng mà bạn gửi tới AWS. Luôn bảo vệ các thông tin này và không bao giờ chia sẻ chúng. Nên sử dụng IAM roles khi có thể thay vì access keys.</p>
+<h4 id="cấu-hình-region">Cấu hình Region</h4>
+<p>ℹ️ <strong>Thông tin</strong>: <code>Default region name</code> xác định Khu vực AWS có máy chủ mà bạn muốn gửi yêu cầu của mình theo mặc định. Ví dụ: bạn có thể nhập <code>us-west-2</code> để sử dụng US West (Oregon). Đây là Region mặc định mà tất cả các yêu cầu sau này sẽ được gửi đến, trừ khi bạn chỉ định khác.</p>
+<p>⚠️ <strong>Warning</strong>: Việc chọn Region ảnh hưởng đến chi phí, độ trễ và tính khả dụng của dịch vụ. Hãy chọn Region gần với người dùng cuối của bạn để giảm độ trễ.</p>
+<h4 id="định-dạng-đầu-ra">Định dạng đầu ra</h4>
+<p>ℹ️ <strong>Thông tin</strong>: <code>Default output format</code> chỉ định cách các kết quả trả về được định dạng. Nếu bạn không chỉ định định dạng đầu ra thì <code>json</code> được sử dụng mặc định.</p>
 <ul>
 <li><strong>json</strong> – Đầu ra được định dạng dưới dạng chuỗi JSON.</li>
 <li><strong>yaml</strong> – Đầu ra được định dạng dưới dạng chuỗi YAML. (Chỉ hỗ trợ ở AWS CLI v2.)</li>
@@ -597,6 +601,7 @@
 <li><strong>text</strong> – Đầu ra được định dạng dưới dạng nhiều dòng giá trị chuỗi được phân tách bằng tab.</li>
 <li><strong>table</strong> – Đầu ra được định dạng dưới dạng bảng sử dụng các ký tự <code>+|-</code> để tạo thành các đường viền ô.</li>
 </ul>
+<p>💡 <strong>Pro Tip</strong>: Định dạng <code>table</code> rất hữu ích khi bạn muốn xem kết quả một cách trực quan, trong khi định dạng <code>json</code> hoặc <code>yaml</code> thích hợp khi bạn cần xử lý dữ liệu bằng các công cụ khác.</p>
 <h4 id="nội-dung-chính">Nội dung chính:</h4>
 <ol>
 <li><a href="/vi/#tổng-quan">Giới thiệu</a></li>
@@ -872,19 +877,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1733747342"></script>
-    <script src="/js/perfect-scrollbar.min.js?1733747342"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1733747342"></script>
-    <script src="/js/jquery.sticky.js?1733747342"></script>
-    <script src="/js/featherlight.min.js?1733747342"></script>
-    <script src="/js/highlight.pack.js?1733747342"></script>
+    <script src="/js/clipboard.min.js?1744797309"></script>
+    <script src="/js/perfect-scrollbar.min.js?1744797309"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1744797309"></script>
+    <script src="/js/jquery.sticky.js?1744797309"></script>
+    <script src="/js/featherlight.min.js?1744797309"></script>
+    <script src="/js/highlight.pack.js?1744797309"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1733747342"></script>
-    <script src="/js/learn.js?1733747342"></script>
-    <script src="/js/hugo-learn.js?1733747342"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1744797309"></script>
+    <script src="/js/learn.js?1744797309"></script>
+    <script src="/js/hugo-learn.js?1744797309"></script>
 
-    <link href="/mermaid/mermaid.css?1733747342" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1733747342"></script>
+    <link href="/mermaid/mermaid.css?1744797309" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1744797309"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.133.0">
+    <meta name="generator" content="Hugo 0.123.7">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Getting Started with the AWS CLI :: GETTING STARTED WITH THE AWS CLI</title>
 
     
-    <link href="/css/nucleus.css?1733747341" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1733747341" rel="stylesheet">
-    <link href="/css/hybrid.css?1733747341" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1733747341" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1733747341" rel="stylesheet">
-    <link href="/css/auto-complete.css?1733747341" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1733747341" rel="stylesheet">
-    <link href="/css/theme.css?1733747341" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1733747341" rel="stylesheet">
+    <link href="/css/nucleus.css?1744797309" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1744797309" rel="stylesheet">
+    <link href="/css/hybrid.css?1744797309" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1744797309" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1744797309" rel="stylesheet">
+    <link href="/css/auto-complete.css?1744797309" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1744797309" rel="stylesheet">
+    <link href="/css/theme.css?1744797309" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1744797309" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1733747341" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1744797309" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1733747341"></script>
+    <script src="/js/jquery-3.3.1.min.js?1744797309"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1733747341"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1733747341"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1744797309"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1744797309"></script>
 <script type="text/javascript">
     
         var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1733747341"></script>
+<script type="text/javascript" src="/js/search.js?1744797309"></script>
 
     
   </div>
@@ -519,7 +519,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>10-12-2024</font></i>
+        <i><font color=orange>16-04-2025</font></i>
     </left>
     <left>
         <br>
@@ -558,46 +558,48 @@
 
  
 <h1 id="getting-started-with-the-aws-cli">Getting Started with the AWS CLI</h1>
-<h2 id="overview">Overview</h2>
-<p>In this guide, you will learn how to get started with the AWS CLI and use it to interact with AWS services.</p>
-<h2 id="aws-cli-overview">AWS CLI Overview</h2>
-<p>The AWS Command Line Interface (AWS CLI) is an open-source tool that enables you to interact with AWS services using command-line shell commands. The AWS CLI provides the same functionality as the AWS Management Console but allows for automation and scripting.</p>
-<h3 id="supported-command-line-interfaces">Supported Command Line Interfaces</h3>
+<p>In this workshop, you will learn how to use the AWS Command Line Interface (CLI) to interact with AWS services efficiently through the command line.</p>
+<h4 id="aws-command-line-interface-cli">AWS Command Line Interface (CLI)</h4>
+<p><strong>ℹ️ Information</strong>: The <strong>AWS Command Line Interface (CLI)</strong> is an open-source tool that enables you to interact with AWS services using commands in your command-line shell. With the AWS CLI, you can control multiple AWS services directly from the command line and automate them through scripts.</p>
+<h4 id="supported-command-environments">Supported Command Environments</h4>
+<p>The AWS CLI supports various command environments:</p>
 <ul>
-<li><strong>Linux and macOS</strong>: You can use shells like <code>bash</code>, <code>zsh</code>, or <code>tcsh</code> to run AWS CLI commands.</li>
-<li><strong>Windows</strong>: The AWS CLI can be run in Command Prompt or PowerShell.</li>
-<li><strong>Remote Access</strong>: You can also run AWS CLI commands on Amazon EC2 instances through tools like PuTTY, SSH, or AWS Systems Manager.</li>
+<li><strong>Linux and macOS Shells</strong> – Use popular shells like Bash, Zsh, or Tcsh to run AWS CLI commands.</li>
+<li><strong>Windows Command Line</strong> – Execute commands in Windows Command Prompt or PowerShell.</li>
+<li><strong>Remote Access</strong> – Run commands on Amazon EC2 instances through PuTTY, SSH, or AWS Systems Manager.</li>
 </ul>
-<p>The AWS CLI allows you to perform administrative and resource management tasks on AWS, offering direct access to AWS services&rsquo; public APIs. The CLI is updated as AWS releases new features and services, often within 180 days of launch.</p>
-<h3 id="aws-cli-profiles">AWS CLI Profiles</h3>
-<p>Profiles are collections of settings that the AWS CLI uses to execute commands. By default, the AWS CLI uses the <strong>default</strong> profile, but you can define multiple custom profiles.</p>
+<p><strong>💡 Pro Tip</strong>: All administrative tasks available in the AWS Management Console can be performed using the AWS CLI or AWS API. New AWS services and features are typically made available in the CLI and API either immediately upon release or within 180 days.</p>
+<h4 id="aws-cli-profiles">AWS CLI Profiles</h4>
+<p>AWS CLI profiles are collections of settings used to execute commands:</p>
 <ul>
-<li>Profile settings are stored in configuration and credentials files.</li>
-<li>To specify a profile for a command, use the <code>--profile</code> parameter or set the <code>AWS_PROFILE</code> environment variable to switch profiles for the current session.</li>
+<li>The <strong>default</strong> profile is used when no specific profile is specified</li>
+<li>Multiple named profiles can be created for different AWS environments</li>
+<li>Profile settings are stored in configuration and credentials files</li>
+<li>Use the <code>--profile</code> parameter or set the <code>AWS_PROFILE</code> environment variable to switch profiles</li>
 </ul>
-<h2 id="aws-cli-configuration">AWS CLI Configuration</h2>
-<p>You can configure the AWS CLI using the <code>aws configure</code> command. This command will prompt you for four pieces of information:</p>
+<h4 id="aws-cli-configuration">AWS CLI Configuration</h4>
+<p>Configure the AWS CLI using the <code>aws configure</code> command, which prompts for:</p>
 <ol>
 <li><strong>AWS Access Key ID</strong></li>
 <li><strong>AWS Secret Access Key</strong></li>
 <li><strong>Default region name</strong></li>
 <li><strong>Default output format</strong></li>
 </ol>
-<h3 id="aws-access-key-id-and-secret-access-key">AWS Access Key ID and Secret Access Key</h3>
-<p>Your AWS access keys consist of the <strong>Access Key ID</strong> and <strong>Secret Access Key</strong>. These are used to authenticate and sign requests made to AWS.</p>
-<h3 id="default-region">Default Region</h3>
-<p>The <strong>default region</strong> is where the AWS CLI will send requests unless a region is explicitly specified in a command. You should select the region closest to your infrastructure or where most of your AWS services reside, e.g., <code>us-west-2</code> for the US West (Oregon) region.</p>
-<h3 id="output-format">Output Format</h3>
-<p>The <strong>default output format</strong> determines how the results of AWS CLI commands are displayed. The available formats are:</p>
+<p><strong>🔒 Security Note</strong>: Store your AWS access keys securely and follow the principle of least privilege when configuring IAM permissions for CLI access. Consider using IAM roles for Amazon EC2 or AWS IAM Identity Center for enhanced security.</p>
+<h4 id="default-region">Default Region</h4>
+<p>The default region determines where the AWS CLI sends requests. Select the region closest to your infrastructure or users for optimal performance and lower latency (e.g., <code>us-west-2</code> for US West Oregon).</p>
+<h4 id="output-formats">Output Formats</h4>
+<p>The AWS CLI supports multiple output formats:</p>
 <ul>
-<li><strong>json</strong>: Outputs results in JSON format (default).</li>
-<li><strong>yaml</strong>: Outputs results in YAML format (only available in AWS CLI v2).</li>
-<li><strong>yaml-stream</strong>: Streams large datasets in YAML format for faster processing (only available in AWS CLI v2).</li>
-<li><strong>text</strong>: Outputs tab-delimited text, useful for parsing with tools like <code>grep</code>, <code>sed</code>, or <code>awk</code>.</li>
-<li><strong>table</strong>: Displays results in a human-readable table format.</li>
+<li><strong>json</strong>: JSON-formatted output (default)</li>
+<li><strong>yaml</strong>: YAML-formatted output (AWS CLI v2 only)</li>
+<li><strong>yaml-stream</strong>: Streamed YAML for processing large datasets (AWS CLI v2 only)</li>
+<li><strong>text</strong>: Tab-delimited text output for parsing with Unix tools</li>
+<li><strong>table</strong>: Human-readable tabular format</li>
 </ul>
-<h2 id="conclusion">Conclusion</h2>
-<p>The AWS CLI is a powerful tool that can simplify AWS management through scripting and automation. Configuring the CLI properly allows you to efficiently manage AWS resources from your command line environment.</p>
+<p><strong>💡 Pro Tip</strong>: Use the <code>text</code> output format with Unix tools like <code>grep</code>, <code>awk</code>, and <code>sed</code> for powerful command-line processing of AWS resource information.</p>
+<h4 id="conclusion">Conclusion</h4>
+<p>The AWS CLI is a powerful tool for managing cloud infrastructure efficiently and can be customized for advanced use cases. Throughout this workshop, you&rsquo;ll gain hands-on experience with essential AWS CLI commands and patterns.</p>
 	
   
         
@@ -859,19 +861,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1733747341"></script>
-    <script src="/js/perfect-scrollbar.min.js?1733747341"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1733747341"></script>
-    <script src="/js/jquery.sticky.js?1733747341"></script>
-    <script src="/js/featherlight.min.js?1733747341"></script>
-    <script src="/js/highlight.pack.js?1733747341"></script>
+    <script src="/js/clipboard.min.js?1744797309"></script>
+    <script src="/js/perfect-scrollbar.min.js?1744797309"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1744797309"></script>
+    <script src="/js/jquery.sticky.js?1744797309"></script>
+    <script src="/js/featherlight.min.js?1744797309"></script>
+    <script src="/js/highlight.pack.js?1744797309"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1733747341"></script>
-    <script src="/js/learn.js?1733747341"></script>
-    <script src="/js/hugo-learn.js?1733747341"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1744797309"></script>
+    <script src="/js/learn.js?1744797309"></script>
+    <script src="/js/hugo-learn.js?1744797309"></script>
 
-    <link href="/mermaid/mermaid.css?1733747341" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1733747341"></script>
+    <link href="/mermaid/mermaid.css?1744797309" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1744797309"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

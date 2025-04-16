@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.133.0">
+    <meta name="generator" content="Hugo 0.123.7">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Giới thiệu :: LÀM QUEN VỚI AWS CLI</title>
 
     
-    <link href="/css/nucleus.css?1733747341" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1733747341" rel="stylesheet">
-    <link href="/css/hybrid.css?1733747341" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1733747341" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1733747341" rel="stylesheet">
-    <link href="/css/auto-complete.css?1733747341" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1733747341" rel="stylesheet">
-    <link href="/css/theme.css?1733747341" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1733747341" rel="stylesheet">
+    <link href="/css/nucleus.css?1744797309" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1744797309" rel="stylesheet">
+    <link href="/css/hybrid.css?1744797309" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1744797309" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1744797309" rel="stylesheet">
+    <link href="/css/auto-complete.css?1744797309" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1744797309" rel="stylesheet">
+    <link href="/css/theme.css?1744797309" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1744797309" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1733747341" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1744797309" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1733747341"></script>
+    <script src="/js/jquery-3.3.1.min.js?1744797309"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1733747341"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1733747341"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1744797309"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1744797309"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1733747341"></script>
+<script type="text/javascript" src="/js/search.js?1744797309"></script>
 
     
   </div>
@@ -519,7 +519,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>10-12-2024</font></i>
+        <i><font color=orange>16-04-2025</font></i>
     </left>
     <left>
         <br>
@@ -612,21 +612,30 @@
 	<h4 id="tổng-quan">Tổng quan</h4>
 <p>Trong bài thực hành này, bạn sẽ được giới thiệu về AWS Command Line Interface (AWS CLI) và cách sử dụng nó để tương tác với các dịch vụ AWS.</p>
 <h4 id="aws-cli">AWS CLI</h4>
-<p><strong>AWS Command Line Interface (AWS CLI)</strong> là một công cụ mã nguồn mở cho phép bạn tương tác với các dịch vụ AWS thông qua các lệnh trong giao diện dòng lệnh (command-line). Với quá trình thiết lập đơn giản, AWS CLI giúp bạn triển khai các chức năng tương tự như trên AWS Management Console.</p>
-<h5 id="các-môi-trường-dòng-lệnh-hỗ-trợ-aws-cli">Các môi trường dòng lệnh hỗ trợ AWS CLI:</h5>
+<p><strong>ℹ️ Information</strong>: <strong>AWS Command Line Interface (AWS CLI)</strong> là một công cụ mã nguồn mở cho phép bạn tương tác với các dịch vụ AWS thông qua các lệnh trong giao diện dòng lệnh (command-line). Với quá trình thiết lập đơn giản, AWS CLI giúp bạn triển khai các chức năng tương tự như trên AWS Management Console.</p>
+<h4 id="môi-trường-hỗ-trợ">Môi trường hỗ trợ</h4>
+<p>AWS CLI hỗ trợ nhiều môi trường dòng lệnh khác nhau:</p>
 <ul>
 <li><strong>Linux Shells</strong>: Sử dụng các shell phổ biến như Bash, Zsh, và Tcsh để chạy lệnh trên Linux hoặc macOS.</li>
 <li><strong>Windows Command Line</strong>: Trên Windows, bạn có thể sử dụng Command Prompt hoặc PowerShell để chạy các lệnh.</li>
 <li><strong>Remote Access</strong>: Bạn có thể chạy lệnh trên Amazon Elastic Compute Cloud (Amazon EC2) thông qua PuTTY, SSH hoặc AWS Systems Manager.</li>
 </ul>
-<p>AWS CLI cung cấp quyền truy cập trực tiếp vào API của các dịch vụ AWS, cho phép bạn khám phá và sử dụng các dịch vụ này một cách linh hoạt. Bạn có thể viết các tập lệnh (scripts) để quản lý tài nguyên, đồng thời thực hiện các tác vụ như triển khai, quản lý, và giám sát hệ thống.</p>
-<p>Ngoài các lệnh tương đương với API, một số dịch vụ AWS cho phép <strong>tùy chỉnh</strong> (customization) trên AWS CLI, cung cấp các lệnh cấp cao nhằm đơn giản hóa việc sử dụng những dịch vụ có API phức tạp.</p>
+<h4 id="khả-năng-và-tính-năng">Khả năng và tính năng</h4>
+<p>AWS CLI cung cấp quyền truy cập trực tiếp vào API của các dịch vụ AWS, cho phép bạn:</p>
+<ul>
+<li>Khám phá và sử dụng các dịch vụ AWS một cách linh hoạt</li>
+<li>Viết các tập lệnh (scripts) để quản lý tài nguyên</li>
+<li>Thực hiện các tác vụ như triển khai, quản lý, và giám sát hệ thống</li>
+</ul>
+<p>💡 <strong>Pro Tip</strong>: Ngoài các lệnh tương đương với API, một số dịch vụ AWS cung cấp các lệnh cấp cao được <strong>tùy chỉnh</strong> (customization) trên AWS CLI, giúp đơn giản hóa việc sử dụng những dịch vụ có API phức tạp.</p>
 <h4 id="lợi-ích-của-aws-cli">Lợi ích của AWS CLI</h4>
 <ol>
 <li><strong>Tiện lợi</strong>: Thao tác trên dòng lệnh dễ dàng, linh hoạt, và có thể được tự động hóa qua scripts.</li>
 <li><strong>Tiết kiệm thời gian</strong>: Chạy các lệnh đồng thời hoặc script phức tạp mà không cần thao tác thủ công qua AWS Management Console.</li>
-<li><strong>Bảo mật</strong>: Dễ dàng tích hợp với các dịch vụ bảo mật của AWS như IAM để quản lý quyền truy cập.</li>
+<li><strong>🔒 Security Note</strong>: Dễ dàng tích hợp với các dịch vụ bảo mật của AWS như AWS Identity and Access Management (IAM) để quản lý quyền truy cập và tuân thủ nguyên tắc đặc quyền tối thiểu.</li>
+<li><strong>Tự động hóa</strong>: Tích hợp vào các quy trình CI/CD và các công cụ DevOps khác.</li>
 </ol>
+<p>⚠️ <strong>Warning</strong>: Khi sử dụng AWS CLI, hãy luôn đảm bảo bảo vệ thông tin xác thực của bạn và không bao giờ chia sẻ khóa truy cập trong mã nguồn công khai hoặc repositories.</p>
 <h4 id="kết-luận">Kết luận</h4>
 <p>AWS CLI là công cụ mạnh mẽ và tiện lợi cho quản trị viên, nhà phát triển, và những người quản lý hệ thống. Thông qua việc sử dụng AWS CLI, bạn có thể tận dụng toàn bộ tiềm năng của AWS API để tự động hóa và quản lý hạ tầng một cách hiệu quả.</p>
 
@@ -900,19 +909,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1733747341"></script>
-    <script src="/js/perfect-scrollbar.min.js?1733747341"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1733747341"></script>
-    <script src="/js/jquery.sticky.js?1733747341"></script>
-    <script src="/js/featherlight.min.js?1733747341"></script>
-    <script src="/js/highlight.pack.js?1733747341"></script>
+    <script src="/js/clipboard.min.js?1744797309"></script>
+    <script src="/js/perfect-scrollbar.min.js?1744797309"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1744797309"></script>
+    <script src="/js/jquery.sticky.js?1744797309"></script>
+    <script src="/js/featherlight.min.js?1744797309"></script>
+    <script src="/js/highlight.pack.js?1744797309"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1733747341"></script>
-    <script src="/js/learn.js?1733747341"></script>
-    <script src="/js/hugo-learn.js?1733747341"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1744797309"></script>
+    <script src="/js/learn.js?1744797309"></script>
+    <script src="/js/hugo-learn.js?1744797309"></script>
 
-    <link href="/mermaid/mermaid.css?1733747341" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1733747341"></script>
+    <link href="/mermaid/mermaid.css?1744797309" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1744797309"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
