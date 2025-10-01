@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Getting Started with the AWS CLI
 
 A comprehensive workshop for learning how to use the AWS Command Line Interface (CLI) to interact with AWS services efficiently through the command line.
