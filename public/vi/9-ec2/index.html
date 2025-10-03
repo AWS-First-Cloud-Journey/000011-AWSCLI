@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="vi" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.123.7">
+    <meta name="generator" content="Hugo 0.147.8">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Tạo EC2 sử dụng AWS CLI :: LÀM QUEN VỚI AWS CLI</title>
 
     
-    <link href="/css/nucleus.css?1744797309" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1744797309" rel="stylesheet">
-    <link href="/css/hybrid.css?1744797309" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1744797309" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1744797309" rel="stylesheet">
-    <link href="/css/auto-complete.css?1744797309" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1744797309" rel="stylesheet">
-    <link href="/css/theme.css?1744797309" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1744797309" rel="stylesheet">
+    <link href="/css/nucleus.css?1759505619" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1759505619" rel="stylesheet">
+    <link href="/css/hybrid.css?1759505619" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1759505619" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1759505619" rel="stylesheet">
+    <link href="/css/auto-complete.css?1759505619" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1759505619" rel="stylesheet">
+    <link href="/css/theme.css?1759505619" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1759505619" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1744797309" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1759505619" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1744797309"></script>
+    <script src="/js/jquery-3.3.1.min.js?1759505619"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1744797309"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1744797309"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1759505619"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1759505619"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/\/vi";
+        var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1744797309"></script>
+<script type="text/javascript" src="/js/search.js?1759505619"></script>
 
     
   </div>
@@ -467,7 +467,7 @@
                   
                     
                     
-                      <option id="en" value="/9-ec2/">English</option>
+                      <option id="en" value="//localhost:1313/9-ec2/">English</option>
                     
                   
               
@@ -481,7 +481,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/9-ec2/" selected>Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/9-ec2/" selected>Tiếng Việt</option>
                     
                   
               
@@ -614,55 +614,57 @@
 <li>
 <p>Từ hạ tầng mạng đã tạo bằng <strong>CLI</strong>, chúng ta sẽ tạo <strong>EC2</strong>. Trước hết, tạo <strong>AWS Key pair</strong>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws ec2 create-key-pair --key-name MyKeyPair --query <span style="color:#e6db74">&#34;KeyMaterial&#34;</span> --output text &gt; MyKeyPair.pem
-</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/ec2-net/0001.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/ec2-net/0001.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 </li>
 <li>
 <p>Kiểm tra trên giao diện, xác nhận đã tạo thành công <strong>Key pair</strong>.</p>
-<p><img alt="AWS CLI" src="/images/ec2-net/0002.png?featherlight=false&width=90pc"></p>
+<p><img src="/images/ec2-net/0002.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 </li>
 <li>
 <p>Phân quyền cho file <strong>Key pair</strong>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod <span style="color:#ae81ff">400</span> MyKeyPair.pem
-</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/ec2-net/0003.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/ec2-net/0003.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 </li>
 <li>
 <p>Tạo <strong>Security group</strong> cho <strong>EC2</strong>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws ec2 create-security-group --group-name SSHAccess --description <span style="color:#e6db74">&#34;Security group for SSH access&#34;</span> --vpc-id &lt;VPC ID&gt;
-</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/ec2-net/0004.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/ec2-net/0004.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 </li>
 <li>
 <p>Kiểm tra <strong>Security group</strong> vừa tạo.</p>
-<p><img alt="AWS CLI" src="/images/ec2-net/0005.png?featherlight=false&width=90pc"></p>
+<p><img src="/images/ec2-net/0005.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 </li>
 <li>
 <p>Cấp quyền để SSH:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws ec2 authorize-security-group-ingress --group-id &lt;SG ID&gt; --protocol tcp --port <span style="color:#ae81ff">22</span> --cidr 0.0.0.0/0
-</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/ec2-net/0006.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/ec2-net/0006.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 </li>
 <li>
 <p>Khởi tạo <strong>EC2</strong>:</p>
+<p>Bạn có thể lấy <strong>AMI ID</strong> bằng cách truy cập <strong>EC2</strong>, chọn <strong>AMI Catalog</strong>. Ở đây chúng ta sẽ lấy <strong>AMI ID</strong> của <strong>Amazon Linux 2023 kenel-6.1 AMI</strong>.</p>
+<p><img src="/images/0/019.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws ec2 run-instances --image-id &lt;AMI ID&gt; --count <span style="color:#ae81ff">1</span> --instance-type t2.micro --key-name MyKeyPair --security-group-ids &lt;SG ID&gt; --subnet-id &lt;Subnet ID&gt;
-</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/ec2-net/0007.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/ec2-net/0007.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 </li>
 <li>
 <p>Chờ khoảng 2 phút, kiểm tra trạng thái của <strong>EC2 instance</strong>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws ec2 describe-instances --instance-id &lt;Instance ID&gt; --query <span style="color:#e6db74">&#34;Reservations[*].Instances[*].{State:State.Name,Address:PublicIpAddress}&#34;</span>
-</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/ec2-net/0008.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/ec2-net/0008.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 </li>
 <li>
-<p>Khi <strong>instance</strong> đang ở trạng thái <strong>running</strong>, thực hiện kết nối:</p>
+<p>Khi <strong>instance</strong> đang ở trạng thái <strong>running</strong>, thực hiện kết nối, nhớ thay thế IP của EC2 instance vừa tạo:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh -i <span style="color:#e6db74">&#34;MyKeyPair.pem&#34;</span> ec2-user@&lt;IP Public&gt;
-</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/ec2-net/0009.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/ec2-net/0009.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 </li>
 <li>
 <p>Sau khi hoàn thành, <strong>terminate</strong> instance:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws ec2 terminate-instances --instance-ids &lt;Instance ID&gt;
-</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/ec2-net/00010.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/ec2-net/00010.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 </li>
 <li>
 <p>Sau 2-3 phút, kiểm tra lại trạng thái <strong>instance</strong>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws ec2 describe-instances --instance-id &lt;Instance ID&gt; --query <span style="color:#e6db74">&#34;Reservations[*].Instances[*].State.Name&#34;</span>
-</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/ec2-net/00011.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/ec2-net/00011.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 </li>
 </ol>
 
@@ -943,19 +945,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1744797309"></script>
-    <script src="/js/perfect-scrollbar.min.js?1744797309"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1744797309"></script>
-    <script src="/js/jquery.sticky.js?1744797309"></script>
-    <script src="/js/featherlight.min.js?1744797309"></script>
-    <script src="/js/highlight.pack.js?1744797309"></script>
+    <script src="/js/clipboard.min.js?1759505619"></script>
+    <script src="/js/perfect-scrollbar.min.js?1759505619"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1759505619"></script>
+    <script src="/js/jquery.sticky.js?1759505619"></script>
+    <script src="/js/featherlight.min.js?1759505619"></script>
+    <script src="/js/highlight.pack.js?1759505619"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1744797309"></script>
-    <script src="/js/learn.js?1744797309"></script>
-    <script src="/js/hugo-learn.js?1744797309"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1759505619"></script>
+    <script src="/js/learn.js?1759505619"></script>
+    <script src="/js/hugo-learn.js?1759505619"></script>
 
-    <link href="/mermaid/mermaid.css?1744797309" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1744797309"></script>
+    <link href="/mermaid/mermaid.css?1759505619" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1759505619"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

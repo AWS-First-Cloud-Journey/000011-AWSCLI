@@ -93,7 +93,7 @@ aws iam create-access-key --user-name dev-1
 Cuối cùng, nếu muốn xóa **Access Key** đã tạo, chúng ta có thể thực hiện với lệnh sau:
 
 ```bash
-aws iam delete-access-key --user-name dev-1 --access-key-id AKIAIOSFODNN7EXAMPLE
+aws iam delete-access-key --user-name dev-1 --access-key-id *dev-1-Access key*
 ```
 
 ![Xóa Access Key](/images/5-iam/0006.png?featherlight=false&width=90pc)

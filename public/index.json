@@ -1,111 +1,111 @@
 [
 {
-	"uri": "/8-network/8.1-vpc/",
+	"uri": "//localhost:1313/8-network/8.1-vpc/",
 	"title": "AWS CLI with VPC",
 	"tags": [],
 	"description": "",
 	"content": "AWS CLI with VPC Create a VPC using CLI aws ec2 create-vpc --cidr-block 10.0.0.0/16 --query Vpc.VpcId --output text Create a subnet based on VPC ID aws ec2 create-subnet --vpc-id **VPC-ID** --cidr-block 10.0.1.0/24 Create a second subnet aws ec2 create-subnet --vpc-id **VPC-ID** --cidr-block 10.0.2.0/24 Notes: Ensure the correct VPC ID is provided when creating subnets. Use aws ec2 describe-vpcs to list all VPCs and find the correct VPC ID.\n"
 },
 {
-	"uri": "/",
+	"uri": "//localhost:1313/",
 	"title": "Getting Started with the AWS CLI",
 	"tags": [],
 	"description": "",
 	"content": "Getting Started with the AWS CLI In this workshop, you will learn how to use the AWS Command Line Interface (CLI) to interact with AWS services efficiently through the command line.\nAWS Command Line Interface (CLI) ℹ️ Information: The AWS Command Line Interface (CLI) is an open-source tool that enables you to interact with AWS services using commands in your command-line shell. With the AWS CLI, you can control multiple AWS services directly from the command line and automate them through scripts.\nSupported Command Environments The AWS CLI supports various command environments:\nLinux and macOS Shells – Use popular shells like Bash, Zsh, or Tcsh to run AWS CLI commands. Windows Command Line – Execute commands in Windows Command Prompt or PowerShell. Remote Access – Run commands on Amazon EC2 instances through PuTTY, SSH, or AWS Systems Manager. 💡 Pro Tip: All administrative tasks available in the AWS Management Console can be performed using the AWS CLI or AWS API. New AWS services and features are typically made available in the CLI and API either immediately upon release or within 180 days.\nAWS CLI Profiles AWS CLI profiles are collections of settings used to execute commands:\nThe default profile is used when no specific profile is specified Multiple named profiles can be created for different AWS environments Profile settings are stored in configuration and credentials files Use the --profile parameter or set the AWS_PROFILE environment variable to switch profiles AWS CLI Configuration Configure the AWS CLI using the aws configure command, which prompts for:\nAWS Access Key ID AWS Secret Access Key Default region name Default output format 🔒 Security Note: Store your AWS access keys securely and follow the principle of least privilege when configuring IAM permissions for CLI access. Consider using IAM roles for Amazon EC2 or AWS IAM Identity Center for enhanced security.\nDefault Region The default region determines where the AWS CLI sends requests. Select the region closest to your infrastructure or users for optimal performance and lower latency (e.g., us-west-2 for US West Oregon).\nOutput Formats The AWS CLI supports multiple output formats:\njson: JSON-formatted output (default) yaml: YAML-formatted output (AWS CLI v2 only) yaml-stream: Streamed YAML for processing large datasets (AWS CLI v2 only) text: Tab-delimited text output for parsing with Unix tools table: Human-readable tabular format 💡 Pro Tip: Use the text output format with Unix tools like grep, awk, and sed for powerful command-line processing of AWS resource information.\nConclusion The AWS CLI is a powerful tool for managing cloud infrastructure efficiently and can be customized for advanced use cases. Throughout this workshop, you\u0026rsquo;ll gain hands-on experience with essential AWS CLI commands and patterns.\n"
 },
 {
-	"uri": "/1-introduce/",
+	"uri": "//localhost:1313/1-introduce/",
 	"title": "Introduction",
 	"tags": [],
 	"description": "",
 	"content": "Overview In this exercise, you will learn how to use the AWS Command Line Interface (CLI) to interact with AWS services.\nAWS CLI The AWS Command Line Interface (CLI) is an open-source tool that enables you to interact with AWS services using commands in a terminal. It provides functionality equivalent to the AWS Management Console, allowing you to automate tasks and manage AWS resources more efficiently.\nThe AWS CLI supports various command environments:\nLinux Shells – Use popular shells like Bash, Zsh, or Tcsh on Linux or macOS. Windows Command Line – Run commands in the Windows Command Prompt or PowerShell. Remote Access – Use tools like PuTTY, SSH, or AWS Systems Manager to run commands on an Amazon EC2 instance. All administrative tasks available in the AWS Management Console can be performed using the AWS CLI or API. New AWS services and features are made available in the CLI and API either immediately upon release or within 180 days.\nThe AWS CLI provides direct access to the public APIs of AWS services, enabling you to:\nExplore and interact with AWS services. Automate resource management through scripts. Use higher-level commands that simplify interactions with services that have complex APIs. The AWS CLI is a powerful tool for managing cloud infrastructure efficiently and can be customized for advanced use cases.\n"
 },
 {
-	"uri": "/8-network/8.2-igw/",
+	"uri": "//localhost:1313/8-network/8.2-igw/",
 	"title": "AWS CLI with Internet Gateway",
 	"tags": [],
 	"description": "",
 	"content": "AWS CLI with Internet Gateway Introduction This guide provides step-by-step instructions for creating and managing an Internet Gateway using AWS CLI.\nThis guide assumes you have AWS CLI configured on your system with appropriate IAM permissions.\nSteps to Create and Attach an Internet Gateway 1. Create Internet Gateway To create an Internet Gateway, use the following command:\naws ec2 create-internet-gateway --query InternetGateway.InternetGatewayId --output text 2. Confirm Internet Gateway Creation Once the Internet Gateway is created, confirm the successful creation and retrieve the Internet Gateway ID for the next steps.\n3. Check the VPC Next, check your VPC and retrieve the VPC ID to use in subsequent commands:\n4. Attach Internet Gateway to VPC Attach the Internet Gateway to your VPC by using the following command:\naws ec2 attach-internet-gateway --vpc-id \u0026lt;VPC-ID\u0026gt; --internet-gateway-id \u0026lt;IGW-ID\u0026gt; 5. Create and Manage Network Resources Create a Route Table for the VPC:\naws ec2 create-route-table --vpc-id \u0026lt;VPC-ID\u0026gt; --query RouteTable.RouteTableId --output text After creating the route table, create a route for the Internet Gateway:\naws ec2 create-route --route-table-id \u0026lt;RTB-ID\u0026gt; --destination-cidr-block 0.0.0.0/0 --gateway-id \u0026lt;IGW-ID\u0026gt; Check the route table:\naws ec2 describe-route-tables --route-table-id \u0026lt;RTB-ID\u0026gt; Finally, associate the route table with a Subnet:\naws ec2 associate-route-table --subnet-id \u0026lt;Subnet-ID\u0026gt; --route-table-id \u0026lt;RTB-ID\u0026gt; Notes Make sure to replace placeholders like \u0026lt;VPC-ID\u0026gt;, \u0026lt;IGW-ID\u0026gt;, \u0026lt;RTB-ID\u0026gt;, and \u0026lt;Subnet-ID\u0026gt; with actual values from your AWS environment.\nConclusion By following the steps in this guide, you can successfully create and manage an Internet Gateway in AWS. The Internet Gateway allows your VPC to communicate with the Internet, enabling inbound and outbound traffic for your resources.\n"
 },
 {
-	"uri": "/2-prerequiste/",
+	"uri": "//localhost:1313/2-prerequiste/",
 	"title": "Preparation",
 	"tags": [],
 	"description": "",
 	"content": "Preparation This guide outlines the necessary steps to prepare for the exercise. We\u0026rsquo;ll use Markdown format to write a blog post within an IDE environment.\nPreparation Steps Before you get started, follow these steps:\nCreate an AWS Account: If you don\u0026rsquo;t already have an AWS account, sign up here. An AWS account is required to complete this exercise.\nCreate an IAM Group:\nLog in to your AWS Management Console. Navigate to the IAM (Identity and Access Management) service. Create a new IAM group, assign a name, and define the necessary permissions for your use case. Create an IAM User:\nStill within the IAM service, create a new IAM user. Assign this user to the IAM group you just created. Take note of the Access Key ID and Secret Access Key for future use. Generate AWS Access Keys:\nSelect the IAM user you created. Under the Security Credentials tab, generate a new pair of access keys. Safely store the Access Key ID and Secret Access Key—you will need them to authenticate with AWS services. Create an EC2 Instance for SSH Access:\nIn the AWS Management Console, navigate to the EC2 (Elastic Compute Cloud) service. Launch a new EC2 instance with your preferred operating system (e.g., Amazon Linux, Ubuntu). Configure SSH access by creating or using an existing key pair. Ensure the security group allows SSH access (port 22) from your IP address or trusted sources. Final Notes With these preparation steps completed, you are now ready to proceed with the exercise. Be sure to securely store all login credentials and access keys to avoid unauthorized access or loss of control over your AWS resources.\n"
 },
 {
-	"uri": "/3-installcli/",
+	"uri": "//localhost:1313/3-installcli/",
 	"title": "Install AWS CLI",
 	"tags": [],
 	"description": "",
 	"content": "Install AWS CLI AWS Command Line Interface (AWS CLI) is available in two versions. To ensure a smooth experience, this guide covers the installation of AWS CLI v2 for Windows and Ubuntu, as it is simpler, more convenient, and feature-complete compared to v1.\nAWS CLI version 1 (AWS CLI v1): The original AWS CLI, still supported by AWS. AWS CLI version 2 (AWS CLI v2): The latest version supporting all the newest AWS features. Some features available in v2 are not supported in v1, so upgrading is necessary to use those features. Let\u0026rsquo;s begin by installing the AWS CLI on different platforms. For Linux: curl \u0026#34;https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip\u0026#34; -o \u0026#34;awscliv2.zip\u0026#34; unzip awscliv2.zip sudo ./aws/install For Windows: msiexec.exe /i https://awscli.amazonaws.com/AWSCLIV2.msi For MacOS: sudo ln -s /folder/installed/aws-cli/aws /usr/local/bin/aws sudo ln -s /folder/installed/aws-cli/aws_completer /usr/local/bin/aws_completer Verify that AWS CLI is installed: aws --version Create Default Profile Use the aws configure command to set up the AWS CLI. This is the fastest way to configure it. You will be prompted for the following details:\nAccess key ID Secret access key AWS Region Output format (e.g., JSON) aws configure AWS Access Key ID [None]: *AKIAIOSFODNN7EXAMPLE* AWS Secret Access Key [None]: *wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY* Default region name [None]: *ap-southeast-1* Default output format [None]: *json* The AWS CLI stores this information in a profile named default in the credentials file. This profile is used when no specific profile is specified.\nCreate Custom Profile To configure multiple profiles, create another profile (e.g., devops). aws configure --profile devops The access key (Access Key ID and Secret Access Key) is used to authenticate requests to AWS.\nVerify that the profile is configured: Manage Multiple Profiles Check the configuration of CLI credentials: cd ~/.aws/ ls cat config You can also verify the region for a specific profile: aws configure get region --profile devops List the current configuration: aws configure list List all profiles: aws configure list-profiles You can add or edit profiles directly by editing the config and credentials files using a text editor.\n"
 },
 {
-	"uri": "/4-infras/",
+	"uri": "//localhost:1313/4-infras/",
 	"title": "View resource via CLI",
 	"tags": [],
 	"description": "",
 	"content": "View resource via CLI Table of Contents View resource via CLI Table of Contents View EC2 instances Check S3 buckets CLI Auto Prompt EC2 tabular description View EC2 instances We can check the profile\u0026rsquo;s EC2 instances using the following command:\naws ec2 describe-instances --profile devops You can specify the region by adding --region \u0026lt;region-name\u0026gt;.\nCheck S3 buckets To check the number of S3 buckets in your profile:\naws s3 ls --profile devops This command lists all S3 buckets associated with the selected AWS profile.\nCLI Auto Prompt The AWS CLI Auto Prompt helps you interactively create AWS CLI commands:\naws --cli-auto-prompt EC2 tabular description To view EC2 instance details in tabular format for a specific region:\naws ec2 describe-instances --output table --region ap-southeast-1 "
 },
 {
-	"uri": "/5-s3/",
+	"uri": "//localhost:1313/5-s3/",
 	"title": "AWS CLI with Amazon S3",
 	"tags": [],
 	"description": "",
 	"content": "Introduction In this guide, we will walk through how to use the AWS CLI to perform basic operations with Amazon S3, such as creating a bucket, listing objects, and deleting both objects and the bucket.\nStep 1: Create an S3 Bucket To create an S3 bucket using the AWS CLI, execute the following command. Make sure to replace aws-cli-2000 with your desired bucket name.\naws s3 mb s3://aws-cli-2000 ℹ️ Information: Make sure your bucket name is unique and complies with AWS naming conventions.\nStep 2: List All S3 Buckets After creating the bucket, use the following command to list all the available S3 buckets:\naws s3 ls Step 3: List Objects in a Specific Bucket To view the contents of a specific S3 bucket, use the following command:\naws s3 ls s3://bucket-name Replace bucket-name with the name of the bucket you want to inspect.\nStep 4: Delete an Object from the Bucket To remove an object from the S3 bucket, run the following command:\naws s3 rm s3://bucket-name/object Replace bucket-name with your bucket name and object with the specific object you want to delete.\n⚠️ Warning: Deleting an object is permanent and cannot be undone.\nStep 5: Delete the S3 Bucket Finally, once all objects are removed, you can delete the bucket itself with the command:\naws s3 rb s3://bucket-name 💡 Pro Tip: Ensure the bucket is empty before attempting to delete it. Use --force to delete non-empty buckets, but exercise caution.\nConclusion By following these steps, you\u0026rsquo;ve learned how to create, list, and delete S3 buckets and objects using the AWS CLI. These fundamental commands will help you manage your S3 resources efficiently.\n"
 },
 {
-	"uri": "/6-sns/",
+	"uri": "//localhost:1313/6-sns/",
 	"title": "AWS CLI with Amazon SNS",
 	"tags": [],
 	"description": "",
 	"content": "AWS CLI with Amazon SNS We will get acquainted with CLI via SNS service.\nTo create an SNS topic, we do the following: aws sns create-topic --name aws-cli After successfully creating the SNS topic, we will subscribe aws sns subscribe --topic-arn **ARN Topic** --protocol email --notification-endpoint aws@example.com Check the mail we used in the previous command. Then select Confirm subscription. Complete subscription After the subscriber, we try to push the message to check. aws sns publish --topic-arn **ARN Topic** --message \u0026#34;Hello\u0026#34; We will receive a message by mail. "
 },
 {
-	"uri": "/7-iam/",
+	"uri": "//localhost:1313/7-iam/",
 	"title": "AWS CLI with IAM",
 	"tags": [],
 	"description": "",
-	"content": "AWS CLI with IAM We can quickly create IAM group, IAM user, and policy using CLI.\nAWS CLI with IAM 1. Create an IAM Group 2. Create an IAM User 3. Add User to Group 4. Check Group Details 5. Generate Access Key 6. Delete Access Key 1. Create an IAM Group Use the following command to create a new IAM group:\naws iam create-group --group-name dev You can name the group whatever fits your use case. 2. Create an IAM User Next, create a new IAM user:\naws iam create-user --user-name dev-1 Ensure that each user is properly assigned unique permissions. 3. Add User to Group Now, add the user to the created group:\naws iam add-user-to-group --user-name dev-1 --group-name dev 4. Check Group Details You can verify the group and user details with:\naws iam get-group --group-name dev 5. Generate Access Key Generate the Access Key for the user with:\naws iam create-access-key --user-name dev-1 6. Delete Access Key To delete an Access Key, use the following command:\naws iam delete-access-key --user-name dev-1 --access-key-id AKIAIOSFODNN7EXAMPLE Always ensure to securely manage and delete access keys that are no longer in use. "
+	"content": "AWS CLI with IAM We can quickly create IAM group, IAM user, and policy using CLI.\nAWS CLI with IAM 1. Create an IAM Group 2. Create an IAM User 3. Add User to Group 4. Check Group Details 5. Generate Access Key 6. Delete Access Key 1. Create an IAM Group Use the following command to create a new IAM group:\naws iam create-group --group-name dev You can name the group whatever fits your use case.\r2. Create an IAM User Next, create a new IAM user:\naws iam create-user --user-name dev-1 Ensure that each user is properly assigned unique permissions.\r3. Add User to Group Now, add the user to the created group:\naws iam add-user-to-group --user-name dev-1 --group-name dev 4. Check Group Details You can verify the group and user details with:\naws iam get-group --group-name dev 5. Generate Access Key Generate the Access Key for the user with:\naws iam create-access-key --user-name dev-1 6. Delete Access Key To delete an Access Key, use the following command:\naws iam delete-access-key --user-name dev-1 --access-key-id AKIAIOSFODNN7EXAMPLE Always ensure to securely manage and delete access keys that are no longer in use.\r"
 },
 {
-	"uri": "/8-network/",
+	"uri": "//localhost:1313/8-network/",
 	"title": "AWS CLI with VPC",
 	"tags": [],
 	"description": "",
-	"content": "AWS CLI with VPC AWS CLI with VPC Create VPC Create VPC Components Tables Create VPC To create a Virtual Private Cloud (VPC) using AWS CLI, follow these steps:\nThis section covers basic VPC creation using AWS CLI. Open your terminal and configure AWS CLI with your credentials:\naws configure Create a VPC with a CIDR block:\naws ec2 create-vpc --cidr-block 10.0.0.0/16 Ensure you use a unique CIDR block that doesn\u0026rsquo;t overlap with other networks. Create VPC Components After creating the VPC, you can add components like subnets, route tables, and internet gateways.\nCreate a Subnet:\naws ec2 create-subnet --vpc-id \u0026lt;vpc-id\u0026gt; --cidr-block 10.0.1.0/24 Create an Internet Gateway:\naws ec2 create-internet-gateway Attach the internet gateway to your VPC:\naws ec2 attach-internet-gateway --vpc-id \u0026lt;vpc-id\u0026gt; --internet-gateway-id \u0026lt;igw-id\u0026gt; Ensure you modify the route table to allow internet traffic for public subnets. Tables Component Description VPC Virtual Private Cloud, defines the network space. Subnet Divides the VPC into smaller networks. Internet Gateway Enables internet access for public subnets. "
+	"content": "AWS CLI with VPC AWS CLI with VPC Create VPC Create VPC Components Tables Create VPC To create a Virtual Private Cloud (VPC) using AWS CLI, follow these steps:\nThis section covers basic VPC creation using AWS CLI.\rOpen your terminal and configure AWS CLI with your credentials:\naws configure Create a VPC with a CIDR block:\naws ec2 create-vpc --cidr-block 10.0.0.0/16 Ensure you use a unique CIDR block that doesn\u0026rsquo;t overlap with other networks.\rCreate VPC Components After creating the VPC, you can add components like subnets, route tables, and internet gateways.\nCreate a Subnet:\naws ec2 create-subnet --vpc-id \u0026lt;vpc-id\u0026gt; --cidr-block 10.0.1.0/24 Create an Internet Gateway:\naws ec2 create-internet-gateway Attach the internet gateway to your VPC:\naws ec2 attach-internet-gateway --vpc-id \u0026lt;vpc-id\u0026gt; --internet-gateway-id \u0026lt;igw-id\u0026gt; Ensure you modify the route table to allow internet traffic for public subnets.\rTables Component Description VPC Virtual Private Cloud, defines the network space. Subnet Divides the VPC into smaller networks. Internet Gateway Enables internet access for public subnets. "
 },
 {
-	"uri": "/9-ec2/",
+	"uri": "//localhost:1313/9-ec2/",
 	"title": "Creating EC2 Using AWS CLI",
 	"tags": [],
 	"description": "",
 	"content": "Create EC2 using AWS CLI From the network infrastructure created with CLI, we will create EC2. First, create AWS Key pair aws ec2 create-key-pair --key-name MyKeyPair --query \u0026#34;KeyMaterial\u0026#34; --output text \u0026gt; MyKeyPair.pem Check on the interface; we confirm that we have successfully created Key pair Use the command to decentralize: chmod 400 MyKeyPair.pem Create Security group for EC2 aws ec2 create-security-group --group-name SSHAccess --description \u0026#34;Security group for SSH access\u0026#34; --vpc-id **VPC ID** Then, we check the created Security group. Make permission to SSH: aws ec2 authorize-security-group-ingress --group-id **SG ID** --protocol tcp --port 22 --cidr 0.0.0.0/0 Preparation is complete. Let\u0026rsquo;s start EC2 aws ec2 run-instances --image-id **AMI** --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids **SG ID** --subnet- id **Subnet ID** Wait about 2 minutes, see the status of EC2 instance aws ec2 describe-instances --instance-id **Instance ID** --query \u0026#34;Reservations[*].Instances[*].{State:State.Name,Address:PublicIpAddress}\u0026#34; When the instance is in running state. We make the connection ssh -i \u0026#34;MyKeyPair.pem\u0026#34; ec2-user@IP Public Once used, we execute terminate with the command: aws ec2 terminate-instance --instances-ids **Instance ID** After about 2-3 minutes later. We check the status of instance "
 },
 {
-	"uri": "/10-troubleshoot/",
+	"uri": "//localhost:1313/10-troubleshoot/",
 	"title": "Troubleshooting",
 	"tags": [],
 	"description": "",
 	"content": "Troubleshooting During the practice of the lab, errors cannot be avoided: Fix bug for AWS CLI Some related references: AWS First Cloud Journey Deep Dive: AWS Command Line Interface How do I assume an IAM role using the AWS CLI? How do I use the AWS CLI to perform a multipart message upload of a file to Amazon S3? How can I use the AWS CLI to call and store SAML credentials? How do I use an MFA token to authenticate access to my AWS resources through the AWS CLI? AWS re:Invent 2019: [REPEAT] Introduction to the AWS CLI v2 (DOP343-R) "
 },
 {
-	"uri": "/11-cleanup/",
+	"uri": "//localhost:1313/11-cleanup/",
 	"title": "Clean up resources",
 	"tags": [],
 	"description": "",
 	"content": "Clean up resources ⚠️ Warning: Make sure to delete resources in the correct order to avoid dependency errors. Resources with dependencies must be deleted after their dependent resources.\nDelete Security Group aws ec2 delete-security-group --group-id \u0026lt;SECURITY_GROUP_ID\u0026gt; Delete Subnet aws ec2 delete-subnet --subnet-id \u0026lt;SUBNET_ID\u0026gt; Delete Route Table aws ec2 delete-route-table --route-table-id \u0026lt;ROUTE_TABLE_ID\u0026gt; Detach Internet Gateway 💡 Pro Tip: You must detach the Internet Gateway from the VPC before you can delete it.\naws ec2 detach-internet-gateway --internet-gateway-id \u0026lt;INTERNET_GATEWAY_ID\u0026gt; --vpc-id \u0026lt;VPC_ID\u0026gt; Delete Internet Gateway aws ec2 delete-internet-gateway --internet-gateway-id \u0026lt;INTERNET_GATEWAY_ID\u0026gt; Delete VPC ℹ️ Information: This should be the final step after all resources within the VPC have been deleted.\naws ec2 delete-vpc --vpc-id \u0026lt;VPC_ID\u0026gt; 🔒 Security Note: To ensure complete cleanup and prevent unexpected charges, verify all resources have been successfully deleted by checking the AWS Management Console or using the CLI list commands.\n"
 },
 {
-	"uri": "/categories/",
+	"uri": "//localhost:1313/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "/tags/",
+	"uri": "//localhost:1313/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",

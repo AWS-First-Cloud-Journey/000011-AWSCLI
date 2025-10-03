@@ -1,7 +1,7 @@
 ---
 
 title : "AWS CLI với Amazon SNS"  
-date : "`r Sys.Date()`"  
+date : 2025-10-02  
 weight : 6  
 chapter : false  
 pre : " <b> 6. </b> "
@@ -38,12 +38,13 @@ aws sns create-topic --name aws-cli
 ```
 
 {{% notice info %}} Đây là lệnh để tạo một topic SNS với tên là `aws-cli`. {{% /notice %}}
+Copy lại **TopicARN**.
 
 ![AWS CLI](/images/4-sns/0001.png?featherlight=false&width=90pc)
 
 #### Thực hiện đăng ký subscriber
 
-Sau khi đã tạo thành công topic SNS, ta thực hiện đăng ký subscriber bằng lệnh sau:
+Sau khi đã tạo thành công topic SNS, ta thực hiện đăng ký subscriber bằng lệnh sau, hãy thay thế **aws@example.com** bằng email của bạn:
 
 ```bash
 aws sns subscribe --topic-arn **ARN Topic** --protocol email --notification-endpoint aws@example.com

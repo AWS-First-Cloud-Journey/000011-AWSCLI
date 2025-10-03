@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="vi" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.123.7">
+    <meta name="generator" content="Hugo 0.147.8">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>AWS CLI với Internet Gateway :: LÀM QUEN VỚI AWS CLI</title>
 
     
-    <link href="/css/nucleus.css?1744797309" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1744797309" rel="stylesheet">
-    <link href="/css/hybrid.css?1744797309" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1744797309" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1744797309" rel="stylesheet">
-    <link href="/css/auto-complete.css?1744797309" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1744797309" rel="stylesheet">
-    <link href="/css/theme.css?1744797309" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1744797309" rel="stylesheet">
+    <link href="/css/nucleus.css?1759505619" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1759505619" rel="stylesheet">
+    <link href="/css/hybrid.css?1759505619" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1759505619" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1759505619" rel="stylesheet">
+    <link href="/css/auto-complete.css?1759505619" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1759505619" rel="stylesheet">
+    <link href="/css/theme.css?1759505619" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1759505619" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1744797309" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1759505619" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1744797309"></script>
+    <script src="/js/jquery-3.3.1.min.js?1759505619"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1744797309"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1744797309"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1759505619"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1759505619"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/\/vi";
+        var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1744797309"></script>
+<script type="text/javascript" src="/js/search.js?1759505619"></script>
 
     
   </div>
@@ -467,7 +467,7 @@
                   
                     
                     
-                      <option id="en" value="/8-network/8.2-igw/">English</option>
+                      <option id="en" value="//localhost:1313/8-network/8.2-igw/">English</option>
                     
                   
               
@@ -481,7 +481,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/8-network/8.2-igw/" selected>Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/8-network/8.2-igw/" selected>Tiếng Việt</option>
                     
                   
               
@@ -617,39 +617,38 @@
 
 	<h4 id="aws-cli-với-internet-gateway">AWS CLI với Internet Gateway</h4>
 <h4 id="mục-lục">Mục lục</h4>
-<!-- raw HTML omitted -->
 <ul>
-<li><a href="/vi/8-network/8.2-igw/#aws-cli-với-internet-gateway">AWS CLI với Internet Gateway</a></li>
-<li><a href="/vi/8-network/8.2-igw/#mục-lục">Mục lục</a></li>
-<li><a href="/vi/8-network/8.2-igw/#1-thực-hiện-tạo-internet-gateway">1. Thực hiện tạo Internet Gateway</a></li>
-<li><a href="/vi/8-network/8.2-igw/#2-xác-nhận-internet-gateway">2. Xác nhận Internet Gateway</a></li>
-<li><a href="/vi/8-network/8.2-igw/#3-kiểm-tra-vpc">3. Kiểm tra VPC</a></li>
+<li><a href="/vi/8-network/8.2-igw/#aws-cli-v%e1%bb%9bi-internet-gateway">AWS CLI với Internet Gateway</a></li>
+<li><a href="/vi/8-network/8.2-igw/#m%e1%bb%a5c-l%e1%bb%a5c">Mục lục</a></li>
+<li><a href="/vi/8-network/8.2-igw/#1-th%e1%bb%b1c-hi%e1%bb%87n-t%e1%ba%a1o-internet-gateway">1. Thực hiện tạo Internet Gateway</a></li>
+<li><a href="/vi/8-network/8.2-igw/#2-x%c3%a1c-nh%e1%ba%adn-internet-gateway">2. Xác nhận Internet Gateway</a></li>
+<li><a href="/vi/8-network/8.2-igw/#3-ki%e1%bb%83m-tra-vpc">3. Kiểm tra VPC</a></li>
 <li><a href="/vi/8-network/8.2-igw/#4-attach-internet-gateway">4. Attach Internet Gateway</a></li>
-<li><a href="/vi/8-network/8.2-igw/#5-tạo-route-table">5. Tạo Route Table</a></li>
-<li><a href="/vi/8-network/8.2-igw/#6-định-tuyến-route-table">6. Định tuyến Route Table</a></li>
-<li><a href="/vi/8-network/8.2-igw/#7-kiểm-tra-route-table">7. Kiểm tra Route Table</a></li>
+<li><a href="/vi/8-network/8.2-igw/#5-t%e1%ba%a1o-route-table">5. Tạo Route Table</a></li>
+<li><a href="/vi/8-network/8.2-igw/#6-%c4%91%e1%bb%8bnh-tuy%e1%ba%bfn-route-table">6. Định tuyến Route Table</a></li>
+<li><a href="/vi/8-network/8.2-igw/#7-ki%e1%bb%83m-tra-route-table">7. Kiểm tra Route Table</a></li>
 <li><a href="/vi/8-network/8.2-igw/#8-associate-route-table">8. Associate Route Table</a></li>
 </ul>
-<!-- raw HTML omitted -->
 <h4 id="1-thực-hiện-tạo-internet-gateway">1. Thực hiện tạo Internet Gateway</h4>
+<p>Nếu đã tạo trước đó, vui lòng bỏ qua bước này.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws ec2 create-internet-gateway --query InternetGateway.InternetGatewayId --output text
-</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/igw/0001.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/igw/0001.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 
 <div class="notices note" >Đây là bước khởi tạo Internet Gateway.</div>
 
 <h4 id="2-xác-nhận-internet-gateway">2. Xác nhận Internet Gateway</h4>
 <p>Chúng ta sẽ xác nhận lại đã tạo thành công <strong>Internet Gateway</strong> và sử dụng <strong>Internet Gateway ID</strong> để thực hiện các bước tiếp theo.</p>
-<p><img alt="AWS CLI" src="/images/igw/0002.png?featherlight=false&width=90pc"></p>
+<p><img src="/images/igw/0002.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 
 <div class="notices info" >Xác nhận Internet Gateway là bước quan trọng trước khi thực hiện các bước tiếp theo.</div>
 
 <h4 id="3-kiểm-tra-vpc">3. Kiểm tra VPC</h4>
 <p>Chúng ta sẽ kiểm tra <strong>VPC</strong> để sử dụng <strong>VPC ID</strong> cho bước tiếp theo.</p>
-<p><img alt="AWS CLI" src="/images/igw/0003.png?featherlight=false&width=90pc"></p>
+<p><img src="/images/igw/0003.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <h4 id="4-attach-internet-gateway">4. Attach Internet Gateway</h4>
 <p>Sau khi kiểm tra Internet Gateway và VPC, chúng ta thực hiện <strong>attach internet gateway</strong> bằng cách:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws ec2 attach-internet-gateway --vpc-id &lt;VPC-ID&gt; --internet-gateway-id &lt;IGW-ID&gt;
-</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/igw/0004.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/igw/0004.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 
 <div class="notices tip" >Chúng ta cần sử dụng đúng VPC ID và Internet Gateway ID để attach thành công.</div>
 
@@ -943,19 +942,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1744797309"></script>
-    <script src="/js/perfect-scrollbar.min.js?1744797309"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1744797309"></script>
-    <script src="/js/jquery.sticky.js?1744797309"></script>
-    <script src="/js/featherlight.min.js?1744797309"></script>
-    <script src="/js/highlight.pack.js?1744797309"></script>
+    <script src="/js/clipboard.min.js?1759505619"></script>
+    <script src="/js/perfect-scrollbar.min.js?1759505619"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1759505619"></script>
+    <script src="/js/jquery.sticky.js?1759505619"></script>
+    <script src="/js/featherlight.min.js?1759505619"></script>
+    <script src="/js/highlight.pack.js?1759505619"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1744797309"></script>
-    <script src="/js/learn.js?1744797309"></script>
-    <script src="/js/hugo-learn.js?1744797309"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1759505619"></script>
+    <script src="/js/learn.js?1759505619"></script>
+    <script src="/js/hugo-learn.js?1759505619"></script>
 
-    <link href="/mermaid/mermaid.css?1744797309" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1744797309"></script>
+    <link href="/mermaid/mermaid.css?1759505619" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1759505619"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

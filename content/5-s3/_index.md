@@ -1,6 +1,6 @@
 ---
 title: "AWS CLI with Amazon S3"
-date: "`r Sys.Date()`"
+date: 2025-10-02
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "

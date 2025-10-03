@@ -68,3 +68,15 @@ aws ec2 delete-vpc --vpc-id <VPC ID>
 
 ![AWS CLI](/images/ec2-net/00017.png?featherlight=false&width=90pc)
 
+#### 7. Xóa **aws-cli-instance**
+     
+        aws ec2 terminate-instances --instance-ids <aws-cli-instance ID>
+
+#### 8. Xóa Access Key của **aws-cli-user** và **devops**
+
+        aws iam delete-access-key --user-name aws-cli-user --access-key-id *aws-cli-user-Access key*
+
+        aws iam delete-access-key --user-name devops --access-key-id *devops-Access key*
+
+
+        

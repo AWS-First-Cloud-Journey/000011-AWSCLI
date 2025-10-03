@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="vi" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.123.7">
+    <meta name="generator" content="Hugo 0.147.8">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Các bước chuẩn bị :: LÀM QUEN VỚI AWS CLI</title>
 
     
-    <link href="/css/nucleus.css?1744797309" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1744797309" rel="stylesheet">
-    <link href="/css/hybrid.css?1744797309" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1744797309" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1744797309" rel="stylesheet">
-    <link href="/css/auto-complete.css?1744797309" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1744797309" rel="stylesheet">
-    <link href="/css/theme.css?1744797309" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1744797309" rel="stylesheet">
+    <link href="/css/nucleus.css?1759505619" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1759505619" rel="stylesheet">
+    <link href="/css/hybrid.css?1759505619" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1759505619" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1759505619" rel="stylesheet">
+    <link href="/css/auto-complete.css?1759505619" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1759505619" rel="stylesheet">
+    <link href="/css/theme.css?1759505619" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1759505619" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1744797309" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1759505619" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1744797309"></script>
+    <script src="/js/jquery-3.3.1.min.js?1759505619"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1744797309"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1744797309"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1759505619"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1759505619"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/\/vi";
+        var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1744797309"></script>
+<script type="text/javascript" src="/js/search.js?1759505619"></script>
 
     
   </div>
@@ -467,7 +467,7 @@
                   
                     
                     
-                      <option id="en" value="/2-prerequiste/">English</option>
+                      <option id="en" value="//localhost:1313/2-prerequiste/">English</option>
                     
                   
               
@@ -481,7 +481,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/2-prerequiste/" selected>Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/2-prerequiste/" selected>Tiếng Việt</option>
                     
                   
               
@@ -612,11 +612,104 @@
 	<h4 id="các-bước-chuẩn-bị">Các bước chuẩn bị</h4>
 <p><strong>ℹ️ Information</strong>: Trước khi bắt đầu bài thực hành, bạn cần hoàn thành các bước thiết lập cơ bản sau đây để đảm bảo môi trường AWS của bạn được cấu hình đúng cách.</p>
 <ul>
-<li>Tạo một tài khoản AWS để thực hiện bài thực hành.</li>
-<li>Tạo một <strong>IAM User Group</strong> để quản lý quyền hạn.</li>
-<li>Tạo một <strong>IAM User</strong> với quyền truy cập thích hợp.</li>
-<li>Tạo <strong>AWS Access Key</strong> để sử dụng cho AWS CLI hoặc SDK.</li>
-<li>Khởi tạo một <strong>EC2 Instance</strong> và thiết lập quyền truy cập SSH để quản lý thông qua <strong>AWS CLI</strong>.</li>
+<li>
+<p>Tạo một tài khoản AWS để thực hiện bài thực hành.</p>
+</li>
+<li>
+<p>Tạo một <strong>IAM User Group</strong> để quản lý quyền hạn.</p>
+<ul>
+<li>
+<p>Truy cập <strong>Identity and Access Management (IAM)</strong>
+<img src="/images/0/01.png?featherlight=false&amp;width=90pc" alt="Prerequiste"></p>
+</li>
+<li>
+<p>Click vào <strong>User group</strong>.</p>
+</li>
+<li>
+<p>Chọn <strong>Create group</strong>.
+<img src="/images/0/2.png?featherlight=false&amp;width=90pc" alt="Prerequiste"></p>
+</li>
+<li>
+<p>Nhập tên cho <strong>User group</strong>.</p>
+</li>
+<li>
+<p>Kéo xuống <strong>Attach permissions policies</strong>, chọn <strong>AdministratorAccess</strong>.
+<img src="/images/0/3.png?featherlight=false&amp;width=90pc" alt="Prerequiste">
+<img src="/images/0/4.png?featherlight=false&amp;width=90pc" alt="Prerequiste"></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Tạo một <strong>IAM User</strong> với quyền truy cập thích hợp.</p>
+<ul>
+<li>Truy cập <strong>User</strong>, chọn <strong>Create User</strong>.</li>
+<li>Đặt tên <strong>aws-cli-user</strong>.</li>
+<li><strong>Add user to group</strong>, chọn <strong>User group</strong> vừa tạo.</li>
+<li>Chọn <strong>Next</strong> và tạo user.
+<img src="/images/0/5.png?featherlight=false&amp;width=90pc" alt="Prerequiste">
+<img src="/images/0/6.png?featherlight=false&amp;width=90pc" alt="Prerequiste">
+<img src="/images/0/7.png?featherlight=false&amp;width=90pc" alt="Prerequiste"></li>
+</ul>
+</li>
+<li>
+<p>Tạo <strong>AWS Access Key</strong> để sử dụng cho AWS CLI hoặc SDK.</p>
+<ul>
+<li>
+<p>Chọn User vừa tạo.</p>
+</li>
+<li>
+<p>Kéo xuống và chọn mục <strong>Security credentials</strong>, chọn <strong>Create Access Key</strong>.</p>
+</li>
+<li>
+<p>Chọn <strong>Command Line Interface (CLI)</strong>.</p>
+</li>
+<li>
+<p>Tick vào ô <strong>I understand&hellip;</strong>, chọn <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Nhập mô tả và chọn <strong>Create access key</strong>.
+<img src="/images/0/9.png?featherlight=false&amp;width=90pc" alt="Prerequiste">
+<img src="/images/0/10.png?featherlight=false&amp;width=90pc" alt="Prerequiste">
+<img src="/images/0/11.png?featherlight=false&amp;width=90pc" alt="Prerequiste">
+<img src="/images/0/12.png?featherlight=false&amp;width=90pc" alt="Prerequiste">
+<img src="/images/0/13.png?featherlight=false&amp;width=90pc" alt="Prerequiste"></p>
+</li>
+<li>
+<p>Sau khi có <strong>Access key</strong> và <strong>Secret access key</strong>, vui lòng copy vào notepad hoặc download <strong>.csv file</strong> để dùng cho các bước sau.
+<img src="/images/0/14.png?featherlight=false&amp;width=90pc" alt="Prerequiste"></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Hãy tạo thêm một user nữa tên <strong>devops</strong>, thêm user đó vào <strong>aws-cli</strong> và lặp lại các bước trên.</p>
+</li>
+<li>
+<p>Khởi tạo một <strong>EC2 Instance</strong> và thiết lập quyền truy cập SSH để quản lý thông qua <strong>AWS CLI</strong>.</p>
+<ul>
+<li>
+<p>Truy cập EC2.</p>
+</li>
+<li>
+<p>Chọn <strong>Create instance</strong>.</p>
+</li>
+<li>
+<p>Đặt tên instance <strong>aws-cli-instance</strong>.
+<img src="/images/0/15.png?featherlight=false&amp;width=90pc" alt="Prerequiste">
+<img src="/images/0/16.png?featherlight=false&amp;width=90pc" alt="Prerequiste"></p>
+</li>
+<li>
+<p>Giữ nguyên các giá trị mặc định, tiếp theo tiến hành tạo <strong>Key pair</strong>.
+<img src="/images/0/17.png?featherlight=false&amp;width=90pc" alt="Prerequiste"></p>
+</li>
+<li>
+<p>Đảm bảo có quyền truy cập <strong>SSH</strong> để quản lý thông qua <strong>AWS CLI</strong>.
+<img src="/images/0/18.png?featherlight=false&amp;width=90pc" alt="Prerequiste"></p>
+</li>
+<li>
+<p>Review lại và tiến hành <strong>Create instance</strong>, sau đó đợi 2 phút để instance <strong>check passed</strong>.</p>
+</li>
+</ul>
+</li>
 </ul>
 <p><strong>🔒 Security Note</strong>: Luôn tuân thủ nguyên tắc đặc quyền tối thiểu khi cấp quyền cho IAM User và đảm bảo bảo vệ AWS Access Key của bạn.</p>
 <p><strong>💡 Pro Tip</strong>: Sử dụng AWS CloudShell để tránh phải cài đặt AWS CLI trên máy tính cá nhân của bạn và để truy cập môi trường dòng lệnh AWS đã được xác thực sẵn.</p>
@@ -894,19 +987,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1744797309"></script>
-    <script src="/js/perfect-scrollbar.min.js?1744797309"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1744797309"></script>
-    <script src="/js/jquery.sticky.js?1744797309"></script>
-    <script src="/js/featherlight.min.js?1744797309"></script>
-    <script src="/js/highlight.pack.js?1744797309"></script>
+    <script src="/js/clipboard.min.js?1759505619"></script>
+    <script src="/js/perfect-scrollbar.min.js?1759505619"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1759505619"></script>
+    <script src="/js/jquery.sticky.js?1759505619"></script>
+    <script src="/js/featherlight.min.js?1759505619"></script>
+    <script src="/js/highlight.pack.js?1759505619"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1744797309"></script>
-    <script src="/js/learn.js?1744797309"></script>
-    <script src="/js/hugo-learn.js?1744797309"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1759505619"></script>
+    <script src="/js/learn.js?1759505619"></script>
+    <script src="/js/hugo-learn.js?1759505619"></script>
 
-    <link href="/mermaid/mermaid.css?1744797309" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1744797309"></script>
+    <link href="/mermaid/mermaid.css?1759505619" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1759505619"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

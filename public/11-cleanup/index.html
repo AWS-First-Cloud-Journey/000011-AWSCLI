@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.123.7">
+    <meta name="generator" content="Hugo 0.147.8">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Clean up resources :: GETTING STARTED WITH THE AWS CLI</title>
 
     
-    <link href="/css/nucleus.css?1744797309" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1744797309" rel="stylesheet">
-    <link href="/css/hybrid.css?1744797309" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1744797309" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1744797309" rel="stylesheet">
-    <link href="/css/auto-complete.css?1744797309" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1744797309" rel="stylesheet">
-    <link href="/css/theme.css?1744797309" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1744797309" rel="stylesheet">
+    <link href="/css/nucleus.css?1759505619" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1759505619" rel="stylesheet">
+    <link href="/css/hybrid.css?1759505619" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1759505619" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1759505619" rel="stylesheet">
+    <link href="/css/auto-complete.css?1759505619" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1759505619" rel="stylesheet">
+    <link href="/css/theme.css?1759505619" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1759505619" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1744797309" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1759505619" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1744797309"></script>
+    <script src="/js/jquery-3.3.1.min.js?1759505619"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1744797309"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1744797309"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1759505619"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1759505619"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/";
+        var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1744797309"></script>
+<script type="text/javascript" src="/js/search.js?1759505619"></script>
 
     
   </div>
@@ -467,7 +467,7 @@
                   
                     
                     
-                      <option id="en" value="/11-cleanup/" selected>English</option>
+                      <option id="en" value="//localhost:1313/11-cleanup/" selected>English</option>
                     
                   
               
@@ -481,7 +481,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/11-cleanup/">Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/11-cleanup/">Tiếng Việt</option>
                     
                   
               
@@ -613,24 +613,32 @@
 <p>⚠️ <strong>Warning</strong>: Make sure to delete resources in the correct order to avoid dependency errors. Resources with dependencies must be deleted after their dependent resources.</p>
 <h4 id="delete-security-group">Delete Security Group</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws ec2 delete-security-group --group-id &lt;SECURITY_GROUP_ID&gt;
-</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/ec2-net/00012.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/ec2-net/00012.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <h4 id="delete-subnet">Delete Subnet</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws ec2 delete-subnet --subnet-id &lt;SUBNET_ID&gt;
-</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/ec2-net/00013.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/ec2-net/00013.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <h4 id="delete-route-table">Delete Route Table</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws ec2 delete-route-table --route-table-id &lt;ROUTE_TABLE_ID&gt;
-</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/ec2-net/00014.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/ec2-net/00014.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <h4 id="detach-internet-gateway">Detach Internet Gateway</h4>
 <p>💡 <strong>Pro Tip</strong>: You must detach the Internet Gateway from the VPC before you can delete it.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws ec2 detach-internet-gateway --internet-gateway-id &lt;INTERNET_GATEWAY_ID&gt; --vpc-id &lt;VPC_ID&gt;
-</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/ec2-net/00015.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/ec2-net/00015.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <h4 id="delete-internet-gateway">Delete Internet Gateway</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws ec2 delete-internet-gateway --internet-gateway-id &lt;INTERNET_GATEWAY_ID&gt;
-</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/ec2-net/00016.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/ec2-net/00016.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <h4 id="delete-vpc">Delete VPC</h4>
 <p>ℹ️ <strong>Information</strong>: This should be the final step after all resources within the VPC have been deleted.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws ec2 delete-vpc --vpc-id &lt;VPC_ID&gt;
-</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/ec2-net/00017.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/ec2-net/00017.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
+<h4 id="delete-aws-cli-instance">Delete <strong>aws-cli-instance</strong></h4>
+<pre><code>    aws ec2 terminate-instances --instance-ids &lt;aws-cli-instance ID&gt;
+</code></pre>
+<h4 id="delete-access-key-of-aws-cli-user-and-devops">Delete Access Key of <strong>aws-cli-user</strong> and <strong>devops</strong></h4>
+<pre><code>    aws iam delete-access-key --user-name aws-cli-user --access-key-id *aws-cli-user-Access key*
+
+    aws iam delete-access-key --user-name devops --access-key-id *devops-Access key*
+</code></pre>
 <p>🔒 <strong>Security Note</strong>: To ensure complete cleanup and prevent unexpected charges, verify all resources have been successfully deleted by checking the AWS Management Console or using the CLI list commands.</p>
 
 
@@ -903,19 +911,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1744797309"></script>
-    <script src="/js/perfect-scrollbar.min.js?1744797309"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1744797309"></script>
-    <script src="/js/jquery.sticky.js?1744797309"></script>
-    <script src="/js/featherlight.min.js?1744797309"></script>
-    <script src="/js/highlight.pack.js?1744797309"></script>
+    <script src="/js/clipboard.min.js?1759505619"></script>
+    <script src="/js/perfect-scrollbar.min.js?1759505619"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1759505619"></script>
+    <script src="/js/jquery.sticky.js?1759505619"></script>
+    <script src="/js/featherlight.min.js?1759505619"></script>
+    <script src="/js/highlight.pack.js?1759505619"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1744797309"></script>
-    <script src="/js/learn.js?1744797309"></script>
-    <script src="/js/hugo-learn.js?1744797309"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1759505619"></script>
+    <script src="/js/learn.js?1759505619"></script>
+    <script src="/js/hugo-learn.js?1759505619"></script>
 
-    <link href="/mermaid/mermaid.css?1744797309" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1744797309"></script>
+    <link href="/mermaid/mermaid.css?1759505619" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1759505619"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

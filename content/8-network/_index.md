@@ -1,6 +1,6 @@
 ---
 title: "AWS CLI with VPC"
-date: "`r Sys.Date()`"
+date: 2025-10-02
 weight: 8
 chapter: false
 pre: " <b> 8. </b> "

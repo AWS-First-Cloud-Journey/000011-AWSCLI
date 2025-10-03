@@ -10,7 +10,7 @@ pre : " <b> 8.1 </b> "
 
 #### Tạo VPC
 
-1. Thực hiện tạo VPC bằng **AWS CLI**:
+1. Thực hiện tạo VPC bằng **AWS CLI**, nếu đã tạo trước đó vui lòng bỏ qua:
     ```bash
     aws ec2 create-vpc --cidr-block 10.0.0.0/16 --query Vpc.VpcId --output text
     ```

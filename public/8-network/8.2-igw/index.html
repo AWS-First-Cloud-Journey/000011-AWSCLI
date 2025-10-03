@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.123.7">
+    <meta name="generator" content="Hugo 0.147.8">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>AWS CLI with Internet Gateway :: GETTING STARTED WITH THE AWS CLI</title>
 
     
-    <link href="/css/nucleus.css?1744797309" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1744797309" rel="stylesheet">
-    <link href="/css/hybrid.css?1744797309" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1744797309" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1744797309" rel="stylesheet">
-    <link href="/css/auto-complete.css?1744797309" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1744797309" rel="stylesheet">
-    <link href="/css/theme.css?1744797309" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1744797309" rel="stylesheet">
+    <link href="/css/nucleus.css?1759505619" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1759505619" rel="stylesheet">
+    <link href="/css/hybrid.css?1759505619" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1759505619" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1759505619" rel="stylesheet">
+    <link href="/css/auto-complete.css?1759505619" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1759505619" rel="stylesheet">
+    <link href="/css/theme.css?1759505619" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1759505619" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1744797309" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1759505619" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1744797309"></script>
+    <script src="/js/jquery-3.3.1.min.js?1759505619"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1744797309"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1744797309"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1759505619"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1759505619"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/";
+        var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1744797309"></script>
+<script type="text/javascript" src="/js/search.js?1759505619"></script>
 
     
   </div>
@@ -467,7 +467,7 @@
                   
                     
                     
-                      <option id="en" value="/8-network/8.2-igw/" selected>English</option>
+                      <option id="en" value="//localhost:1313/8-network/8.2-igw/" selected>English</option>
                     
                   
               
@@ -481,7 +481,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/8-network/8.2-igw/">Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/8-network/8.2-igw/">Tiếng Việt</option>
                     
                   
               
@@ -626,17 +626,17 @@
 <h4 id="1-create-internet-gateway">1. Create <strong>Internet Gateway</strong></h4>
 <p>To create an Internet Gateway, use the following command:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws ec2 create-internet-gateway --query InternetGateway.InternetGatewayId --output text
-</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/igw/0001.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/igw/0001.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <h4 id="2-confirm-internet-gateway-creation">2. Confirm Internet Gateway Creation</h4>
 <p>Once the Internet Gateway is created, confirm the successful creation and retrieve the <strong>Internet Gateway ID</strong> for the next steps.</p>
-<p><img alt="AWS CLI" src="/images/igw/0002.png?featherlight=false&width=90pc"></p>
+<p><img src="/images/igw/0002.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <h4 id="3-check-the-vpc">3. Check the VPC</h4>
 <p>Next, check your <strong>VPC</strong> and retrieve the <strong>VPC ID</strong> to use in subsequent commands:</p>
-<p><img alt="AWS CLI" src="/images/igw/0003.png?featherlight=false&width=90pc"></p>
+<p><img src="/images/igw/0003.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <h4 id="4-attach-internet-gateway-to-vpc">4. Attach Internet Gateway to VPC</h4>
 <p>Attach the Internet Gateway to your VPC by using the following command:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws ec2 attach-internet-gateway --vpc-id &lt;VPC-ID&gt; --internet-gateway-id &lt;IGW-ID&gt;
-</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/igw/0004.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/igw/0004.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <h4 id="5-create-and-manage-network-resources">5. Create and Manage Network Resources</h4>
 <p>Create a <strong>Route Table</strong> for the VPC:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws ec2 create-route-table --vpc-id &lt;VPC-ID&gt; --query RouteTable.RouteTableId --output text
@@ -931,19 +931,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1744797309"></script>
-    <script src="/js/perfect-scrollbar.min.js?1744797309"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1744797309"></script>
-    <script src="/js/jquery.sticky.js?1744797309"></script>
-    <script src="/js/featherlight.min.js?1744797309"></script>
-    <script src="/js/highlight.pack.js?1744797309"></script>
+    <script src="/js/clipboard.min.js?1759505619"></script>
+    <script src="/js/perfect-scrollbar.min.js?1759505619"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1759505619"></script>
+    <script src="/js/jquery.sticky.js?1759505619"></script>
+    <script src="/js/featherlight.min.js?1759505619"></script>
+    <script src="/js/highlight.pack.js?1759505619"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1744797309"></script>
-    <script src="/js/learn.js?1744797309"></script>
-    <script src="/js/hugo-learn.js?1744797309"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1759505619"></script>
+    <script src="/js/learn.js?1759505619"></script>
+    <script src="/js/hugo-learn.js?1759505619"></script>
 
-    <link href="/mermaid/mermaid.css?1744797309" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1744797309"></script>
+    <link href="/mermaid/mermaid.css?1759505619" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1759505619"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

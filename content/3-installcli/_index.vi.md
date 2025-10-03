@@ -1,6 +1,6 @@
 ---
 title: "Cài đặt AWS CLI"
-date: "`r Sys.Date()`"
+date: 2025-10-02
 weight: 3
 chapter: false
 pre: "<b>3.</b>"
@@ -61,11 +61,11 @@ Sử dụng lệnh `aws configure` để thiết lập AWS CLI. Lệnh này sẽ
 aws configure
 ```
 
-Ví dụ đầu vào:
+Hãy nhập **Access key ID** và **Secret Acces Key** của **aws-cli-user**, các giá trị còn lại giữ nguyên:
 
 ```bash
-AWS Access Key ID [None]: *AKIAIOSFODNN7EXAMPLE*
-AWS Secret Access Key [None]: *wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY*
+AWS Access Key ID [None]: *aws-cli-user_Access Key ID*
+AWS Secret Access Key [None]: *aws-cli-user_Secret Access Key*
 Default region name [None]: *ap-southeast-1*
 Default output format [None]: *json*
 ```
@@ -78,7 +78,7 @@ Cấu hình này được lưu trong file `credentials` dưới profile `default
 
 ### 4. Cấu hình nhiều profile
 
-Để tạo profile khác, ví dụ `devops`, sử dụng lệnh sau:
+Để tạo profile khác, ví dụ `devops`, sử dụng lệnh sau, nhập **Access Key ID** và **Secret Access Key** của user **devops**, các giá trị còn lại giữ nguyên:
 
 ```bash
 aws configure --profile devops
