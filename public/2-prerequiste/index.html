@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.123.7">
+    <meta name="generator" content="Hugo 0.147.8">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Preparation :: GETTING STARTED WITH THE AWS CLI</title>
 
     
-    <link href="/css/nucleus.css?1744797309" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1744797309" rel="stylesheet">
-    <link href="/css/hybrid.css?1744797309" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1744797309" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1744797309" rel="stylesheet">
-    <link href="/css/auto-complete.css?1744797309" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1744797309" rel="stylesheet">
-    <link href="/css/theme.css?1744797309" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1744797309" rel="stylesheet">
+    <link href="/css/nucleus.css?1759505619" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1759505619" rel="stylesheet">
+    <link href="/css/hybrid.css?1759505619" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1759505619" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1759505619" rel="stylesheet">
+    <link href="/css/auto-complete.css?1759505619" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1759505619" rel="stylesheet">
+    <link href="/css/theme.css?1759505619" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1759505619" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1744797309" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1759505619" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1744797309"></script>
+    <script src="/js/jquery-3.3.1.min.js?1759505619"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1744797309"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1744797309"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1759505619"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1759505619"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/";
+        var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1744797309"></script>
+<script type="text/javascript" src="/js/search.js?1759505619"></script>
 
     
   </div>
@@ -467,7 +467,7 @@
                   
                     
                     
-                      <option id="en" value="/2-prerequiste/" selected>English</option>
+                      <option id="en" value="//localhost:1313/2-prerequiste/" selected>English</option>
                     
                   
               
@@ -481,7 +481,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/2-prerequiste/">Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/2-prerequiste/">Tiếng Việt</option>
                     
                   
               
@@ -623,24 +623,45 @@
 <p><strong>Create an IAM Group</strong>:</p>
 <ul>
 <li>Log in to your AWS Management Console.</li>
-<li>Navigate to the <strong>IAM</strong> (Identity and Access Management) service.</li>
-<li>Create a new IAM group, assign a name, and define the necessary permissions for your use case.</li>
+<li>Navigate to the <strong>IAM</strong> (Identity and Access Management) service.
+<img src="/images/0/01.png?featherlight=false&amp;width=90pc" alt="Prerequiste"></li>
+<li>Create a new IAM group, assign a name, and define the necessary permissions for your use case.
+<img src="/images/0/2.png?featherlight=false&amp;width=90pc" alt="Prerequiste">
+<img src="/images/0/3.png?featherlight=false&amp;width=90pc" alt="Prerequiste">
+<img src="/images/0/4.png?featherlight=false&amp;width=90pc" alt="Prerequiste"></li>
 </ul>
 </li>
 <li>
 <p><strong>Create an IAM User</strong>:</p>
 <ul>
-<li>Still within the IAM service, create a new IAM user.</li>
+<li>Still within the IAM service, create a new IAM user., named <strong>aws-cli-user</strong>.</li>
 <li>Assign this user to the IAM group you just created.</li>
-<li>Take note of the <strong>Access Key ID</strong> and <strong>Secret Access Key</strong> for future use.</li>
+<li>Take note of the <strong>Access Key ID</strong> and <strong>Secret Access Key</strong> for future use.
+<img src="/images/0/5.png?featherlight=false&amp;width=90pc" alt="Prerequiste">
+<img src="/images/0/6.png?featherlight=false&amp;width=90pc" alt="Prerequiste">
+<img src="/images/0/7.png?featherlight=false&amp;width=90pc" alt="Prerequiste"></li>
 </ul>
 </li>
 <li>
 <p><strong>Generate AWS Access Keys</strong>:</p>
 <ul>
-<li>Select the IAM user you created.</li>
-<li>Under the <strong>Security Credentials</strong> tab, generate a new pair of access keys.</li>
-<li>Safely store the <strong>Access Key ID</strong> and <strong>Secret Access Key</strong>—you will need them to authenticate with AWS services.</li>
+<li>
+<p>Select the IAM user you created.</p>
+</li>
+<li>
+<p>Under the <strong>Security Credentials</strong> tab, generate a new pair of access keys.</p>
+</li>
+<li>
+<p>Safely store the <strong>Access Key ID</strong> and <strong>Secret Access Key</strong>—you will need them to authenticate with AWS services.
+<img src="/images/0/9.png?featherlight=false&amp;width=90pc" alt="Prerequiste">
+<img src="/images/0/10.png?featherlight=false&amp;width=90pc" alt="Prerequiste">
+<img src="/images/0/11.png?featherlight=false&amp;width=90pc" alt="Prerequiste">
+<img src="/images/0/12.png?featherlight=false&amp;width=90pc" alt="Prerequiste">
+<img src="/images/0/13.png?featherlight=false&amp;width=90pc" alt="Prerequiste"></p>
+<ul>
+<li>Create another user named <strong>devops</strong>, add that user to <strong>aws-cli</strong> and repeat the above steps.</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
@@ -651,6 +672,8 @@
 <li>Configure SSH access by creating or using an existing key pair.</li>
 <li>Ensure the security group allows SSH access (port 22) from your IP address or trusted sources.</li>
 </ul>
+<p><img src="/images/0/17.png?featherlight=false&amp;width=90pc" alt="Prerequiste">
+<img src="/images/0/18.png?featherlight=false&amp;width=90pc" alt="Prerequiste"></p>
 </li>
 </ul>
 <h3 id="final-notes">Final Notes</h3>
@@ -929,19 +952,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1744797309"></script>
-    <script src="/js/perfect-scrollbar.min.js?1744797309"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1744797309"></script>
-    <script src="/js/jquery.sticky.js?1744797309"></script>
-    <script src="/js/featherlight.min.js?1744797309"></script>
-    <script src="/js/highlight.pack.js?1744797309"></script>
+    <script src="/js/clipboard.min.js?1759505619"></script>
+    <script src="/js/perfect-scrollbar.min.js?1759505619"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1759505619"></script>
+    <script src="/js/jquery.sticky.js?1759505619"></script>
+    <script src="/js/featherlight.min.js?1759505619"></script>
+    <script src="/js/highlight.pack.js?1759505619"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1744797309"></script>
-    <script src="/js/learn.js?1744797309"></script>
-    <script src="/js/hugo-learn.js?1744797309"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1759505619"></script>
+    <script src="/js/learn.js?1759505619"></script>
+    <script src="/js/hugo-learn.js?1759505619"></script>
 
-    <link href="/mermaid/mermaid.css?1744797309" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1744797309"></script>
+    <link href="/mermaid/mermaid.css?1759505619" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1759505619"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

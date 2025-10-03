@@ -1,6 +1,6 @@
 ---
 title : "AWS CLI với Internet Gateway"
-date : "`r Sys.Date()`"
+date : 2025-10-02
 weight : 2
 chapter : false
 pre : " <b> 8.2 </b> "
@@ -26,6 +26,7 @@ pre : " <b> 8.2 </b> "
 <!-- /TOC -->
 
 #### 1. Thực hiện tạo Internet Gateway
+Nếu đã tạo trước đó, vui lòng bỏ qua bước này.
 
 ```bash
 aws ec2 create-internet-gateway --query InternetGateway.InternetGatewayId --output text

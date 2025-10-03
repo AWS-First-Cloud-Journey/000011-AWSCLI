@@ -1,6 +1,6 @@
 ---
 title : "Tạo EC2 sử dụng AWS CLI"
-date : "`r Sys.Date()`"
+date : 2025-10-02
 weight : 9
 chapter : false
 pre : " <b> 9. </b> "
@@ -49,10 +49,16 @@ pre : " <b> 9. </b> "
     ![AWS CLI](/images/ec2-net/0006.png?featherlight=false&width=90pc)
 
 7. Khởi tạo **EC2**:
+   
+    Bạn có thể lấy **AMI ID** bằng cách truy cập **EC2**, chọn **AMI Catalog**. Ở đây chúng ta sẽ lấy **AMI ID** của **Amazon Linux 2023 kenel-6.1 AMI**.
 
-    ```bash
+    ![AWS CLI](/images/0/019.png?featherlight=false&width=90pc)
+
+
+     ```bash
     aws ec2 run-instances --image-id <AMI ID> --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids <SG ID> --subnet-id <Subnet ID>
     ```
+
 
     ![AWS CLI](/images/ec2-net/0007.png?featherlight=false&width=90pc)
 
@@ -64,7 +70,7 @@ pre : " <b> 9. </b> "
 
     ![AWS CLI](/images/ec2-net/0008.png?featherlight=false&width=90pc)
 
-9. Khi **instance** đang ở trạng thái **running**, thực hiện kết nối:
+9. Khi **instance** đang ở trạng thái **running**, thực hiện kết nối, nhớ thay thế IP của EC2 instance vừa tạo:
 
     ```bash
     ssh -i "MyKeyPair.pem" ec2-user@<IP Public>

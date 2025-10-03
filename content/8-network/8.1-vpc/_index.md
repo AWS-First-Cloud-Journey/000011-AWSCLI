@@ -1,7 +1,7 @@
 ---
 
 title : "AWS CLI with VPC"  
-date : "`r Sys.Date()`"  
+date : 2025-10-02  
 weight : 1  
 chapter : false  
 pre : " <b> 8.1 </b> "  
@@ -11,6 +11,7 @@ pre : " <b> 8.1 </b> "
 #### AWS CLI with VPC
 
 1. **Create a VPC using CLI**
+If you have created it before, please skip it
 
 ```bash
 aws ec2 create-vpc --cidr-block 10.0.0.0/16 --query Vpc.VpcId --output text

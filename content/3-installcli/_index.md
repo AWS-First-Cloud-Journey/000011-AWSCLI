@@ -1,6 +1,6 @@
 ---
 title: "Install AWS CLI"  
-date: "`r Sys.Date()`"  
+date: 2025-10-02  
 weight: 3  
 chapter: false  
 pre: " <b> 3. </b> "
@@ -58,6 +58,7 @@ aws --version
 ```bash
 aws configure
 ```
+Enter the **Access key ID** and **Secret Access Key** of **aws-cli-user**, the remaining values ​​remain the same:
 
 ```bash
 AWS Access Key ID [None]: *AKIAIOSFODNN7EXAMPLE*
@@ -72,7 +73,7 @@ The AWS CLI stores this information in a profile named **default** in the creden
 
 #### Create Custom Profile
 
-4. To configure multiple profiles, create another profile (e.g., devops).
+4. To configure multiple profiles, create another profile (e.g., devops). Use the following command, enter **Access Key ID** and **Secret Access Key** of user **devops**, the remaining values ​​remain the same:
 
 ```bash
 aws configure --profile devops
@@ -120,7 +121,7 @@ aws configure list
 aws configure list-profiles
 ```
 
-![AWS CLI](/images/1/00090.png?featherlight=false&width=90pc)
+![AWS CLI](/images/1/00010.png?featherlight=false&width=90pc)
 
 {{% notice tip %}}  
 You can add or edit profiles directly by editing the **config** and **credentials** files using a text editor.  

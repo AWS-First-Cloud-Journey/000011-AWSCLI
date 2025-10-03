@@ -233,3 +233,12 @@ For questions or issues:
 ---
 
 **Note**: This workshop provides practical, hands-on experience with the AWS CLI. All administrative tasks available in the AWS Management Console can be performed using the AWS CLI, making it an essential tool for cloud automation and management.
+
+### Update workshop
+1. Hướng dẫn các bước:
+Tạo một IAM User Group để quản lý quyền hạn.
+Tạo một IAM User với quyền truy cập thích hợp.
+Tạo AWS Access Key để sử dụng cho AWS CLI hoặc SDK.
+Khởi tạo một EC2 Instance và thiết lập quyền truy cập SSH để quản lý thông qua AWS CLI.
+2. Note một số thứ cần phải copy lại để thay thế vào câu lệnh cho đúng.
+3. Hướng dẫn cách lấy AMI ID.

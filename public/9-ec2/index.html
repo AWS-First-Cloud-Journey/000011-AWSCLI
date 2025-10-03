@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.123.7">
+    <meta name="generator" content="Hugo 0.147.8">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Creating EC2 Using AWS CLI :: GETTING STARTED WITH THE AWS CLI</title>
 
     
-    <link href="/css/nucleus.css?1744797309" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1744797309" rel="stylesheet">
-    <link href="/css/hybrid.css?1744797309" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1744797309" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1744797309" rel="stylesheet">
-    <link href="/css/auto-complete.css?1744797309" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1744797309" rel="stylesheet">
-    <link href="/css/theme.css?1744797309" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1744797309" rel="stylesheet">
+    <link href="/css/nucleus.css?1759505619" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1759505619" rel="stylesheet">
+    <link href="/css/hybrid.css?1759505619" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1759505619" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1759505619" rel="stylesheet">
+    <link href="/css/auto-complete.css?1759505619" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1759505619" rel="stylesheet">
+    <link href="/css/theme.css?1759505619" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1759505619" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1744797309" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1759505619" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1744797309"></script>
+    <script src="/js/jquery-3.3.1.min.js?1759505619"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1744797309"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1744797309"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1759505619"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1759505619"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/";
+        var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1744797309"></script>
+<script type="text/javascript" src="/js/search.js?1759505619"></script>
 
     
   </div>
@@ -467,7 +467,7 @@
                   
                     
                     
-                      <option id="en" value="/9-ec2/" selected>English</option>
+                      <option id="en" value="//localhost:1313/9-ec2/" selected>English</option>
                     
                   
               
@@ -481,7 +481,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/9-ec2/">Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/9-ec2/">Tiếng Việt</option>
                     
                   
               
@@ -614,54 +614,56 @@
 <li>From the network infrastructure created with <strong>CLI</strong>, we will create <strong>EC2</strong>. First, create <strong>AWS Key pair</strong></li>
 </ol>
 <pre tabindex="0"><code>aws ec2 create-key-pair --key-name MyKeyPair --query &#34;KeyMaterial&#34; --output text &gt; MyKeyPair.pem
-</code></pre><p><img alt="AWS CLI" src="/images/ec2-net/0001.png?featherlight=false&width=90pc"></p>
+</code></pre><p><img src="/images/ec2-net/0001.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <ol start="2">
 <li>Check on the interface; we confirm that we have successfully created <strong>Key pair</strong></li>
 </ol>
-<p><img alt="AWS CLI" src="/images/ec2-net/0002.png?featherlight=false&width=90pc"></p>
+<p><img src="/images/ec2-net/0002.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <ol start="3">
 <li>Use the command to decentralize:</li>
 </ol>
 <pre tabindex="0"><code>chmod 400 MyKeyPair.pem
-</code></pre><p><img alt="AWS CLI" src="/images/ec2-net/0003.png?featherlight=false&width=90pc"></p>
+</code></pre><p><img src="/images/ec2-net/0003.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <ol start="4">
 <li>Create <strong>Security group</strong> for <strong>EC2</strong></li>
 </ol>
 <pre tabindex="0"><code>aws ec2 create-security-group --group-name SSHAccess --description &#34;Security group for SSH access&#34; --vpc-id **VPC ID**
-</code></pre><p><img alt="AWS CLI" src="/images/ec2-net/0004.png?featherlight=false&width=90pc"></p>
+</code></pre><p><img src="/images/ec2-net/0004.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <ol start="5">
 <li>Then, we check the created <strong>Security group</strong>.</li>
 </ol>
-<p><img alt="AWS CLI" src="/images/ec2-net/0005.png?featherlight=false&width=90pc"></p>
+<p><img src="/images/ec2-net/0005.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <ol start="6">
 <li>Make permission to SSH:</li>
 </ol>
 <pre tabindex="0"><code>aws ec2 authorize-security-group-ingress --group-id **SG ID** --protocol tcp --port 22 --cidr 0.0.0.0/0
-</code></pre><p><img alt="AWS CLI" src="/images/ec2-net/0006.png?featherlight=false&width=90pc"></p>
+</code></pre><p><img src="/images/ec2-net/0006.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <ol start="7">
-<li>Preparation is complete. Let&rsquo;s start <strong>EC2</strong></li>
+<li>Preparation is complete. Let&rsquo;s start <strong>EC2</strong>
+You can get the <strong>AMI ID</strong> by accessing <strong>EC2</strong>, selecting <strong>AMI Catalog</strong>. Here we will get the <strong>AMI ID</strong> of the <strong>Amazon Linux 2023 kenel-6.1 AMI</strong>.
+<img src="/images/0/019.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></li>
 </ol>
 <pre tabindex="0"><code>aws ec2 run-instances --image-id **AMI** --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids **SG ID** --subnet- id **Subnet ID**
-</code></pre><p><img alt="AWS CLI" src="/images/ec2-net/0007.png?featherlight=false&width=90pc"></p>
+</code></pre><p><img src="/images/ec2-net/0007.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <ol start="8">
 <li>Wait about 2 minutes, see the status of <strong>EC2 instance</strong></li>
 </ol>
 <pre tabindex="0"><code>aws ec2 describe-instances --instance-id **Instance ID** --query &#34;Reservations[*].Instances[*].{State:State.Name,Address:PublicIpAddress}&#34;
-</code></pre><p><img alt="AWS CLI" src="/images/ec2-net/0008.png?featherlight=false&width=90pc"></p>
+</code></pre><p><img src="/images/ec2-net/0008.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <ol start="9">
 <li>When the instance is in <strong>running</strong> state. We make the connection</li>
 </ol>
 <pre tabindex="0"><code>ssh -i &#34;MyKeyPair.pem&#34; ec2-user@IP Public
-</code></pre><p><img alt="AWS CLI" src="/images/ec2-net/0009.png?featherlight=false&width=90pc"></p>
+</code></pre><p><img src="/images/ec2-net/0009.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <ol start="10">
 <li>Once used, we execute <strong>terminate</strong> with the command:</li>
 </ol>
 <pre tabindex="0"><code>aws ec2 terminate-instance --instances-ids **Instance ID**
-</code></pre><p><img alt="AWS CLI" src="/images/ec2-net/00010.png?featherlight=false&width=90pc"></p>
+</code></pre><p><img src="/images/ec2-net/00010.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <ol start="11">
 <li>After about 2-3 minutes later. We check the status of <strong>instance</strong></li>
 </ol>
-<p><img alt="AWS CLI" src="/images/ec2-net/00011.png?featherlight=false&width=90pc"></p>
+<p><img src="/images/ec2-net/00011.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 
 
 
@@ -936,19 +938,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1744797309"></script>
-    <script src="/js/perfect-scrollbar.min.js?1744797309"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1744797309"></script>
-    <script src="/js/jquery.sticky.js?1744797309"></script>
-    <script src="/js/featherlight.min.js?1744797309"></script>
-    <script src="/js/highlight.pack.js?1744797309"></script>
+    <script src="/js/clipboard.min.js?1759505619"></script>
+    <script src="/js/perfect-scrollbar.min.js?1759505619"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1759505619"></script>
+    <script src="/js/jquery.sticky.js?1759505619"></script>
+    <script src="/js/featherlight.min.js?1759505619"></script>
+    <script src="/js/highlight.pack.js?1759505619"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1744797309"></script>
-    <script src="/js/learn.js?1744797309"></script>
-    <script src="/js/hugo-learn.js?1744797309"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1759505619"></script>
+    <script src="/js/learn.js?1759505619"></script>
+    <script src="/js/hugo-learn.js?1759505619"></script>
 
-    <link href="/mermaid/mermaid.css?1744797309" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1744797309"></script>
+    <link href="/mermaid/mermaid.css?1759505619" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1759505619"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

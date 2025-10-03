@@ -1,6 +1,6 @@
 ---
 title : "Creating EC2 Using AWS CLI"
-date : "`r Sys.Date()`"
+date : 2025-10-02
 weight : 9
 chapter : false
 pre : " <b> 9. </b> "
@@ -49,6 +49,8 @@ aws ec2 authorize-security-group-ingress --group-id **SG ID** --protocol tcp --p
 ![AWS CLI](/images/ec2-net/0006.png?featherlight=false&width=90pc)
 
 7. Preparation is complete. Let's start **EC2**
+You can get the **AMI ID** by accessing **EC2**, selecting **AMI Catalog**. Here we will get the **AMI ID** of the **Amazon Linux 2023 kenel-6.1 AMI**.
+ ![AWS CLI](/images/0/019.png?featherlight=false&width=90pc)
 
 ```
 aws ec2 run-instances --image-id **AMI** --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids **SG ID** --subnet- id **Subnet ID**

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="vi" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.123.7">
+    <meta name="generator" content="Hugo 0.147.8">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Kiểm tra tài nguyên qua CLI :: LÀM QUEN VỚI AWS CLI</title>
 
     
-    <link href="/css/nucleus.css?1744797309" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1744797309" rel="stylesheet">
-    <link href="/css/hybrid.css?1744797309" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1744797309" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1744797309" rel="stylesheet">
-    <link href="/css/auto-complete.css?1744797309" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1744797309" rel="stylesheet">
-    <link href="/css/theme.css?1744797309" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1744797309" rel="stylesheet">
+    <link href="/css/nucleus.css?1759505629" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1759505629" rel="stylesheet">
+    <link href="/css/hybrid.css?1759505629" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1759505629" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1759505629" rel="stylesheet">
+    <link href="/css/auto-complete.css?1759505629" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1759505629" rel="stylesheet">
+    <link href="/css/theme.css?1759505629" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1759505629" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1744797309" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1759505629" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1744797309"></script>
+    <script src="/js/jquery-3.3.1.min.js?1759505629"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1744797309"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1744797309"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1759505629"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1759505629"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/\/vi";
+        var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1744797309"></script>
+<script type="text/javascript" src="/js/search.js?1759505629"></script>
 
     
   </div>
@@ -467,7 +467,7 @@
                   
                     
                     
-                      <option id="en" value="/4-infras/">English</option>
+                      <option id="en" value="//localhost:1313/4-infras/">English</option>
                     
                   
               
@@ -481,7 +481,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/4-infras/" selected>Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/4-infras/" selected>Tiếng Việt</option>
                     
                   
               
@@ -611,21 +611,18 @@
 
 	<h4 id="kiểm-tra-tài-nguyên-qua-cli">Kiểm tra tài nguyên qua CLI</h4>
 <h4 id="table-of-contents">Table of Contents</h4>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
 <ul>
-<li><a href="/vi/4-infras/#kiểm-tra-tài-nguyên-qua-cli">Kiểm tra tài nguyên qua CLI</a></li>
+<li><a href="/vi/4-infras/#ki%e1%bb%83m-tra-t%c3%a0i-nguy%c3%aan-qua-cli">Kiểm tra tài nguyên qua CLI</a></li>
 <li><a href="/vi/4-infras/#table-of-contents">Table of Contents</a></li>
-<li><a href="/vi/4-infras/#kiểm-tra-tài-nguyên-của-profile-qua-aws-cli">Kiểm tra tài nguyên của profile qua AWS CLI</a></li>
-<li><a href="/vi/4-infras/#kiểm-tra-số-lượng-s3-bucket-của-profile">Kiểm tra số lượng S3 bucket của profile</a></li>
-<li><a href="/vi/4-infras/#sử-dụng-cli-auto-prompt">Sử dụng CLI Auto Prompt</a></li>
-<li><a href="/vi/4-infras/#xem-mô-tả-chi-tiết-ec2-dưới-dạng-bảng">Xem mô tả chi tiết EC2 dưới dạng bảng</a></li>
+<li><a href="/vi/4-infras/#ki%e1%bb%83m-tra-t%c3%a0i-nguy%c3%aan-c%e1%bb%a7a-profile-qua-aws-cli">Kiểm tra tài nguyên của profile qua AWS CLI</a></li>
+<li><a href="/vi/4-infras/#ki%e1%bb%83m-tra-s%e1%bb%91-l%c6%b0%e1%bb%a3ng-s3-bucket-c%e1%bb%a7a-profile">Kiểm tra số lượng S3 bucket của profile</a></li>
+<li><a href="/vi/4-infras/#s%e1%bb%ad-d%e1%bb%a5ng-cli-auto-prompt">Sử dụng CLI Auto Prompt</a></li>
+<li><a href="/vi/4-infras/#xem-m%c3%b4-t%e1%ba%a3-chi-ti%e1%ba%bft-ec2-d%c6%b0%e1%bb%9bi-d%e1%ba%a1ng-b%e1%ba%a3ng">Xem mô tả chi tiết EC2 dưới dạng bảng</a></li>
 </ul>
-<!-- raw HTML omitted -->
 <h4 id="kiểm-tra-tài-nguyên-của-profile-qua-aws-cli">Kiểm tra tài nguyên của profile qua AWS CLI</h4>
 <p>Để kiểm tra các instance EC2 của profile, chúng ta sử dụng lệnh sau:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws ec2 describe-instances --profile devops
-</span></span></code></pre></div><p><img alt="Kiểm tra tài nguyên EC2 qua CLI" src="/images/2-ec2/0001.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/2-ec2/0001.png?featherlight=false&amp;width=90pc" alt="Kiểm tra tài nguyên EC2 qua CLI"></p>
 
 <div class="notices note" ><p>Đảm bảo rằng bạn đã cấu hình đúng profile AWS trước khi chạy lệnh này.</p>
 </div>
@@ -633,15 +630,15 @@
 <h4 id="kiểm-tra-số-lượng-s3-bucket-của-profile">Kiểm tra số lượng S3 bucket của profile</h4>
 <p>Để liệt kê các bucket S3 của profile, sử dụng lệnh:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws s3 ls --profile devops
-</span></span></code></pre></div><p><img alt="Liệt kê S3 bucket qua CLI" src="/images/2-ec2/0002.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/2-ec2/0002.png?featherlight=false&amp;width=90pc" alt="Liệt kê S3 bucket qua CLI"></p>
 <h4 id="sử-dụng-cli-auto-prompt">Sử dụng CLI Auto Prompt</h4>
 <p>Auto Prompt của AWS CLI giúp gợi ý các tham số và lệnh, rất tiện dụng khi không nhớ chính xác cú pháp:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws --cli-auto-prompt
-</span></span></code></pre></div><p><img alt="CLI Auto Prompt" src="/images/2-ec2/0003.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/2-ec2/0003.png?featherlight=false&amp;width=90pc" alt="CLI Auto Prompt"></p>
 <h4 id="xem-mô-tả-chi-tiết-ec2-dưới-dạng-bảng">Xem mô tả chi tiết EC2 dưới dạng bảng</h4>
 <p>Để xem thông tin các EC2 instance dưới dạng bảng (table), có thể sử dụng lệnh:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws ec2 describe-instances --output table --region ap-southeast-1
-</span></span></code></pre></div><p><img alt="Mô tả EC2 dưới dạng bảng" src="/images/2-ec2/0004.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/2-ec2/0004.png?featherlight=false&amp;width=90pc" alt="Mô tả EC2 dưới dạng bảng"></p>
 
 
 
@@ -916,19 +913,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1744797309"></script>
-    <script src="/js/perfect-scrollbar.min.js?1744797309"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1744797309"></script>
-    <script src="/js/jquery.sticky.js?1744797309"></script>
-    <script src="/js/featherlight.min.js?1744797309"></script>
-    <script src="/js/highlight.pack.js?1744797309"></script>
+    <script src="/js/clipboard.min.js?1759505629"></script>
+    <script src="/js/perfect-scrollbar.min.js?1759505629"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1759505629"></script>
+    <script src="/js/jquery.sticky.js?1759505629"></script>
+    <script src="/js/featherlight.min.js?1759505629"></script>
+    <script src="/js/highlight.pack.js?1759505629"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1744797309"></script>
-    <script src="/js/learn.js?1744797309"></script>
-    <script src="/js/hugo-learn.js?1744797309"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1759505629"></script>
+    <script src="/js/learn.js?1759505629"></script>
+    <script src="/js/hugo-learn.js?1759505629"></script>
 
-    <link href="/mermaid/mermaid.css?1744797309" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1744797309"></script>
+    <link href="/mermaid/mermaid.css?1759505629" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1759505629"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

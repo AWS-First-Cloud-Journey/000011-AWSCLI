@@ -1,6 +1,6 @@
 ---
 title : "Troubleshooting"
-date : "`r Sys.Date()`"
+date : 2025-10-02
 weight : 10
 chapter : false
 pre : " <b> 10. </b> "

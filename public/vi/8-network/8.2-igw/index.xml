@@ -2,10 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AWS CLI với Internet Gateway on LÀM QUEN VỚI AWS CLI</title>
-    <link>/vi/8-network/8.2-igw/</link>
+    <link>//localhost:1313/vi/8-network/8.2-igw/</link>
     <description>Recent content in AWS CLI với Internet Gateway on LÀM QUEN VỚI AWS CLI</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>vi</language>
-    <atom:link href="/vi/8-network/8.2-igw/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="//localhost:1313/vi/8-network/8.2-igw/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

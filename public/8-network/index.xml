@@ -2,10 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AWS CLI with VPC on GETTING STARTED WITH THE AWS CLI</title>
-    <link>/8-network/</link>
+    <link>//localhost:1313/8-network/</link>
     <description>Recent content in AWS CLI with VPC on GETTING STARTED WITH THE AWS CLI</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="/8-network/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="//localhost:1313/8-network/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

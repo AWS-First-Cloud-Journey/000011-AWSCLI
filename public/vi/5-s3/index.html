@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="vi" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.123.7">
+    <meta name="generator" content="Hugo 0.147.8">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>AWS CLI với Amazon S3 :: LÀM QUEN VỚI AWS CLI</title>
 
     
-    <link href="/css/nucleus.css?1744797309" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1744797309" rel="stylesheet">
-    <link href="/css/hybrid.css?1744797309" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1744797309" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1744797309" rel="stylesheet">
-    <link href="/css/auto-complete.css?1744797309" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1744797309" rel="stylesheet">
-    <link href="/css/theme.css?1744797309" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1744797309" rel="stylesheet">
+    <link href="/css/nucleus.css?1759505619" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1759505619" rel="stylesheet">
+    <link href="/css/hybrid.css?1759505619" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1759505619" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1759505619" rel="stylesheet">
+    <link href="/css/auto-complete.css?1759505619" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1759505619" rel="stylesheet">
+    <link href="/css/theme.css?1759505619" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1759505619" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1744797309" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1759505619" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1744797309"></script>
+    <script src="/js/jquery-3.3.1.min.js?1759505619"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1744797309"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1744797309"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1759505619"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1759505619"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/\/vi";
+        var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1744797309"></script>
+<script type="text/javascript" src="/js/search.js?1759505619"></script>
 
     
   </div>
@@ -467,7 +467,7 @@
                   
                     
                     
-                      <option id="en" value="/5-s3/">English</option>
+                      <option id="en" value="//localhost:1313/5-s3/">English</option>
                     
                   
               
@@ -481,7 +481,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/5-s3/" selected>Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/5-s3/" selected>Tiếng Việt</option>
                     
                   
               
@@ -610,13 +610,10 @@
 
 
 	<h4 id="mục-lục"><strong>Mục lục</strong></h4>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
 <ul>
-<li><a href="/vi/5-s3/#mục-lục"><strong>Mục lục</strong></a></li>
-<li><a href="/vi/5-s3/#sử-dụng-aws-cli-để-khởi-tạo-tài-nguyên-s3">Sử dụng AWS CLI để khởi tạo tài nguyên S3</a></li>
+<li><a href="/vi/5-s3/#m%e1%bb%a5c-l%e1%bb%a5c"><strong>Mục lục</strong></a></li>
+<li><a href="/vi/5-s3/#s%e1%bb%ad-d%e1%bb%a5ng-aws-cli-%c4%91%e1%bb%83-kh%e1%bb%9fi-t%e1%ba%a1o-t%c3%a0i-nguy%c3%aan-s3">Sử dụng AWS CLI để khởi tạo tài nguyên S3</a></li>
 </ul>
-<!-- raw HTML omitted -->
 <h4 id="sử-dụng-aws-cli-để-khởi-tạo-tài-nguyên-s3">Sử dụng AWS CLI để khởi tạo tài nguyên S3</h4>
 
 <div class="notices info" ><strong>Giới thiệu</strong>: Trong phần này, chúng ta sẽ sử dụng AWS CLI để tương tác với dịch vụ S3 của AWS. Các thao tác bao gồm việc tạo và quản lý các <strong>bucket</strong> và <strong>object</strong> trong S3.</div>
@@ -626,7 +623,7 @@
 <p><strong>Tạo S3 bucket</strong></p>
 <p>Để tạo một <strong>S3 bucket</strong>, sử dụng lệnh sau:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws s3 mb s3://aws-cli-2000
-</span></span></code></pre></div><p><img alt="AWS CLI Tạo Bucket" src="/images/3-s3/0001.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/3-s3/0001.png?featherlight=false&amp;width=90pc" alt="AWS CLI Tạo Bucket"></p>
 </li>
 </ol>
 
@@ -637,7 +634,7 @@
 <p><strong>Liệt kê danh sách các S3 bucket</strong></p>
 <p>Để xem danh sách các <strong>bucket</strong> hiện có trong tài khoản của bạn:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws s3 ls
-</span></span></code></pre></div><p><img alt="AWS CLI Liệt Kê Bucket" src="/images/3-s3/0002.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/3-s3/0002.png?featherlight=false&amp;width=90pc" alt="AWS CLI Liệt Kê Bucket"></p>
 </li>
 </ol>
 
@@ -648,13 +645,13 @@
 <p><strong>Kiểm tra object trong S3 bucket</strong></p>
 <p>Để liệt kê các <strong>object</strong> trong một bucket cụ thể:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws s3 ls s3://bucket-name
-</span></span></code></pre></div><p><img alt="AWS CLI Kiểm Tra Object" src="/images/3-s3/0004.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/3-s3/0004.png?featherlight=false&amp;width=90pc" alt="AWS CLI Kiểm Tra Object"></p>
 </li>
 <li>
 <p><strong>Xóa object trong S3 bucket</strong></p>
 <p>Khi cần xóa một <strong>object</strong> từ bucket:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws s3 rm s3://bucket-name/object
-</span></span></code></pre></div><p><img alt="AWS CLI Xóa Object" src="/images/3-s3/0005.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/3-s3/0005.png?featherlight=false&amp;width=90pc" alt="AWS CLI Xóa Object"></p>
 </li>
 </ol>
 
@@ -665,7 +662,7 @@
 <p><strong>Xóa S3 bucket</strong></p>
 <p>Sau khi đã xóa toàn bộ object trong bucket, bạn có thể xóa bucket bằng lệnh sau:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws s3 rb s3://bucket-name
-</span></span></code></pre></div><p><img alt="AWS CLI Xóa Bucket" src="/images/3-s3/0006.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/3-s3/0006.png?featherlight=false&amp;width=90pc" alt="AWS CLI Xóa Bucket"></p>
 </li>
 </ol>
 
@@ -945,19 +942,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1744797309"></script>
-    <script src="/js/perfect-scrollbar.min.js?1744797309"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1744797309"></script>
-    <script src="/js/jquery.sticky.js?1744797309"></script>
-    <script src="/js/featherlight.min.js?1744797309"></script>
-    <script src="/js/highlight.pack.js?1744797309"></script>
+    <script src="/js/clipboard.min.js?1759505619"></script>
+    <script src="/js/perfect-scrollbar.min.js?1759505619"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1759505619"></script>
+    <script src="/js/jquery.sticky.js?1759505619"></script>
+    <script src="/js/featherlight.min.js?1759505619"></script>
+    <script src="/js/highlight.pack.js?1759505619"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1744797309"></script>
-    <script src="/js/learn.js?1744797309"></script>
-    <script src="/js/hugo-learn.js?1744797309"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1759505619"></script>
+    <script src="/js/learn.js?1759505619"></script>
+    <script src="/js/hugo-learn.js?1759505619"></script>
 
-    <link href="/mermaid/mermaid.css?1744797309" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1744797309"></script>
+    <link href="/mermaid/mermaid.css?1759505619" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1759505619"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

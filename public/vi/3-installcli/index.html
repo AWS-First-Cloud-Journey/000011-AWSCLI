@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="vi" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.123.7">
+    <meta name="generator" content="Hugo 0.147.8">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Cài đặt AWS CLI :: LÀM QUEN VỚI AWS CLI</title>
 
     
-    <link href="/css/nucleus.css?1744797309" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1744797309" rel="stylesheet">
-    <link href="/css/hybrid.css?1744797309" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1744797309" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1744797309" rel="stylesheet">
-    <link href="/css/auto-complete.css?1744797309" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1744797309" rel="stylesheet">
-    <link href="/css/theme.css?1744797309" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1744797309" rel="stylesheet">
+    <link href="/css/nucleus.css?1759505627" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1759505627" rel="stylesheet">
+    <link href="/css/hybrid.css?1759505627" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1759505627" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1759505627" rel="stylesheet">
+    <link href="/css/auto-complete.css?1759505627" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1759505627" rel="stylesheet">
+    <link href="/css/theme.css?1759505627" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1759505627" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1744797309" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1759505627" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1744797309"></script>
+    <script src="/js/jquery-3.3.1.min.js?1759505627"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1744797309"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1744797309"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1759505627"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1759505627"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/\/vi";
+        var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1744797309"></script>
+<script type="text/javascript" src="/js/search.js?1759505627"></script>
 
     
   </div>
@@ -467,7 +467,7 @@
                   
                     
                     
-                      <option id="en" value="/3-installcli/">English</option>
+                      <option id="en" value="//localhost:1313/3-installcli/">English</option>
                     
                   
               
@@ -481,7 +481,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/3-installcli/" selected>Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/3-installcli/" selected>Tiếng Việt</option>
                     
                   
               
@@ -645,10 +645,10 @@
 </span></span></code></pre></div><h4 id="đối-với-macos">Đối với macOS:</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ln -s /folder/installed/aws-cli/aws /usr/local/bin/aws
 </span></span><span style="display:flex;"><span>sudo ln -s /folder/installed/aws-cli/aws_completer /usr/local/bin/aws_completer
-</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/1/0001.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/1/0001.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <h3 id="2-kiểm-tra-cài-đặt-aws-cli">2. Kiểm tra cài đặt AWS CLI:</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws --version
-</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/1/0002.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/1/0002.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <h2 id="cấu-hình-aws-cli">Cấu hình AWS CLI</h2>
 <h3 id="3-tạo-default-profile">3. Tạo Default Profile</h3>
 <p>Sử dụng lệnh <code>aws configure</code> để thiết lập AWS CLI. Lệnh này sẽ yêu cầu nhập các thông tin quan trọng:</p>
@@ -659,36 +659,36 @@
 <li><strong>Định dạng xuất (Output format)</strong></li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws configure
-</span></span></code></pre></div><p>Ví dụ đầu vào:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AWS Access Key ID <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: *AKIAIOSFODNN7EXAMPLE*
-</span></span><span style="display:flex;"><span>AWS Secret Access Key <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: *wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY*
+</span></span></code></pre></div><p>Hãy nhập <strong>Access key ID</strong> và <strong>Secret Acces Key</strong> của <strong>aws-cli-user</strong>, các giá trị còn lại giữ nguyên:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AWS Access Key ID <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: *aws-cli-user_Access Key ID*
+</span></span><span style="display:flex;"><span>AWS Secret Access Key <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: *aws-cli-user_Secret Access Key*
 </span></span><span style="display:flex;"><span>Default region name <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: *ap-southeast-1*
 </span></span><span style="display:flex;"><span>Default output format <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: *json*
-</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/1/0003.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/1/0003.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <p>Cấu hình này được lưu trong file <code>credentials</code> dưới profile <code>default</code>. Profile <code>default</code> sẽ được AWS CLI sử dụng nếu không chỉ định profile khác.</p>
 <h2 id="tạo-profile-riêng">Tạo Profile Riêng</h2>
 <h3 id="4-cấu-hình-nhiều-profile">4. Cấu hình nhiều profile</h3>
-<p>Để tạo profile khác, ví dụ <code>devops</code>, sử dụng lệnh sau:</p>
+<p>Để tạo profile khác, ví dụ <code>devops</code>, sử dụng lệnh sau, nhập <strong>Access Key ID</strong> và <strong>Secret Access Key</strong> của user <strong>devops</strong>, các giá trị còn lại giữ nguyên:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws configure --profile devops
-</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/1/0005.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/1/0005.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <p>Profile chứa <strong>Access Key ID</strong> và <strong>Secret Access Key</strong> để ký các yêu cầu gửi tới AWS.</p>
 <h3 id="5-kiểm-tra-cấu-hình-profile">5. Kiểm tra cấu hình profile</h3>
-<p><img alt="AWS CLI" src="/images/1/0006.png?featherlight=false&width=90pc"></p>
+<p><img src="/images/1/0006.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <h2 id="quản-lý-nhiều-profile">Quản lý Nhiều Profile</h2>
 <h3 id="6-kiểm-tra-thông-tin-credentials">6. Kiểm tra thông tin credentials</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd ~/.aws/
 </span></span><span style="display:flex;"><span>ls
 </span></span><span style="display:flex;"><span>cat config
-</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/1/0007.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/1/0007.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <h3 id="7-kiểm-tra-vùng-region-của-profile">7. Kiểm tra vùng (region) của profile</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws configure get region --profile devops
-</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/1/0008.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/1/0008.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <h3 id="8-liệt-kê-danh-sách-cấu-hình">8. Liệt kê danh sách cấu hình</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws configure list
-</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/1/0009.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/1/0009.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 <h3 id="9-liệt-kê-các-profile">9. Liệt kê các profile</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws configure list-profiles
-</span></span></code></pre></div><p><img alt="AWS CLI" src="/images/1/00010.png?featherlight=false&width=90pc"></p>
+</span></span></code></pre></div><p><img src="/images/1/00010.png?featherlight=false&amp;width=90pc" alt="AWS CLI"></p>
 
 <div class="notices tip" ><p>Bạn có thể chỉnh sửa hoặc thêm profile bằng cách cập nhật trực tiếp các tệp <strong>config</strong> và <strong>credentials</strong> với trình soạn thảo trên hệ điều hành của bạn.</p>
 </div>
@@ -967,19 +967,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1744797309"></script>
-    <script src="/js/perfect-scrollbar.min.js?1744797309"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1744797309"></script>
-    <script src="/js/jquery.sticky.js?1744797309"></script>
-    <script src="/js/featherlight.min.js?1744797309"></script>
-    <script src="/js/highlight.pack.js?1744797309"></script>
+    <script src="/js/clipboard.min.js?1759505627"></script>
+    <script src="/js/perfect-scrollbar.min.js?1759505627"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1759505627"></script>
+    <script src="/js/jquery.sticky.js?1759505627"></script>
+    <script src="/js/featherlight.min.js?1759505627"></script>
+    <script src="/js/highlight.pack.js?1759505627"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1744797309"></script>
-    <script src="/js/learn.js?1744797309"></script>
-    <script src="/js/hugo-learn.js?1744797309"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1759505627"></script>
+    <script src="/js/learn.js?1759505627"></script>
+    <script src="/js/hugo-learn.js?1759505627"></script>
 
-    <link href="/mermaid/mermaid.css?1744797309" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1744797309"></script>
+    <link href="/mermaid/mermaid.css?1759505627" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1759505627"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

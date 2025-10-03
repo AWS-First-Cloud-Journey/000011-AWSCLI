@@ -1,6 +1,6 @@
 ---
 title : "AWS CLI with Internet Gateway"
-date : "`r Sys.Date()`"
+date : 2025-10-02
 weight : 2
 chapter : false
 pre : " <b> 8.2 </b> "

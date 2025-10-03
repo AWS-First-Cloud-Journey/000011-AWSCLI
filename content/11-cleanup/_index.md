@@ -1,6 +1,6 @@
 ---
 title : "Clean up resources"
-date : "`r Sys.Date()`"
+date : 2025-10-02
 weight : 11
 chapter : false
 pre : " <b> 11. </b> "
@@ -62,4 +62,13 @@ aws ec2 delete-vpc --vpc-id <VPC_ID>
 
 ![AWS CLI](/images/ec2-net/00017.png?featherlight=false&width=90pc)
 
+#### Delete **aws-cli-instance**
+     
+        aws ec2 terminate-instances --instance-ids <aws-cli-instance ID>
+
+#### Delete Access Key of **aws-cli-user** and **devops**
+
+        aws iam delete-access-key --user-name aws-cli-user --access-key-id *aws-cli-user-Access key*
+
+        aws iam delete-access-key --user-name devops --access-key-id *devops-Access key*
 🔒 **Security Note**: To ensure complete cleanup and prevent unexpected charges, verify all resources have been successfully deleted by checking the AWS Management Console or using the CLI list commands.
